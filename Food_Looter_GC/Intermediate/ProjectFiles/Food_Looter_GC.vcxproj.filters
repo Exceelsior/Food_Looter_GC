@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\Food_Looter_GC.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{71DF94C8-097F-4242-888A-76ADAE616277}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Food_Looter_GC.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\Food_Looter_GCEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{0EBFF31D-5321-4855-A698-D3474F6CE86A}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\Food_Looter_GC">
+      <UniqueIdentifier>{78C95361-52D7-4531-8AD8-63DC69C9CD0B}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\Food_Looter_GC\Food_Looter_GC.Build.cs">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\Food_Looter_GC.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\Food_Looter_GC.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\Food_Looter_GCGameModeBase.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\Food_Looter_GCGameModeBase.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
