@@ -32,16 +32,14 @@
 /wd4244
 /wd4838
 /I .
-/I "D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC"
-/I "D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Source"
+/I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
 /I Runtime
+/I Runtime\Engine\Classes
+/I Runtime\Engine\Public
 /I Runtime\TraceLog\Public
 /I Runtime\Core\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\CoreUObject
 /I Runtime\CoreUObject\Public
-/I ..\Intermediate\Build\Win64\UE4Editor\Inc\Engine
-/I Runtime\Engine\Classes
-/I Runtime\Engine\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\NetCore
 /I Runtime\Net
 /I Runtime\Net\Core\Classes
@@ -233,6 +231,8 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
+/I D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC
+/I D:\UProjects\Food_Looter_GC\Food_Looter_GC\Source
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -262,12 +262,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Source\Food_Looter_GC\Food_Looter_GCGameModeBase.cpp"
-/FI"D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h"
-/Fo"D:\Unreal Projects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Food_Looter_GCGameModeBase.cpp.obj"
+/FI"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Source\Food_Looter_GC\Food_Looter_GCGameModeBase.cpp"
+/FI"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h"
+/Fo"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Food_Looter_GCGameModeBase.cpp.obj"
 /TP
 /GR-
 /W4
