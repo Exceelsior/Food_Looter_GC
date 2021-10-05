@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+class USpringArmComponent;
 UCLASS()
 class FOOD_LOOTER_GC_API AMainCharacter : public ACharacter
 {
@@ -18,6 +19,15 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
+	UPROPERTY(VisibleAnywhere)
+	USceneComponent* SceneComponent;
+    
+	UPROPERTY(VisibleAnywhere)
+    UStaticMeshComponent* StaticMeshComponent;
+
+	UPROPERTY(VisibleAnywhere)
+	USpringArmComponent* ArmComponent;
 
 public:	
 	// Called every frame
