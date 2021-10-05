@@ -13,5 +13,7 @@ UCLASS()
 class FOOD_LOOTER_GC_API AFood_Looter_GCGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
+
+	
 	
 };

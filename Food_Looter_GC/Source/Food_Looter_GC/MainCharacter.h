@@ -21,18 +21,40 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	
-	UPROPERTY(VisibleAnywhere)
-	USceneComponent* SceneComponent;
-    
-	UPROPERTY(VisibleAnywhere)
-    UStaticMeshComponent* StaticMeshComponent;
-
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	USpringArmComponent* ArmComponent;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	UCameraComponent* CameraComponent;
 
+	UPROPERTY()
+	UAnimInstance* AnimInstance;
+
+	//UPROPERTY()
+	//UFloatProperty* MoveSpeedProp;
+		
+	UPROPERTY(EditAnywhere)
+	float CameraYawSpeed;
+
+	UPROPERTY(EditAnywhere)
+	float CameraPitchSpeed;
+
+	UPROPERTY()
+	UWorld* CurrentWorld;
+	
+	UFUNCTION()
+	void MoveForward(float Value);
+
+	UFUNCTION()
+	void MoveRight(float Value);
+
+	UFUNCTION()
+	void Turn(float Rate);
+
+	UFUNCTION()
+	void LookUp(float Rate);
+
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
