@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+class UCameraComponent;
 class USpringArmComponent;
 UCLASS()
 class FOOD_LOOTER_GC_API AMainCharacter : public ACharacter
@@ -28,6 +29,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* ArmComponent;
+
+	UPROPERTY(VisibleAnywhere)
+	UCameraComponent* CameraComponent;
 
 public:	
 	// Called every frame

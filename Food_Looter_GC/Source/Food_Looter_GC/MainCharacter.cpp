@@ -3,6 +3,7 @@
 
 #include "MainCharacter.h"
 
+#include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -20,8 +21,8 @@ AMainCharacter::AMainCharacter()
 	armComponent->CameraLagSpeed = 6.0f;
 	armComponent->bDrawDebugLagMarkers = true;
 
-	m_cameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraMain"));
-	m_cameraComponent->SetupAttachment(armComponent, USpringArmComponent::SocketName);
+	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraMain"));
+	CameraComponent->SetupAttachment(armComponent, USpringArmComponent::SocketName);
 	
 }
 

@@ -1021,3 +1021,15 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2021.10.05-11.46.09:709][765]LogUObjectHash: Compacting FUObjectHashTables data took   0.44ms
 [2021.10.05-11.46.09:710][765]LogEditorActor: Deleted 1 Actors (0.006 secs)
 [2021.10.05-11.46.19:862][907]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2021.10.05-12.16.07:078][789]LogSlate: Window 'Save Level As' being destroyed
+[2021.10.05-12.16.20:426][ 43]LogSlate: Window 'Save Level As' being destroyed
+[2021.10.05-12.16.33:416][646]LogSlate: Window 'Save Level As' being destroyed
+[2021.10.05-12.16.33:464][646]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/mapTest" FILE="D:/UProjects/Food_Looter_GC/Food_Looter_GC/Content/Maps/mapTest.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2021.10.05-12.16.33:471][646]LogUObjectHash: Compacting FUObjectHashTables data took   1.19ms
+[2021.10.05-12.16.33:478][646]LogSavePackage: Moving 'D:/UProjects/Food_Looter_GC/Food_Looter_GC/Saved/mapTest587EFCFD4E22E433026A3195C8A65005.tmp' to 'D:/UProjects/Food_Looter_GC/Food_Looter_GC/Content/Maps/mapTest.umap'
+[2021.10.05-12.16.33:486][646]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/mapTest_BuiltData" FILE="D:/UProjects/Food_Looter_GC/Food_Looter_GC/Content/Maps/mapTest_BuiltData.uasset" SILENT=true
+[2021.10.05-12.16.33:499][646]LogSavePackage: Moving 'D:/UProjects/Food_Looter_GC/Food_Looter_GC/Saved/mapTest_BuiltData7A9096944AB2DFABC10AC8AEE6E3EA6B.tmp' to 'D:/UProjects/Food_Looter_GC/Food_Looter_GC/Content/Maps/mapTest_BuiltData.uasset'
+[2021.10.05-12.16.33:509][646]LogFileHelpers: Saving map 'mapTest' took 0.086
+[2021.10.05-12.16.33:512][646]AssetCheck: New page: Asset Save: multiple assets
+[2021.10.05-12.16.33:512][646]LogContentValidation: Display: Validating MapBuildDataRegistry /Game/Maps/mapTest_BuiltData.mapTest_BuiltData
+[2021.10.05-12.16.33:512][646]LogContentValidation: Display: Validating World /Game/Maps/mapTest.mapTest
