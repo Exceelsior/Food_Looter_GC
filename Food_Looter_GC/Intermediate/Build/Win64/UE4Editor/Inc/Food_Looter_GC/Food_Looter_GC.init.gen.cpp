@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeFood_Looter_GC_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x53A1223E,
+				0xC1AC1113,
 				0xCB550CAD,
 				METADATA_PARAMS(nullptr, 0)
 			};

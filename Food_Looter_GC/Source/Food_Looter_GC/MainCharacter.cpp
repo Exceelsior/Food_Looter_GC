@@ -6,6 +6,18 @@
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
+void AMainCharacter::MoveForward(float AxisValue)
+{
+	// Move at 100 units per second forward or backward
+	CurrentVelocity.X = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 100.0f;
+}
+
+void AMainCharacter::MoveRight(float AxisValue)
+{
+	// Move at 100 units per second right or left
+	CurrentVelocity.Y = FMath::Clamp(AxisValue, -1.0f, 1.0f) * 100.0f;
+}
+
 // Sets default values
 AMainCharacter::AMainCharacter()
 {
@@ -44,6 +56,9 @@ void AMainCharacter::Tick(float DeltaTime)
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	PlayerInputComponent->BindAxis("Forward", this, &AMainCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("Right", this, &AMainCharacter::MoveRight);
 
 }
 

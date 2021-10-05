@@ -17,6 +17,10 @@ public:
 	// Sets default values for this character's properties
 	AMainCharacter();
 
+
+	void MoveForward(float AxisValue);
+	void MoveRight(float AxisValue);
+	
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -32,6 +36,8 @@ protected:
 
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComponent;
+
+	FVector CurrentVelocity;
 
 public:	
 	// Called every frame
