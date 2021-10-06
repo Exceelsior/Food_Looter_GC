@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Food_Looter_GC.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{EDEA9DA6-AC0E-4926-9394-BC311AA350AE}</UniqueIdentifier>
+      <UniqueIdentifier>{5C5421F9-A6DD-43AD-BCBA-596EBCE15AE3}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Food_Looter_GC.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{AC3C4723-6E49-4A52-864A-76A117B9B425}</UniqueIdentifier>
+      <UniqueIdentifier>{4B5D0F34-BE9F-4697-A21D-662371D591CB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -23,8 +23,11 @@
     <None Include="..\..\Config\DefaultGame.ini">
       <Filter>Config</Filter>
     </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
     <Filter Include="Source\Food_Looter_GC">
-      <UniqueIdentifier>{9D9D3A6D-8DD4-4E05-B101-C6AE755DFD8F}</UniqueIdentifier>
+      <UniqueIdentifier>{83CA23B2-994F-48B5-A62E-28B6D4474EE7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Food_Looter_GC\Food_Looter_GC.Build.cs">
       <Filter>Source\Food_Looter_GC</Filter>
@@ -45,6 +48,12 @@
       <Filter>Source\Food_Looter_GC</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Food_Looter_GC\MainCharacter.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\PlayerAnimInstance.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\PlayerAnimInstance.h">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClInclude>
   </ItemGroup>
