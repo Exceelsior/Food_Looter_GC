@@ -3,7 +3,11 @@
   <ItemGroup>
     <None Include="..\..\Food_Looter_GC.uproject" />
     <Filter Include="Source">
+<<<<<<< Updated upstream
       <UniqueIdentifier>{5C5421F9-A6DD-43AD-BCBA-596EBCE15AE3}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{3FEA4DA5-C6A8-416C-9C40-60CE170589B6}</UniqueIdentifier>
+>>>>>>> Stashed changes
     </Filter>
     <None Include="..\..\Source\Food_Looter_GC.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +16,11 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
+<<<<<<< Updated upstream
       <UniqueIdentifier>{4B5D0F34-BE9F-4697-A21D-662371D591CB}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{2BCB3661-654D-4A1D-85FD-1FC4AD69AFCF}</UniqueIdentifier>
+>>>>>>> Stashed changes
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,8 +35,36 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Food_Looter_GC">
+<<<<<<< Updated upstream
       <UniqueIdentifier>{83CA23B2-994F-48B5-A62E-28B6D4474EE7}</UniqueIdentifier>
+=======
+      <UniqueIdentifier>{D5B19C0F-3B91-46D3-BC2B-517C992581A7}</UniqueIdentifier>
+>>>>>>> Stashed changes
     </Filter>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\AIEnnemy.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\AIEnnemy.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\BotTargetPoint.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\BotTargetPoint.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\BTTargetPointSelection.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\BTTargetPointSelection.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\EnemyAIController.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\EnemyAIController.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
     <None Include="..\..\Source\Food_Looter_GC\Food_Looter_GC.Build.cs">
       <Filter>Source\Food_Looter_GC</Filter>
     </None>
@@ -50,6 +86,15 @@
     <ClInclude Include="..\..\Source\Food_Looter_GC\MainCharacter.h">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClInclude>
+<<<<<<< Updated upstream
+=======
+    <ClCompile Include="..\..\Source\Food_Looter_GC\MyAIController.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\MyAIController.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+>>>>>>> Stashed changes
     <ClCompile Include="..\..\Source\Food_Looter_GC\PlayerAnimInstance.cpp">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClCompile>
