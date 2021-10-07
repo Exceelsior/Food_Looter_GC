@@ -1,3 +1,3 @@
-C:\Users\mcaspar\Documents\Unreal Projects\FoodLooter\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h
-C:\Users\mcaspar\Documents\Unreal Projects\FoodLooter\Food_Looter_GC\Food_Looter_GC\Source\Food_Looter_GC\PlayerAnimInstance.h
-C:\Users\mcaspar\Documents\Unreal Projects\FoodLooter\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC\PlayerAnimInstance.generated.h
+D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h
+D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Source\Food_Looter_GC\PlayerAnimInstance.h
+D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC\PlayerAnimInstance.generated.h
