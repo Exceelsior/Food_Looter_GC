@@ -14,16 +14,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define FOOD_LOOTER_GC_GameManager_generated_h
 
 #define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_SPARSE_DATA
-#define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execFillArrayEnemies);
-
-
-#define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execFillArrayEnemies);
-
-
+#define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_RPC_WRAPPERS
+#define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_RPC_WRAPPERS_NO_PURE_DECLS
 #define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAGameManager(); \
@@ -68,10 +60,7 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AGameManager)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_PRIVATE_PROPERTY_OFFSET \
-	FORCEINLINE static uint32 __PPO__NbEnemiesHere() { return STRUCT_OFFSET(AGameManager, NbEnemiesHere); }
-
-
+#define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_PRIVATE_PROPERTY_OFFSET
 #define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_12_PROLOG
 #define Food_Looter_GC_Source_Food_Looter_GC_GameManager_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \

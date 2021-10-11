@@ -8,33 +8,48 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class AActor;
 #ifdef FOOD_LOOTER_GC_Food_Looter_GCGameModeBase_generated_h
 #error "Food_Looter_GCGameModeBase.generated.h already included, missing '#pragma once' in Food_Looter_GCGameModeBase.h"
 #endif
 #define FOOD_LOOTER_GC_Food_Looter_GCGameModeBase_generated_h
 
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_SPARSE_DATA
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_RPC_WRAPPERS
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_SPARSE_DATA
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execManageIa); \
+	DECLARE_FUNCTION(execCompareFood); \
+	DECLARE_FUNCTION(execBeginPlay); \
+	DECLARE_FUNCTION(execTick);
+
+
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execManageIa); \
+	DECLARE_FUNCTION(execCompareFood); \
+	DECLARE_FUNCTION(execBeginPlay); \
+	DECLARE_FUNCTION(execTick);
+
+
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFood_Looter_GCGameModeBase(); \
 	friend struct Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics; \
 public: \
-	DECLARE_CLASS(AFood_Looter_GCGameModeBase, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/Food_Looter_GC"), NO_API) \
+	DECLARE_CLASS(AFood_Looter_GCGameModeBase, AGameMode, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/Food_Looter_GC"), NO_API) \
 	DECLARE_SERIALIZER(AFood_Looter_GCGameModeBase)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_INCLASS \
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesAFood_Looter_GCGameModeBase(); \
 	friend struct Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics; \
 public: \
-	DECLARE_CLASS(AFood_Looter_GCGameModeBase, AGameModeBase, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/Food_Looter_GC"), NO_API) \
+	DECLARE_CLASS(AFood_Looter_GCGameModeBase, AGameMode, COMPILED_IN_FLAGS(0 | CLASS_Transient | CLASS_Config), CASTCLASS_None, TEXT("/Script/Food_Looter_GC"), NO_API) \
 	DECLARE_SERIALIZER(AFood_Looter_GCGameModeBase)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFood_Looter_GCGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFood_Looter_GCGameModeBase) \
@@ -47,7 +62,7 @@ private: \
 public:
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AFood_Looter_GCGameModeBase(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +75,35 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFood_Looter_GCGameModeBase)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_12_PROLOG
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_GENERATED_BODY_LEGACY \
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	FORCEINLINE static uint32 __PPO__Win() { return STRUCT_OFFSET(AFood_Looter_GCGameModeBase, Win); } \
+	FORCEINLINE static uint32 __PPO__TempAct() { return STRUCT_OFFSET(AFood_Looter_GCGameModeBase, TempAct); } \
+	FORCEINLINE static uint32 __PPO__PtSpawn() { return STRUCT_OFFSET(AFood_Looter_GCGameModeBase, PtSpawn); } \
+	FORCEINLINE static uint32 __PPO__SaveTimerBetweenEnemies() { return STRUCT_OFFSET(AFood_Looter_GCGameModeBase, SaveTimerBetweenEnemies); } \
+	FORCEINLINE static uint32 __PPO__CanDecreaseTimer() { return STRUCT_OFFSET(AFood_Looter_GCGameModeBase, CanDecreaseTimer); }
+
+
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_13_PROLOG
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_RPC_WRAPPERS \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_INCLASS \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_STANDARD_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_RPC_WRAPPERS \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_INCLASS \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_GENERATED_BODY \
+#define Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_INCLASS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_15_ENHANCED_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_INCLASS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_Food_Looter_GCGameModeBase_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
