@@ -935,3 +935,783 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2021.10.11-10.06.02:322][  0]LogCollectionManager: Fixed up redirectors for 0 collections in 0.000003 seconds (updated 0 objects)
 [2021.10.11-10.06.02:323][  0]LogContentStreaming: Texture pool size now 1000 MB
 [2021.10.11-10.06.46:095][541]LogSlate: Took 0.000177 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Italic.ttf' (157K)
+[2021.10.11-10.07.56:551][852]LogEditor: Attempting to add actor of class 'MainCharacter' to level at -548.08,-25.00,0.00
+[2021.10.11-10.08.04:695][296]LogTemp: Repeating last play command: Selected Viewport
+[2021.10.11-10.08.04:704][296]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2021.10.11-10.08.04:704][296]PIE: New page: PIE session: Untitled_1 (11 oct. 2021 à 14:08:04)
+[2021.10.11-10.08.04:706][296]LogOnline: OSS: Creating online subsystem instance for: NULL
+[2021.10.11-10.08.04:708][296]LogOnline: OSS: TryLoadSubsystemAndSetDefault: Loaded subsystem for module [NULL]
+[2021.10.11-10.08.04:708][296]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2021.10.11-10.08.04:710][296]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002348s)
+[2021.10.11-10.08.04:712][296]LogAIModule: Creating AISystem for world Untitled_1
+[2021.10.11-10.08.04:712][296]LogPlayLevel: PIE: World Init took: (0.001753s)
+[2021.10.11-10.08.04:712][296]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004266s)
+[2021.10.11-10.08.04:719][296]LogUObjectHash: Compacting FUObjectHashTables data took   0.98ms
+[2021.10.11-10.08.04:719][296]LogAudio: Display: Creating Audio Device:                 Id: 2, Scope: Unique, Realtime: True
+[2021.10.11-10.08.04:719][296]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2021.10.11-10.08.04:719][296]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2021.10.11-10.08.04:719][296]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2021.10.11-10.08.04:719][296]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2021.10.11-10.08.04:719][296]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2021.10.11-10.08.04:719][296]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2021.10.11-10.08.04:720][296]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2021.10.11-10.08.04:720][296]LogAudio: Display: AudioDevice MaxSources: 32
+[2021.10.11-10.08.04:720][296]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2021.10.11-10.08.04:720][296]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2021.10.11-10.08.04:720][296]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2021.10.11-10.08.04:720][296]LogAudioMixer: Display: Initializing audio mixer.
+[2021.10.11-10.08.04:723][296]LogAudioMixer: Display: 0: FrontLeft
+[2021.10.11-10.08.04:723][296]LogAudioMixer: Display: 1: FrontRight
+[2021.10.11-10.08.04:772][296]LogAudioMixer: Display: Using Audio Device Haut-parleur/Ecouteurs (Realtek High Definition Audio)
+[2021.10.11-10.08.04:772][296]LogAudioMixer: Display: Initializing Sound Submixes...
+[2021.10.11-10.08.04:772][296]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2021.10.11-10.08.04:772][296]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2021.10.11-10.08.04:772][296]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2021.10.11-10.08.04:773][296]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2021.10.11-10.08.04:773][296]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2021.10.11-10.08.04:774][296]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2021.10.11-10.08.04:774][296]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2021.10.11-10.08.04:774][296]LogInit: FAudioDevice initialized.
+[2021.10.11-10.08.04:774][296]LogAudio: Display: Audio Device (ID: 2) registered with world 'Untitled_1'.
+[2021.10.11-10.08.04:784][296]LogLoad: Game class is 'GameModeBase'
+[2021.10.11-10.08.04:786][296]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2021.10.11-12.08.04
+[2021.10.11-10.08.04:802][296]LogWorld: Bringing up level for play took: 0.016477
+[2021.10.11-10.08.04:803][296]LogOnline: OSS: Creating online subsystem instance for: :Context_4
+[2021.10.11-10.08.04:813][296]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'MovieSceneCapture' in 0.0010 seconds. Added 20 classes and 0 folders.
+[2021.10.11-10.08.04:815][296]PIE: Server logged in
+[2021.10.11-10.08.04:819][296]PIE: Play in editor total start time 0,118 seconds.
+[2021.10.11-10.08.09:441][569]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.08.09:441][569]LogWorld: BeginTearingDown for /Temp/UEDPIE_0_Untitled_1
+[2021.10.11-10.08.09:441][569]LogWorld: UWorld::CleanupWorld for Untitled_1, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.08.09:441][569]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.08.09:452][569]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2021.10.11-10.08.09:489][569]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.08.09:494][569]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2021.10.11-10.08.09:494][569]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.08.09:496][569]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.08.09:519][569]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.08.09:521][569]LogUObjectHash: Compacting FUObjectHashTables data took   0.69ms
+[2021.10.11-10.08.09:558][570]LogPlayLevel: Display: Destroying online subsystem :Context_4
+[2021.10.11-10.08.32:461][912]LogEditorViewport: Clicking on Actor (LMB): StaticMeshActor (Floor)
+[2021.10.11-10.08.34:510][ 29]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.08.44:120][598]LogEditorViewport: Clicking on Actor (LMB): PlayerStart (Player Start)
+[2021.10.11-10.08.45:139][657]Cmd: DELETE
+[2021.10.11-10.08.45:139][657]Cmd: ACTOR DELETE
+[2021.10.11-10.08.45:140][657]LogEditorActor: Deleted Actor: PlayerStart
+[2021.10.11-10.08.45:147][657]LogUObjectHash: Compacting FUObjectHashTables data took   0.65ms
+[2021.10.11-10.08.45:148][657]LogEditorActor: Deleted 1 Actors (0.009 secs)
+[2021.10.11-10.08.46:219][720]LogTemp: Repeating last play command: Selected Viewport
+[2021.10.11-10.08.46:229][720]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2021.10.11-10.08.46:229][720]PIE: New page: PIE session: Untitled_1 (11 oct. 2021 à 14:08:46)
+[2021.10.11-10.08.46:268][720]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2021.10.11-10.08.46:271][720]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002538s)
+[2021.10.11-10.08.46:272][720]LogAIModule: Creating AISystem for world Untitled_1
+[2021.10.11-10.08.46:273][720]LogPlayLevel: PIE: World Init took: (0.002027s)
+[2021.10.11-10.08.46:273][720]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.004769s)
+[2021.10.11-10.08.46:279][720]LogUObjectHash: Compacting FUObjectHashTables data took   0.61ms
+[2021.10.11-10.08.46:280][720]LogAudio: Display: Creating Audio Device:                 Id: 3, Scope: Unique, Realtime: True
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2021.10.11-10.08.46:280][720]LogAudio: Display: AudioDevice MaxSources: 32
+[2021.10.11-10.08.46:280][720]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2021.10.11-10.08.46:280][720]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2021.10.11-10.08.46:280][720]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2021.10.11-10.08.46:280][720]LogAudioMixer: Display: Initializing audio mixer.
+[2021.10.11-10.08.46:283][720]LogAudioMixer: Display: 0: FrontLeft
+[2021.10.11-10.08.46:283][720]LogAudioMixer: Display: 1: FrontRight
+[2021.10.11-10.08.46:333][720]LogAudioMixer: Display: Using Audio Device Haut-parleur/Ecouteurs (Realtek High Definition Audio)
+[2021.10.11-10.08.46:333][720]LogAudioMixer: Display: Initializing Sound Submixes...
+[2021.10.11-10.08.46:334][720]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2021.10.11-10.08.46:334][720]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2021.10.11-10.08.46:334][720]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2021.10.11-10.08.46:334][720]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2021.10.11-10.08.46:334][720]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2021.10.11-10.08.46:335][720]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2021.10.11-10.08.46:335][720]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2021.10.11-10.08.46:335][720]LogInit: FAudioDevice initialized.
+[2021.10.11-10.08.46:336][720]LogAudio: Display: Audio Device (ID: 3) registered with world 'Untitled_1'.
+[2021.10.11-10.08.46:344][720]LogLoad: Game class is 'GameModeBase'
+[2021.10.11-10.08.46:346][720]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2021.10.11-12.08.46
+[2021.10.11-10.08.46:346][720]LogWorld: Bringing up level for play took: 0.001177
+[2021.10.11-10.08.46:346][720]LogOnline: OSS: Creating online subsystem instance for: :Context_6
+[2021.10.11-10.08.46:349][720]PIE: Server logged in
+[2021.10.11-10.08.46:350][720]PIE: Play in editor total start time 0,124 seconds.
+[2021.10.11-10.08.51:220][ 10]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.08.51:220][ 10]LogWorld: BeginTearingDown for /Temp/UEDPIE_0_Untitled_1
+[2021.10.11-10.08.51:221][ 10]LogWorld: UWorld::CleanupWorld for Untitled_1, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.08.51:221][ 10]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.08.51:231][ 10]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2021.10.11-10.08.51:233][ 10]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.08.51:238][ 10]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.08.51:239][ 10]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.08.51:240][ 10]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.08.51:246][ 10]LogUObjectHash: Compacting FUObjectHashTables data took   0.68ms
+[2021.10.11-10.08.51:298][ 13]LogPlayLevel: Display: Destroying online subsystem :Context_6
+[2021.10.11-10.09.02:999][626]LogSlate: Only BGRA pngs, bmps or icos are supported in by External Image Picker
+[2021.10.11-10.09.51:140][480]LogSlate: Window 'Project Settings' being destroyed
+[2021.10.11-10.09.51:144][480]LogSlate: Window 'Project Settings' being destroyed
+[2021.10.11-10.11.33:950][827]Candidate modules for hot reload:
+[2021.10.11-10.11.33:950][827]  Food_Looter_GC
+[2021.10.11-10.11.33:950][827]Launching UnrealBuildTool... [D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Food_Looter_GC,5975 Food_Looter_GCEditor Win64 Development -Project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" "D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject"  -IgnoreJunk]
+[2021.10.11-10.11.34:146][827]Warning: Starting HotReload took  0.2s.
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: New page: Compilation - 11 oct. 2021 à 14:11:39
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Documents\GitHub\Food_Looter_GC).
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: Building Food_Looter_GCEditor...
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: Using Visual Studio 2019 14.28.29336 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: Building 3 actions with 8 processes...
+[2021.10.11-10.11.39:030][103]CompilerResultsLog:   [1/3] UE4Editor-Food_Looter_GC-5975.lib
+[2021.10.11-10.11.39:030][103]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5975.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5975.exp
+[2021.10.11-10.11.39:030][103]CompilerResultsLog:   [2/3] UE4Editor-Food_Looter_GC-5975.dll
+[2021.10.11-10.11.39:030][103]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5975.suppressed.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5975.suppressed.exp
+[2021.10.11-10.11.39:030][103]CompilerResultsLog:   [3/3] Food_Looter_GCEditor.target
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: Total time in Parallel executor: 2,85 seconds
+[2021.10.11-10.11.39:030][103]CompilerResultsLog: Total execution time: 4,65 seconds
+[2021.10.11-10.11.39:030][103]LogMainFrame: MainFrame: Module compiling took 5.089 seconds
+[2021.10.11-10.11.39:060][103]LogHotReload: Re-instancing MainCharacter after hot-reload.
+[2021.10.11-10.11.39:083][103]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Food_Looter_GC' in 0.0004 seconds. Added 9 classes and 2 folders.
+[2021.10.11-10.11.39:089][103]Display: HotReload successful (8 functions remapped  0 scriptstructs remapped)
+[2021.10.11-10.11.39:157][103]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0122 seconds. Added 3831 classes and 930 folders.
+[2021.10.11-10.11.39:157][103]Display: HotReload took  5.2s.
+[2021.10.11-10.11.42:234][285]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.11.43:074][329]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.11.44:394][407]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.11.49:106][686]LogTemp: Repeating last play command: Selected Viewport
+[2021.10.11-10.11.49:119][686]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2021.10.11-10.11.49:119][686]PIE: New page: PIE session: Untitled_1 (11 oct. 2021 à 14:11:49)
+[2021.10.11-10.11.49:119][686]LogPlayLevel: Creating play world package: /Temp/UEDPIE_0_Untitled_1
+[2021.10.11-10.11.49:123][686]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003325s)
+[2021.10.11-10.11.49:124][686]LogAIModule: Creating AISystem for world Untitled_1
+[2021.10.11-10.11.49:125][686]LogPlayLevel: PIE: World Init took: (0.001801s)
+[2021.10.11-10.11.49:125][686]LogPlayLevel: PIE: Created PIE world by copying editor world from /Temp/Untitled_1.Untitled_1 to /Temp/UEDPIE_0_Untitled_1.Untitled_1 (0.005322s)
+[2021.10.11-10.11.49:133][686]LogUObjectHash: Compacting FUObjectHashTables data took   1.49ms
+[2021.10.11-10.11.49:136][686]LogAudio: Display: Creating Audio Device:                 Id: 4, Scope: Unique, Realtime: True
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2021.10.11-10.11.49:136][686]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2021.10.11-10.11.49:136][686]LogAudio: Display: AudioDevice MaxSources: 32
+[2021.10.11-10.11.49:137][686]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2021.10.11-10.11.49:137][686]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2021.10.11-10.11.49:137][686]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2021.10.11-10.11.49:137][686]LogAudioMixer: Display: Initializing audio mixer.
+[2021.10.11-10.11.49:140][686]LogAudioMixer: Display: 0: FrontLeft
+[2021.10.11-10.11.49:140][686]LogAudioMixer: Display: 1: FrontRight
+[2021.10.11-10.11.49:190][686]LogAudioMixer: Display: Using Audio Device Haut-parleur/Ecouteurs (Realtek High Definition Audio)
+[2021.10.11-10.11.49:191][686]LogAudioMixer: Display: Initializing Sound Submixes...
+[2021.10.11-10.11.49:191][686]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2021.10.11-10.11.49:191][686]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2021.10.11-10.11.49:191][686]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2021.10.11-10.11.49:191][686]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2021.10.11-10.11.49:191][686]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2021.10.11-10.11.49:193][686]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2021.10.11-10.11.49:193][686]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2021.10.11-10.11.49:193][686]LogInit: FAudioDevice initialized.
+[2021.10.11-10.11.49:193][686]LogAudio: Display: Audio Device (ID: 4) registered with world 'Untitled_1'.
+[2021.10.11-10.11.49:205][686]LogLoad: Game class is 'GameModeBase'
+[2021.10.11-10.11.49:206][686]LogWorld: Bringing World /Temp/UEDPIE_0_Untitled_1.Untitled_1 up for play (max tick rate 60) at 2021.10.11-12.11.49
+[2021.10.11-10.11.49:207][686]LogWorld: Bringing up level for play took: 0.001270
+[2021.10.11-10.11.49:207][686]LogOnline: OSS: Creating online subsystem instance for: :Context_7
+[2021.10.11-10.11.49:209][686]PIE: Server logged in
+[2021.10.11-10.11.49:210][686]PIE: Play in editor total start time 0,094 seconds.
+[2021.10.11-10.11.59:200][273]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.11.59:200][273]LogWorld: BeginTearingDown for /Temp/UEDPIE_0_Untitled_1
+[2021.10.11-10.11.59:200][273]LogWorld: UWorld::CleanupWorld for Untitled_1, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.11.59:200][273]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.11.59:213][273]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2021.10.11-10.11.59:256][273]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.11.59:262][273]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2021.10.11-10.11.59:262][273]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.11.59:264][273]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.11.59:270][273]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.11.59:272][273]LogUObjectHash: Compacting FUObjectHashTables data took   0.66ms
+[2021.10.11-10.11.59:314][274]LogPlayLevel: Display: Destroying online subsystem :Context_7
+[2021.10.11-10.12.08:539][798]LogSlate: Took 0.000166 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-Light.ttf' (167K)
+[2021.10.11-10.14.57:669][436]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.14.58:204][436]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'BlueprintGraph' in 0.0005 seconds. Added 126 classes and 0 folders.
+[2021.10.11-10.15.01:569][549]LogWorld: UWorld::CleanupWorld for World_4, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.15.01:569][549]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.15.01:630][549]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.15.02:356][549]LogSlate: Took 0.000322 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/Roboto-BoldCondensed.ttf' (158K)
+[2021.10.11-10.15.31:015][824]LogWorld: UWorld::CleanupWorld for World_5, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.15.31:015][824]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.15.32:324][897]Candidate modules for hot reload:
+[2021.10.11-10.15.32:324][897]  Food_Looter_GC
+[2021.10.11-10.15.32:324][897]Launching UnrealBuildTool... [D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Food_Looter_GC,6323 Food_Looter_GCEditor Win64 Development -Project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" "D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject"  -IgnoreJunk]
+[2021.10.11-10.15.32:332][897]Warning: Starting HotReload took  0.0s.
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: New page: Compilation - 11 oct. 2021 à 14:16:39
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Documents\GitHub\Food_Looter_GC).
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Creating makefile for Food_Looter_GCEditor (game project files are newer)
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Parsing headers for Food_Looter_GCEditor
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   Running UnrealHeaderTool "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Food_Looter_GC.uproject" "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Food_Looter_GCEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\heart\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: LogInit: Display: Loading text-based GConfig....
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Reflection code generated for Food_Looter_GCEditor in 5,2821551 seconds
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Building Food_Looter_GCEditor...
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Using Visual Studio 2019 14.28.29336 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Building 6 actions with 8 processes...
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   [1/6] Food_Looter_GC.init.gen.cpp
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   [2/6] MainCharacter.gen.cpp
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   [3/6] MainCharacter.cpp
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   [4/6] UE4Editor-Food_Looter_GC-6323.lib
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-6323.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-6323.exp
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   [5/6] UE4Editor-Food_Looter_GC-6323.dll
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-6323.suppressed.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-6323.suppressed.exp
+[2021.10.11-10.16.39:264][950]CompilerResultsLog:   [6/6] Food_Looter_GCEditor.target
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Total time in Parallel executor: 57,37 seconds
+[2021.10.11-10.16.39:264][950]CompilerResultsLog: Total execution time: 66,46 seconds
+[2021.10.11-10.16.39:264][950]LogMainFrame: MainFrame: Module compiling took 66.945 seconds
+[2021.10.11-10.16.39:283][950]LogClass: Could not find existing class MainCharacter in package /Script/Food_Looter_GC for HotReload, assuming new class
+[2021.10.11-10.16.39:283][950]LogClass: Function LookUp is new.
+[2021.10.11-10.16.39:283][950]LogClass: Function MoveForward is new.
+[2021.10.11-10.16.39:283][950]LogClass: Function MoveRight is new.
+[2021.10.11-10.16.39:283][950]LogClass: Function Turn is new.
+[2021.10.11-10.16.39:296][950]LogHotReload: Re-instancing MainCharacter after hot-reload.
+[2021.10.11-10.16.39:415][950]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Food_Looter_GC' in 0.0005 seconds. Added 9 classes and 2 folders.
+[2021.10.11-10.16.39:421][950]Display: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2021.10.11-10.16.39:512][950]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0097 seconds. Added 3831 classes and 930 folders.
+[2021.10.11-10.16.39:512][950]Display: HotReload took 67.2s.
+[2021.10.11-10.16.49:144][272]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2021.10.11-10.19.27:309][184]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2021.10.11-10.19.27:948][220]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.19.28:850][269]LogEditorViewport: Clicking on Actor (LMB): BP_Sky_Sphere_C (Sky Sphere)
+[2021.10.11-10.19.30:681][372]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.29.31:976][271]LogWorld: UWorld::CleanupWorld for World_6, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.29.31:976][271]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.29.49:980][299]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/BPMainCharacter.BPMainCharacter
+[2021.10.11-10.29.50:445][299]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2021.10.11-10.29.50:549][299]LogRenderer: Reallocating scene render targets to support 1208x712 Format 10 NumSamples 1 (Frame:1).
+[2021.10.11-10.30.04:144][ 41]BlueprintLog: New page: Compile BPMainCharacter
+[2021.10.11-10.30.04:278][ 41]LogUObjectHash: Compacting FUObjectHashTables data took   5.06ms
+[2021.10.11-10.30.04:354][ 41]LogSlate: Took 0.036368 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2021.10.11-10.30.06:051][126]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/BPMainCharacter" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/BPMainCharacter.uasset" SILENT=true
+[2021.10.11-10.30.06:061][126]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BPMainCharacter6EF610464C0B6E6FC10D7192A726C096.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/BPMainCharacter.uasset'
+[2021.10.11-10.30.06:082][126]AssetCheck: New page: Asset Save: BPMainCharacter
+[2021.10.11-10.30.06:082][126]LogContentValidation: Display: Validating Blueprint /Game/BPMainCharacter.BPMainCharacter
+[2021.10.11-10.30.07:541][198]LogSlate: Window 'BPMainCharacter' being destroyed
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.BPMainCharacter:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.SKEL_BPMainCharacter_C' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.BPMainCharacter_C' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.BPMainCharacter:EventGraph.K2Node_Event_0' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.BPMainCharacter:EventGraph.K2Node_Event_1' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.BPMainCharacter:EventGraph.K2Node_Event_2' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.SKEL_BPMainCharacter_C:ReceiveBeginPlay' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.SKEL_BPMainCharacter_C:ReceiveActorBeginOverlap' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.SKEL_BPMainCharacter_C:ReceiveTick' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:775][504]LogMetaData: Removing '/Game/Blueprints/BPMainCharacter.SKEL_BPMainCharacter_C:UserConstructionScript' ref from Metadata '/Game/BPMainCharacter.PackageMetaData'
+[2021.10.11-10.30.12:810][504]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BPMainCharacter" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BPMainCharacter.uasset" SILENT=true
+[2021.10.11-10.30.12:817][504]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BPMainCharacterF59CDEC242A719F5C9682084E358775D.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BPMainCharacter.uasset'
+[2021.10.11-10.30.12:952][504]LogUObjectHash: Compacting FUObjectHashTables data took   3.20ms
+[2021.10.11-10.30.12:985][504]LogUObjectHash: Compacting FUObjectHashTables data took   2.10ms
+[2021.10.11-10.30.13:005][504]LogUObjectHash: Compacting FUObjectHashTables data took   0.48ms
+[2021.10.11-10.30.13:052][504]AssetCheck: New page: Asset Save: BPMainCharacter
+[2021.10.11-10.30.13:052][504]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/BPMainCharacter.BPMainCharacter
+[2021.10.11-10.30.19:610][887]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.30.36:731][853]LogSlate: Took 0.103931 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansFallback.ttf' (3848K)
+[2021.10.11-10.30.57:097][995]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BPMainCharacter" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BPMainCharacter.uasset" SILENT=true
+[2021.10.11-10.30.57:113][995]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BPMainCharacter3DC2391A4E99AF560100659BCCAE5FB1.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BPMainCharacter.uasset'
+[2021.10.11-10.30.57:128][995]AssetCheck: New page: Asset Save: BPMainCharacter
+[2021.10.11-10.30.57:128][995]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/BPMainCharacter.BPMainCharacter
+[2021.10.11-10.30.57:501][ 16]BlueprintLog: New page: Compile BPMainCharacter
+[2021.10.11-10.30.57:566][ 16]LogUObjectHash: Compacting FUObjectHashTables data took   2.40ms
+[2021.10.11-10.37.39:855][380]LogWorld: UWorld::CleanupWorld for World_8, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.37.39:855][380]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.37.41:079][450]BlueprintLog: New page: Compile BPMainCharacter
+[2021.10.11-10.37.41:139][450]LogUObjectHash: Compacting FUObjectHashTables data took   2.93ms
+[2021.10.11-10.37.41:477][467]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BPMainCharacter" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BPMainCharacter.uasset" SILENT=true
+[2021.10.11-10.37.41:489][467]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BPMainCharacter1CC7CE6B4C82141DB5D71D97E60FF588.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BPMainCharacter.uasset'
+[2021.10.11-10.37.41:503][467]AssetCheck: New page: Asset Save: BPMainCharacter
+[2021.10.11-10.37.41:503][467]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/BPMainCharacter.BPMainCharacter
+[2021.10.11-10.37.46:670][552]LogSlate: Window 'Save Level As' being destroyed
+[2021.10.11-10.37.50:536][779]LogUObjectHash: Compacting FUObjectHashTables data took   2.12ms
+[2021.10.11-10.37.51:599][779]LogSlate: Window 'Delete Assets' being destroyed
+[2021.10.11-10.37.51:724][779]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2021.10.11-10.37.51:724][779]LogWorld: UWorld::CleanupWorld for World_7, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.37.51:724][779]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.37.51:773][779]LogUObjectGlobals: Force Deleting 1 Package(s):
+	Asset Name: /Game/Blueprints/BPMainCharacter.BPMainCharacter
+[2021.10.11-10.37.54:021][779]LogUObjectHash: Compacting FUObjectHashTables data took   2.21ms
+[2021.10.11-10.37.54:060][779]LogUObjectHash: Compacting FUObjectHashTables data took   1.93ms
+[2021.10.11-10.37.54:076][779]LogUObjectHash: Compacting FUObjectHashTables data took   1.52ms
+[2021.10.11-10.37.54:092][779]LogUObjectHash: Compacting FUObjectHashTables data took   0.68ms
+[2021.10.11-10.38.02:844][298]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.38.05:253][433]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2021.10.11-10.39.51:320][563]Candidate modules for hot reload:
+[2021.10.11-10.39.51:320][563]  Food_Looter_GC
+[2021.10.11-10.39.51:320][563]Launching UnrealBuildTool... [D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Food_Looter_GC,0606 Food_Looter_GCEditor Win64 Development -Project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" "D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject"  -IgnoreJunk]
+[2021.10.11-10.39.51:339][563]Warning: Starting HotReload took  0.0s.
+[2021.10.11-10.40.03:679][826]CompilerResultsLog: New page: Compilation - 11 oct. 2021 à 14:40:03
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Documents\GitHub\Food_Looter_GC).
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Parsing headers for Food_Looter_GCEditor
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   Running UnrealHeaderTool "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Food_Looter_GC.uproject" "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Food_Looter_GCEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\heart\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: LogInit: Display: Loading text-based GConfig....
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Reflection code generated for Food_Looter_GCEditor in 5,6769086 seconds
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Building Food_Looter_GCEditor...
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Using Visual Studio 2019 14.28.29336 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Building 6 actions with 8 processes...
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   [1/6] Food_Looter_GC.init.gen.cpp
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   [2/6] MainCharacter.gen.cpp
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   [3/6] MainCharacter.cpp
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   [4/6] UE4Editor-Food_Looter_GC-0606.lib
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0606.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0606.exp
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   [5/6] UE4Editor-Food_Looter_GC-0606.dll
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0606.suppressed.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0606.suppressed.exp
+[2021.10.11-10.40.03:680][826]CompilerResultsLog:   [6/6] Food_Looter_GCEditor.target
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Total time in Parallel executor: 4,05 seconds
+[2021.10.11-10.40.03:680][826]CompilerResultsLog: Total execution time: 11,43 seconds
+[2021.10.11-10.40.03:680][826]LogMainFrame: MainFrame: Module compiling took 12.383 seconds
+[2021.10.11-10.40.03:701][826]LogClass: Could not find existing class MainCharacter in package /Script/Food_Looter_GC for HotReload, assuming new class
+[2021.10.11-10.40.03:701][826]LogClass: Function LookUp is new.
+[2021.10.11-10.40.03:701][826]LogClass: Function MoveForward is new.
+[2021.10.11-10.40.03:701][826]LogClass: Function MoveRight is new.
+[2021.10.11-10.40.03:701][826]LogClass: Function Turn is new.
+[2021.10.11-10.40.03:722][826]LogHotReload: Re-instancing MainCharacter after hot-reload.
+[2021.10.11-10.40.03:800][826]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Food_Looter_GC' in 0.0003 seconds. Added 9 classes and 2 folders.
+[2021.10.11-10.40.03:807][826]Display: HotReload successful (4 functions remapped  0 scriptstructs remapped)
+[2021.10.11-10.40.03:913][826]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0125 seconds. Added 3831 classes and 930 folders.
+[2021.10.11-10.40.03:913][826]Display: HotReload took 12.6s.
+[2021.10.11-10.41.17:648][ 30]LogSlate: Window 'Message' being destroyed
+[2021.10.11-10.41.17:653][ 30]Message dialog closed, result: Yes, title: Message, text: MapLolo already exists. Do you want to replace it?
+[2021.10.11-10.41.17:653][ 30]LogSlate: Window 'Save Level As' being destroyed
+[2021.10.11-10.41.17:784][ 30]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapLolo" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2021.10.11-10.41.17:855][ 30]LogUObjectHash: Compacting FUObjectHashTables data took   3.42ms
+[2021.10.11-10.41.17:887][ 30]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLoloCA03B77541D0CCC785C3BCB11697FE03.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo.umap'
+[2021.10.11-10.41.17:899][ 30]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapLolo_BuiltData" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo_BuiltData.uasset" SILENT=true
+[2021.10.11-10.41.17:950][ 30]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLolo_BuiltData611E65F04234662504F5A68AD41F910A.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo_BuiltData.uasset'
+[2021.10.11-10.41.17:963][ 30]LogFileHelpers: Saving map 'MapLolo' took 0.299
+[2021.10.11-10.41.17:970][ 30]AssetCheck: New page: Asset Save: multiple assets
+[2021.10.11-10.41.17:970][ 30]LogContentValidation: Display: Validating MapBuildDataRegistry /Game/Maps/MapLolo_BuiltData.MapLolo_BuiltData
+[2021.10.11-10.41.17:970][ 30]LogContentValidation: Display: Validating World /Game/Maps/MapLolo.MapLolo
+[2021.10.11-10.48.44:371][869]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.49.06:265][115]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/wtf.wtf
+[2021.10.11-10.49.06:740][115]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2021.10.11-10.49.09:099][236]LogSlate: Window 'wtf' being destroyed
+[2021.10.11-10.49.12:294][417]BlueprintLog: New page: Compile Player_BP
+[2021.10.11-10.49.12:430][417]LogUObjectHash: Compacting FUObjectHashTables data took   4.29ms
+[2021.10.11-10.49.12:942][442]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/Player_BP" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/Player_BP.uasset" SILENT=true
+[2021.10.11-10.49.12:957][442]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/Player_BP4B8CFBD9409793EB59ECB983E5C9DE50.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/Player_BP.uasset'
+[2021.10.11-10.49.12:968][442]AssetCheck: New page: Asset Save: Player_BP
+[2021.10.11-10.49.12:968][442]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.49.14:610][536]BlueprintLog: New page: Compile wtf
+[2021.10.11-10.49.14:667][536]LogUObjectHash: Compacting FUObjectHashTables data took   2.36ms
+[2021.10.11-10.49.15:098][558]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset" SILENT=true
+[2021.10.11-10.49.15:143][558]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtfC4C57D5248F6214CF96D73878D453C1E.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset'
+[2021.10.11-10.49.15:160][558]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-10.49.15:160][558]LogContentValidation: Display: Validating Blueprint /Game/wtf.wtf
+[2021.10.11-10.49.25:576][162]BlueprintLog: New page: Compile wtf
+[2021.10.11-10.49.25:634][162]LogUObjectHash: Compacting FUObjectHashTables data took   2.64ms
+[2021.10.11-10.49.26:074][185]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset" SILENT=true
+[2021.10.11-10.49.26:089][185]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtf3934CE584926405713D73FA62297ADFB.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset'
+[2021.10.11-10.49.26:103][185]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-10.49.26:103][185]LogContentValidation: Display: Validating Blueprint /Game/wtf.wtf
+[2021.10.11-10.49.27:056][243]BlueprintLog: New page: Compile Player_BP
+[2021.10.11-10.49.27:112][243]LogUObjectHash: Compacting FUObjectHashTables data took   2.70ms
+[2021.10.11-10.50.00:235][140]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2021.10.11-10.50.11:634][811]BlueprintLog: New page: Compile wtf
+[2021.10.11-10.50.11:714][811]LogUObjectHash: Compacting FUObjectHashTables data took   2.56ms
+[2021.10.11-10.50.13:941][942]BlueprintLog: New page: Compile wtf
+[2021.10.11-10.50.13:985][942]LogUObjectHash: Compacting FUObjectHashTables data took   2.83ms
+[2021.10.11-10.50.14:341][961]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset" SILENT=true
+[2021.10.11-10.50.14:353][961]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtf13AF511A4C4D5CE2F56DB5AD598DFDD1.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset'
+[2021.10.11-10.50.14:367][961]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-10.50.14:367][961]LogContentValidation: Display: Validating Blueprint /Game/wtf.wtf
+[2021.10.11-10.50.15:941][ 54]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/Player_BP" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/Player_BP.uasset" SILENT=true
+[2021.10.11-10.50.15:952][ 54]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/Player_BPA594BC394A2E5F7CE82690A57B4CBDAF.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/Player_BP.uasset'
+[2021.10.11-10.50.15:964][ 54]AssetCheck: New page: Asset Save: Player_BP
+[2021.10.11-10.50.15:964][ 54]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.51.09:882][222]BlueprintLog: New page: Compile wtf
+[2021.10.11-10.51.09:934][222]LogUObjectHash: Compacting FUObjectHashTables data took   2.22ms
+[2021.10.11-10.51.11:881][334]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset" SILENT=true
+[2021.10.11-10.51.11:892][334]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtfF1C8E2E44C2F147A33AA128C931A541E.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset'
+[2021.10.11-10.51.11:908][334]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-10.51.11:908][334]LogContentValidation: Display: Validating Blueprint /Game/wtf.wtf
+[2021.10.11-10.51.38:812][905]BlueprintLog: New page: Compile wtf
+[2021.10.11-10.51.38:863][905]LogUObjectHash: Compacting FUObjectHashTables data took   2.23ms
+[2021.10.11-10.51.39:541][942]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset" SILENT=true
+[2021.10.11-10.51.39:552][942]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtfCC6E16134D569B7639CCF3B7D018BCA1.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/wtf.uasset'
+[2021.10.11-10.51.39:567][942]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-10.51.39:567][942]LogContentValidation: Display: Validating Blueprint /Game/wtf.wtf
+[2021.10.11-10.51.43:252][163]LogWorld: UWorld::CleanupWorld for World_11, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.51.43:252][163]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.51.49:979][557]LogEditorViewport: Clicking on Component (LMB): SkeletalMeshComponent (CharacterMesh0)
+[2021.10.11-10.51.52:077][681]LogEditorViewport: Clicking on Component (LMB): CameraComponent (CameraMain)
+[2021.10.11-10.51.53:341][750]Cmd: DELETE
+[2021.10.11-10.51.53:341][750]Cmd: ACTOR DELETE
+[2021.10.11-10.51.53:587][765]Cmd: DELETE
+[2021.10.11-10.51.53:587][765]Cmd: ACTOR DELETE
+[2021.10.11-10.51.53:770][776]Cmd: DELETE
+[2021.10.11-10.51.53:770][776]Cmd: ACTOR DELETE
+[2021.10.11-10.51.53:920][785]Cmd: DELETE
+[2021.10.11-10.51.53:920][785]Cmd: ACTOR DELETE
+[2021.10.11-10.51.54:070][794]Cmd: DELETE
+[2021.10.11-10.51.54:070][794]Cmd: ACTOR DELETE
+[2021.10.11-10.51.54:220][803]Cmd: DELETE
+[2021.10.11-10.51.54:220][803]Cmd: ACTOR DELETE
+[2021.10.11-10.51.54:454][817]Cmd: DELETE
+[2021.10.11-10.51.54:454][817]Cmd: ACTOR DELETE
+[2021.10.11-10.51.54:903][844]LogEditorViewport: Clicking on Component (LMB): SkeletalMeshComponent (CharacterMesh0)
+[2021.10.11-10.51.56:308][926]Cmd: SELECT NONE
+[2021.10.11-10.51.56:951][961]LogEditorViewport: Clicking on Actor (LMB): Player_BP_C (Player_BP)
+[2021.10.11-10.51.57:656][999]Cmd: DELETE
+[2021.10.11-10.51.57:656][999]Cmd: ACTOR DELETE
+[2021.10.11-10.51.57:657][999]LogEditorActor: Deleted Actor: Player_BP_C
+[2021.10.11-10.51.57:693][999]LogUObjectHash: Compacting FUObjectHashTables data took   2.38ms
+[2021.10.11-10.51.57:696][999]LogEditorActor: Deleted 1 Actors (0.040 secs)
+[2021.10.11-10.52.00:859][179]LogTemp: Repeating last play command: Selected Viewport
+[2021.10.11-10.52.00:911][179]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2021.10.11-10.52.00:911][179]PIE: New page: PIE session: MapLolo (11 oct. 2021 à 14:52:00)
+[2021.10.11-10.52.00:911][179]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapLolo
+[2021.10.11-10.52.00:914][179]LogPlayLevel: PIE: StaticDuplicateObject took: (0.003063s)
+[2021.10.11-10.52.00:916][179]LogAIModule: Creating AISystem for world MapLolo
+[2021.10.11-10.52.00:916][179]LogPlayLevel: PIE: World Init took: (0.001754s)
+[2021.10.11-10.52.00:916][179]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapLolo.MapLolo to /Game/Maps/UEDPIE_0_MapLolo.MapLolo (0.005027s)
+[2021.10.11-10.52.00:937][179]LogUObjectHash: Compacting FUObjectHashTables data took   1.92ms
+[2021.10.11-10.52.00:938][179]LogAudio: Display: Creating Audio Device:                 Id: 5, Scope: Unique, Realtime: True
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2021.10.11-10.52.00:938][179]LogAudio: Display: AudioDevice MaxSources: 32
+[2021.10.11-10.52.00:938][179]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2021.10.11-10.52.00:938][179]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2021.10.11-10.52.00:938][179]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2021.10.11-10.52.00:938][179]LogAudioMixer: Display: Initializing audio mixer.
+[2021.10.11-10.52.00:942][179]LogAudioMixer: Display: 0: FrontLeft
+[2021.10.11-10.52.00:942][179]LogAudioMixer: Display: 1: FrontRight
+[2021.10.11-10.52.00:993][179]LogAudioMixer: Display: Using Audio Device Haut-parleur/Ecouteurs (Realtek High Definition Audio)
+[2021.10.11-10.52.00:994][179]LogAudioMixer: Display: Initializing Sound Submixes...
+[2021.10.11-10.52.00:994][179]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2021.10.11-10.52.00:994][179]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2021.10.11-10.52.00:994][179]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2021.10.11-10.52.00:994][179]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2021.10.11-10.52.00:994][179]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2021.10.11-10.52.00:999][179]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2021.10.11-10.52.00:999][179]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2021.10.11-10.52.00:999][179]LogInit: FAudioDevice initialized.
+[2021.10.11-10.52.00:999][179]LogAudio: Display: Audio Device (ID: 5) registered with world 'MapLolo'.
+[2021.10.11-10.52.01:013][179]LogLoad: Game class is 'GameModeBase'
+[2021.10.11-10.52.01:015][179]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapLolo.MapLolo up for play (max tick rate 60) at 2021.10.11-12.52.01
+[2021.10.11-10.52.01:015][179]LogWorld: Bringing up level for play took: 0.001121
+[2021.10.11-10.52.01:016][179]LogOnline: OSS: Creating online subsystem instance for: :Context_20
+[2021.10.11-10.52.01:018][179]PIE: Server logged in
+[2021.10.11-10.52.01:019][179]PIE: Play in editor total start time 0,152 seconds.
+[2021.10.11-10.52.06:484][501]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.52.06:484][501]LogWorld: BeginTearingDown for /Game/Maps/UEDPIE_0_MapLolo
+[2021.10.11-10.52.06:496][501]LogWorld: UWorld::CleanupWorld for MapLolo, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-10.52.06:496][501]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.52.06:510][501]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2021.10.11-10.52.06:554][501]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-10.52.06:572][501]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2021.10.11-10.52.06:572][501]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.52.06:573][501]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-10.52.06:579][501]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-10.52.06:583][501]LogUObjectHash: Compacting FUObjectHashTables data took   1.96ms
+[2021.10.11-10.52.06:628][502]LogPlayLevel: Display: Destroying online subsystem :Context_20
+[2021.10.11-10.52.43:152][280]LogUObjectHash: Compacting FUObjectHashTables data took   2.19ms
+[2021.10.11-10.52.43:172][280]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLolo_Auto18ADD0D2E4BBFE97DCDD554A9E4EB6737.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/Autosaves/Game/Maps/MapLolo_Auto1.umap'
+[2021.10.11-10.52.43:180][280]LogFileHelpers: Editor autosave (incl. external actors) for '/Game/Maps/MapLolo' took 0.052
+[2021.10.11-10.52.43:180][280]LogFileHelpers: Editor autosave (incl. sublevels & external actors) for all levels took 0.052
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.wtf:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.SKEL_wtf_C' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.wtf_C' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.wtf:EventGraph.K2Node_Event_0' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.wtf:EventGraph.K2Node_Event_1' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.wtf:EventGraph.K2Node_Event_2' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.SKEL_wtf_C:UserConstructionScript' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.SKEL_wtf_C:ReceiveTick' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.SKEL_wtf_C:ReceiveActorBeginOverlap' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:590][566]LogMetaData: Removing '/Game/Blueprints/wtf.SKEL_wtf_C:ReceiveBeginPlay' ref from Metadata '/Game/wtf.PackageMetaData'
+[2021.10.11-10.58.40:628][566]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/wtf.uasset" SILENT=true
+[2021.10.11-10.58.40:644][566]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtfB374CE9C4B694A8FCBF0F08E623F5A96.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/wtf.uasset'
+[2021.10.11-10.58.40:727][566]LogUObjectHash: Compacting FUObjectHashTables data took   2.78ms
+[2021.10.11-10.58.40:764][566]LogUObjectHash: Compacting FUObjectHashTables data took   1.72ms
+[2021.10.11-10.58.40:783][566]LogUObjectHash: Compacting FUObjectHashTables data took   0.44ms
+[2021.10.11-10.58.40:823][566]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-10.58.40:823][566]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/wtf.wtf
+[2021.10.11-10.58.45:539][839]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/Player_BP.Player_BP
+[2021.10.11-10.59.07:611][119]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2021.10.11-11.00.13:983][ 36]BlueprintLog: New page: Compile wtf
+[2021.10.11-11.00.14:128][ 36]LogUObjectHash: Compacting FUObjectHashTables data took   2.58ms
+[2021.10.11-11.00.14:897][ 76]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/wtf" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/wtf.uasset" SILENT=true
+[2021.10.11-11.00.14:907][ 76]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/wtfA380822E4A1E5F9DC28CB8B290613960.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/wtf.uasset'
+[2021.10.11-11.00.14:922][ 76]AssetCheck: New page: Asset Save: wtf
+[2021.10.11-11.00.14:922][ 76]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/wtf.wtf
+[2021.10.11-11.00.16:434][162]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapLolo" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2021.10.11-11.00.16:457][162]LogUObjectHash: Compacting FUObjectHashTables data took   2.03ms
+[2021.10.11-11.00.16:470][162]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLolo82E7E97B401BC04750C556B61011DB9B.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo.umap'
+[2021.10.11-11.00.16:483][162]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapLolo_BuiltData" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo_BuiltData.uasset" SILENT=true
+[2021.10.11-11.00.16:547][162]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLolo_BuiltDataA89F5F134AA2AB1D5154B0A5CBBD890F.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo_BuiltData.uasset'
+[2021.10.11-11.00.16:559][162]AssetCheck: New page: Asset Save: multiple assets
+[2021.10.11-11.00.16:559][162]LogContentValidation: Display: Validating MapBuildDataRegistry /Game/Maps/MapLolo_BuiltData.MapLolo_BuiltData
+[2021.10.11-11.00.16:559][162]LogContentValidation: Display: Validating World /Game/Maps/MapLolo.MapLolo
+[2021.10.11-11.00.41:039][408]LogEditorViewport: Clicking on Actor (LMB): wtf_C (wtf)
+[2021.10.11-11.00.41:150][414]LogEditorViewport: Clicking on Component (LMB): CameraComponent (CameraMain)
+[2021.10.11-11.01.48:708][251]LogWorld: UWorld::CleanupWorld for World_12, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-11.01.48:708][251]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-11.01.49:056][267]LogActorComponent: UnregisterComponent: (/Engine/Transient.EditorFloorComp) Not registered. Aborting.
+[2021.10.11-11.01.49:056][267]LogWorld: UWorld::CleanupWorld for World_16, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-11.01.49:056][267]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-11.01.52:794][479]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapLolo" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2021.10.11-11.01.52:817][479]LogUObjectHash: Compacting FUObjectHashTables data took   1.99ms
+[2021.10.11-11.01.52:837][479]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLolo9D402A9C4E5FB4BCC7344BA6E6E08F0E.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo.umap'
+[2021.10.11-11.01.52:850][479]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapLolo_BuiltData" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo_BuiltData.uasset" SILENT=true
+[2021.10.11-11.01.52:869][479]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapLolo_BuiltData6523FE9849A00E620514EB910D2E08FB.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapLolo_BuiltData.uasset'
+[2021.10.11-11.01.52:884][479]AssetCheck: New page: Asset Save: multiple assets
+[2021.10.11-11.01.52:884][479]LogContentValidation: Display: Validating MapBuildDataRegistry /Game/Maps/MapLolo_BuiltData.MapLolo_BuiltData
+[2021.10.11-11.01.52:884][479]LogContentValidation: Display: Validating World /Game/Maps/MapLolo.MapLolo
+[2021.10.11-11.02.14:712][716]Running D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -projectfiles -project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" -game -rocket -progress
+[2021.10.11-11.02.15:223][716]Discovering modules, targets and source code for project...
+[2021.10.11-11.02.20:452][716]Binding IntelliSense data...
+[2021.10.11-11.02.23:591][716]Binding IntelliSense data... 100%
+[2021.10.11-11.02.23:591][716]Writing project files...
+[2021.10.11-11.02.27:818][716]Writing project files... 100%
+[2021.10.11-11.02.28:050][716]Candidate modules for hot reload:
+[2021.10.11-11.02.28:050][716]  Food_Looter_GC
+[2021.10.11-11.02.28:050][716]Launching UnrealBuildTool... [D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Food_Looter_GC,1010 Food_Looter_GCEditor Win64 Development -Project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" "D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject"  -IgnoreJunk]
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: New page: Compilation - 11 oct. 2021 à 15:02:48
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Documents\GitHub\Food_Looter_GC).
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Creating makefile for Food_Looter_GCEditor (no existing makefile)
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Parsing headers for Food_Looter_GCEditor
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   Running UnrealHeaderTool "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Food_Looter_GC.uproject" "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Food_Looter_GCEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\heart\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: LogInit: Display: Loading text-based GConfig....
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Reflection code generated for Food_Looter_GCEditor in 8,4915269 seconds
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Building Food_Looter_GCEditor...
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Using Visual Studio 2019 14.28.29336 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Building 6 actions with 8 processes...
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   [1/6] Food_Looter_GC.init.gen.cpp
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   [2/6] Food.cpp
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   [3/6] Food.gen.cpp
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   [4/6] UE4Editor-Food_Looter_GC-1010.lib
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-1010.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-1010.exp
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   [5/6] UE4Editor-Food_Looter_GC-1010.dll
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-1010.suppressed.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-1010.suppressed.exp
+[2021.10.11-11.02.48:947][716]CompilerResultsLog:   [6/6] Food_Looter_GCEditor.target
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Total time in Parallel executor: 8,26 seconds
+[2021.10.11-11.02.48:947][716]CompilerResultsLog: Total execution time: 19,91 seconds
+[2021.10.11-11.02.48:947][716]LogMainFrame: MainFrame: Module compiling took 20.904 seconds
+[2021.10.11-11.02.48:966][716]LogClass: Could not find existing class Food in package /Script/Food_Looter_GC for HotReload, assuming new class
+[2021.10.11-11.02.48:984][716]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Food_Looter_GC' in 0.0003 seconds. Added 10 classes and 2 folders.
+[2021.10.11-11.02.48:992][716]Display: HotReload successful (8 functions remapped  0 scriptstructs remapped)
+[2021.10.11-11.02.49:119][716]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0168 seconds. Added 3832 classes and 930 folders.
+[2021.10.11-11.02.49:119][716]Display: HotReload took 21.1s.
+[2021.10.11-11.02.49:121][716]Warning: HotReload operation took 21.1s.
+[2021.10.11-11.02.49:188][716]LogSlate: Window 'Add C++ Class' being destroyed
+[2021.10.11-11.02.49:808][717]LogHotReload: New module detected: UE4Editor-Food_Looter_GC-1010.dll
+[2021.10.11-11.02.49:835][718]LogHotReload: Starting Hot-Reload from IDE
+[2021.10.11-11.02.49:868][718]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Food_Looter_GC' in 0.0003 seconds. Added 10 classes and 2 folders.
+[2021.10.11-11.02.49:876][718]Display: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2021.10.11-11.02.49:894][718]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0126 seconds. Added 3832 classes and 930 folders.
+[2021.10.11-11.02.49:899][718]Display: HotReload took  0.1s.
+[2021.10.11-11.17.50:044][697]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/FoodLooter_Gamemode_BP.FoodLooter_Gamemode_BP
+[2021.10.11-11.18.00:395][290]LogSlate: Prevented a slow task dialog from being summoned while a context menu was open
+[2021.10.11-11.18.07:551][698]BlueprintLog: New page: Compile FoodLooter_Gamemode_BP
+[2021.10.11-11.18.07:759][698]LogUObjectHash: Compacting FUObjectHashTables data took   6.29ms
+[2021.10.11-11.18.08:321][730]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/FoodLooter_Gamemode_BP" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/FoodLooter_Gamemode_BP.uasset" SILENT=true
+[2021.10.11-11.18.08:327][730]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/FoodLooter_Gamemode_BP131D706D404B867A6828DEA14138F25A.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/FoodLooter_Gamemode_BP.uasset'
+[2021.10.11-11.18.08:345][730]AssetCheck: New page: Asset Save: FoodLooter_Gamemode_BP
+[2021.10.11-11.18.08:345][730]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/FoodLooter_Gamemode_BP.FoodLooter_Gamemode_BP
+[2021.10.11-11.18.08:827][756]LogWorld: UWorld::CleanupWorld for World_17, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-11.18.08:827][756]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-11.18.10:302][834]LogTemp: Repeating last play command: Selected Viewport
+[2021.10.11-11.18.10:314][834]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2021.10.11-11.18.10:314][834]PIE: New page: PIE session: MapLolo (11 oct. 2021 à 15:18:10)
+[2021.10.11-11.18.10:314][834]LogPlayLevel: Creating play world package: /Game/Maps/UEDPIE_0_MapLolo
+[2021.10.11-11.18.10:316][834]LogPlayLevel: PIE: StaticDuplicateObject took: (0.002214s)
+[2021.10.11-11.18.10:318][834]LogAIModule: Creating AISystem for world MapLolo
+[2021.10.11-11.18.10:318][834]LogPlayLevel: PIE: World Init took: (0.002259s)
+[2021.10.11-11.18.10:318][834]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/Maps/MapLolo.MapLolo to /Game/Maps/UEDPIE_0_MapLolo.MapLolo (0.004623s)
+[2021.10.11-11.18.10:375][834]LogUObjectHash: Compacting FUObjectHashTables data took   3.16ms
+[2021.10.11-11.18.10:377][834]LogAudio: Display: Creating Audio Device:                 Id: 6, Scope: Unique, Realtime: True
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2021.10.11-11.18.10:377][834]LogAudio: Display: AudioDevice MaxSources: 32
+[2021.10.11-11.18.10:377][834]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2021.10.11-11.18.10:377][834]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2021.10.11-11.18.10:377][834]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2021.10.11-11.18.10:377][834]LogAudioMixer: Display: Initializing audio mixer.
+[2021.10.11-11.18.10:383][834]LogAudioMixer: Display: 0: FrontLeft
+[2021.10.11-11.18.10:383][834]LogAudioMixer: Display: 1: FrontRight
+[2021.10.11-11.18.10:429][834]LogAudioMixer: Display: Using Audio Device Haut-parleur/Ecouteurs (Realtek High Definition Audio)
+[2021.10.11-11.18.10:429][834]LogAudioMixer: Display: Initializing Sound Submixes...
+[2021.10.11-11.18.10:429][834]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2021.10.11-11.18.10:429][834]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2021.10.11-11.18.10:430][834]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2021.10.11-11.18.10:430][834]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2021.10.11-11.18.10:430][834]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2021.10.11-11.18.10:432][834]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2021.10.11-11.18.10:432][834]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2021.10.11-11.18.10:432][834]LogInit: FAudioDevice initialized.
+[2021.10.11-11.18.10:432][834]LogAudio: Display: Audio Device (ID: 6) registered with world 'MapLolo'.
+[2021.10.11-11.18.10:441][834]LogLoad: Game class is 'GameModeBase'
+[2021.10.11-11.18.10:444][834]LogWorld: Bringing World /Game/Maps/UEDPIE_0_MapLolo.MapLolo up for play (max tick rate 60) at 2021.10.11-13.18.10
+[2021.10.11-11.18.10:444][834]LogWorld: Bringing up level for play took: 0.001417
+[2021.10.11-11.18.10:444][834]LogOnline: OSS: Creating online subsystem instance for: :Context_23
+[2021.10.11-11.18.10:446][834]PIE: Server logged in
+[2021.10.11-11.18.10:447][834]PIE: Play in editor total start time 0,139 seconds.
+[2021.10.11-11.18.15:173][115]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-11.18.15:173][115]LogWorld: BeginTearingDown for /Game/Maps/UEDPIE_0_MapLolo
+[2021.10.11-11.18.15:173][115]LogWorld: UWorld::CleanupWorld for MapLolo, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-11.18.15:174][115]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-11.18.15:182][115]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2021.10.11-11.18.15:223][115]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-11.18.15:238][115]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2021.10.11-11.18.15:239][115]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-11.18.15:240][115]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2021.10.11-11.18.15:245][115]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2021.10.11-11.18.15:249][115]LogUObjectHash: Compacting FUObjectHashTables data took   2.07ms
+[2021.10.11-11.18.15:294][116]LogPlayLevel: Display: Destroying online subsystem :Context_23
+[2021.10.11-13.46.53:083][990]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2021.10.11-13.55.56:015][313]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2021.10.11-14.09.38:647][222]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/BPFood1.BPFood1
+[2021.10.11-14.09.39:075][222]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2021.10.11-14.09.43:631][474]LogSlate: Window 'BPFood1' being destroyed
+[2021.10.11-14.09.43:651][474]LogWorld: UWorld::CleanupWorld for World_18, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-14.09.43:652][474]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-14.09.48:194][720]LogContentBrowser: Attempting asset rename: BPFood1 -> BP_Food1
+[2021.10.11-14.09.48:228][720]LogMetaData: Removing '/Game/BP_Food1.BP_Food1:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:228][720]LogMetaData: Removing '/Game/BP_Food1.SKEL_BP_Food1_C:UserConstructionScript' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:228][720]LogMetaData: Removing '/Game/BP_Food1.SKEL_BP_Food1_C' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:228][720]LogMetaData: Removing '/Game/BP_Food1.BP_Food1_C' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:229][720]LogMetaData: Removing '/Game/BP_Food1.BP_Food1:EventGraph.K2Node_Event_0' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:229][720]LogMetaData: Removing '/Game/BP_Food1.BP_Food1:EventGraph.K2Node_Event_1' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:229][720]LogMetaData: Removing '/Game/BP_Food1.BP_Food1:EventGraph.K2Node_Event_2' ref from Metadata '/Game/BPFood1.PackageMetaData'
+[2021.10.11-14.09.48:244][720]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/BP_Food1" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/BP_Food1.uasset" SILENT=true
+[2021.10.11-14.09.48:250][720]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BP_Food1BCDF920F425462663083CB81E84C9889.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/BP_Food1.uasset'
+[2021.10.11-14.09.48:333][720]LogUObjectHash: Compacting FUObjectHashTables data took   2.24ms
+[2021.10.11-14.09.48:366][720]LogUObjectHash: Compacting FUObjectHashTables data took   2.07ms
+[2021.10.11-14.09.48:384][720]LogUObjectHash: Compacting FUObjectHashTables data took   0.55ms
+[2021.10.11-14.09.48:418][720]AssetCheck: New page: Asset Save: BP_Food1
+[2021.10.11-14.09.48:418][720]LogContentValidation: Display: Validating Blueprint /Game/BP_Food1.BP_Food1
+[2021.10.11-14.09.51:327][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1_C' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:327][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:328][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C:UserConstructionScript' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:328][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:328][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:EventGraph.K2Node_Event_0' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:328][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:EventGraph.K2Node_Event_1' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:328][888]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:EventGraph.K2Node_Event_2' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.09.51:343][888]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BP_Food1" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BP_Food1.uasset" SILENT=true
+[2021.10.11-14.09.51:349][888]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BP_Food1F3BF7A414377AEB65B5375B9D08B652D.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BP_Food1.uasset'
+[2021.10.11-14.09.51:432][888]LogUObjectHash: Compacting FUObjectHashTables data took   2.40ms
+[2021.10.11-14.09.51:459][888]LogUObjectHash: Compacting FUObjectHashTables data took   1.68ms
+[2021.10.11-14.09.51:477][888]LogUObjectHash: Compacting FUObjectHashTables data took   0.50ms
+[2021.10.11-14.09.51:528][888]AssetCheck: New page: Asset Save: BP_Food1
+[2021.10.11-14.09.51:528][888]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/BP_Food1.BP_Food1
+[2021.10.11-14.09.54:598][ 63]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/BP_Food1.BP_Food1
+[2021.10.11-14.09.56:663][156]LogSlate: Window 'BP_Food1' being destroyed
+[2021.10.11-14.09.56:682][156]LogWorld: UWorld::CleanupWorld for World_19, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-14.09.56:682][156]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-14.09.56:775][156]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/BP_Food1.BP_Food1
+[2021.10.11-14.10.06:642][652]BlueprintLog: New page: Compile BP_Food1
+[2021.10.11-14.10.06:679][652]LogUObjectHash: Compacting FUObjectHashTables data took   2.42ms
+[2021.10.11-14.10.16:673][198]LogSlate: Window 'BP_Food1' being destroyed
+[2021.10.11-14.10.16:707][198]LogWorld: UWorld::CleanupWorld for World_20, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-14.10.16:707][198]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-14.10.19:269][341]LogUObjectHash: Compacting FUObjectHashTables data took   2.47ms
+[2021.10.11-14.10.20:582][341]LogSlate: Window 'Delete Assets' being destroyed
+[2021.10.11-14.10.20:672][341]LogUObjectHash: Compacting FUObjectHashTables data took   2.71ms
+[2021.10.11-14.10.20:700][341]LogUObjectHash: Compacting FUObjectHashTables data took   2.57ms
+[2021.10.11-14.10.20:719][341]LogUObjectHash: Compacting FUObjectHashTables data took   0.48ms
+[2021.10.11-14.10.21:959][414]Candidate modules for hot reload:
+[2021.10.11-14.10.21:959][414]  Food_Looter_GC
+[2021.10.11-14.10.21:959][414]Launching UnrealBuildTool... [D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Food_Looter_GC,1679 Food_Looter_GCEditor Win64 Development -Project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" "D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject"  -IgnoreJunk]
+[2021.10.11-14.10.21:966][414]Warning: Starting HotReload took  0.0s.
+[2021.10.11-14.10.25:260][592]CompilerResultsLog: New page: Compilation - 11 oct. 2021 à 18:10:25
+[2021.10.11-14.10.25:260][592]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Documents\GitHub\Food_Looter_GC).
+[2021.10.11-14.10.25:260][592]CompilerResultsLog: Parsing headers for Food_Looter_GCEditor
+[2021.10.11-14.10.25:260][592]CompilerResultsLog:   Running UnrealHeaderTool "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Food_Looter_GC.uproject" "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Food_Looter_GCEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\heart\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+[2021.10.11-14.10.25:260][592]CompilerResultsLog: LogInit: Display: Loading text-based GConfig....
+[2021.10.11-14.10.25:260][592]CompilerResultsLog: Error: D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Source/Food_Looter_GC/Food.h(1) : Error: No #include found for the .generated.h file - the .generated.h file should always be the last #include in a header
+[2021.10.11-14.10.25:260][592]LogMainFrame: MainFrame: Module compiling took 3.306 seconds
+[2021.10.11-14.10.25:378][592]Warning: HotReload failed, recompile failed
+[2021.10.11-14.11.19:495][236]LogSlate: Window 'Message Log' being destroyed
+[2021.10.11-14.11.19:500][236]LogSlate: Window 'Message Log' being destroyed
+[2021.10.11-14.12.30:987][165]Candidate modules for hot reload:
+[2021.10.11-14.12.30:987][165]  Food_Looter_GC
+[2021.10.11-14.12.30:987][165]Launching UnrealBuildTool... [D:/Logiciels/Unreal/UE_4.27/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=Food_Looter_GC,5873 Food_Looter_GCEditor Win64 Development -Project="D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject" "D:/Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Food_Looter_GC.uproject"  -IgnoreJunk]
+[2021.10.11-14.12.30:993][165]Warning: Starting HotReload took  0.0s.
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: New page: Compilation - 11 oct. 2021 à 18:13:34
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: Using 'git status' to determine working set for adaptive non-unity build (D:\Documents\GitHub\Food_Looter_GC).
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: Parsing headers for Food_Looter_GCEditor
+[2021.10.11-14.13.34:675][960]CompilerResultsLog:   Running UnrealHeaderTool "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Food_Looter_GC.uproject" "D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Food_Looter_GCEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\heart\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: LogInit: Display: Loading text-based GConfig....
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: Reflection code generated for Food_Looter_GCEditor in 5,2850872 seconds
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: Building Food_Looter_GCEditor...
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: Using Visual Studio 2019 14.28.29336 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+[2021.10.11-14.13.34:675][960]CompilerResultsLog: Building 6 actions with 8 processes...
+[2021.10.11-14.13.34:675][960]CompilerResultsLog:   [1/6] Food_Looter_GC.init.gen.cpp
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:   [2/6] Food.cpp
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:   [3/6] Food.gen.cpp
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:   [4/6] UE4Editor-Food_Looter_GC-5873.lib
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5873.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5873.exp
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:   [5/6] UE4Editor-Food_Looter_GC-5873.dll
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:      Creating library D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5873.suppressed.lib and object D:\Documents\GitHub\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-5873.suppressed.exp
+[2021.10.11-14.13.34:676][960]CompilerResultsLog:   [6/6] Food_Looter_GCEditor.target
+[2021.10.11-14.13.34:676][960]CompilerResultsLog: Total time in Parallel executor: 56,75 seconds
+[2021.10.11-14.13.34:676][960]CompilerResultsLog: Total execution time: 63,54 seconds
+[2021.10.11-14.13.34:676][960]LogMainFrame: MainFrame: Module compiling took 63.695 seconds
+[2021.10.11-14.13.34:700][960]LogClass: Could not find existing class Food in package /Script/Food_Looter_GC for HotReload, assuming new class
+[2021.10.11-14.13.34:700][960]LogClass: Function GetDivision is new.
+[2021.10.11-14.13.34:700][960]LogClass: Function GetPts is new.
+[2021.10.11-14.13.34:717][960]LogHotReload: Re-instancing Food after hot-reload.
+[2021.10.11-14.13.34:736][960]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'Food_Looter_GC' in 0.0003 seconds. Added 10 classes and 2 folders.
+[2021.10.11-14.13.34:747][960]Display: HotReload successful (8 functions remapped  0 scriptstructs remapped)
+[2021.10.11-14.13.34:858][960]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0127 seconds. Added 3832 classes and 930 folders.
+[2021.10.11-14.13.34:858][960]Display: HotReload took 63.9s.
+[2021.10.11-14.13.46:920][638]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/BP_Food1.BP_Food1
+[2021.10.11-14.13.47:559][638]LogSlate: Window 'Add Blueprint Class' being destroyed
+[2021.10.11-14.13.47:600][638]LogActor: Warning: BP_Food1_C /Engine/Transient.World_21:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.14.31:098][903]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.14.45:507][700]BlueprintLog: New page: Compile BP_Food1
+[2021.10.11-14.14.45:523][700]LogActor: Warning: BP_Food1_C /Engine/Transient.World_21:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.14.45:523][700]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.14.45:672][700]LogUObjectHash: Compacting FUObjectHashTables data took  17.76ms
+[2021.10.11-14.14.45:673][700]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.48:587][962]BlueprintLog: New page: Compile BP_Food1
+[2021.10.11-14.15.48:593][962]LogActor: Warning: BP_Food1_C /Engine/Transient.World_21:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.48:594][962]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.48:671][962]LogUObjectHash: Compacting FUObjectHashTables data took   3.72ms
+[2021.10.11-14.15.48:675][962]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.48:959][966]BlueprintLog: New page: Compile BP_Food1
+[2021.10.11-14.15.48:966][966]LogActor: Warning: BP_Food1_C /Engine/Transient.World_21:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.48:967][966]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.49:005][966]LogUObjectHash: Compacting FUObjectHashTables data took   2.62ms
+[2021.10.11-14.15.49:006][966]LogActor: Warning: BP_Food1_C /Engine/Transient.World_22:PersistentLevel.BP_Food1_C_3 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.49:614][994]LogActor: Warning: BP_Food1_C /Engine/Transient.World_23:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.11-14.15.49:634][994]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/BP_Food1" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/BP_Food1.uasset" SILENT=true
+[2021.10.11-14.15.49:652][994]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BP_Food19910D28742BF99AF031504B8DCEA2A36.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/BP_Food1.uasset'
+[2021.10.11-14.15.49:668][994]AssetCheck: New page: Asset Save: BP_Food1
+[2021.10.11-14.15.49:668][994]LogContentValidation: Display: Validating Blueprint /Game/BP_Food1.BP_Food1
+[2021.10.11-14.15.52:007][123]LogSlate: Window 'BP_Food1' being destroyed
+[2021.10.11-14.15.52:053][123]LogWorld: UWorld::CleanupWorld for World_21, bSessionEnded=true, bCleanupResources=true
+[2021.10.11-14.15.52:053][123]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:UserConstructionScript.K2Node_FunctionEntry_0' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1_C' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:EventGraph.K2Node_Event_0' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:EventGraph.K2Node_Event_1' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.BP_Food1:EventGraph.K2Node_Event_2' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C:ReceiveBeginPlay' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C:ReceiveActorBeginOverlap' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C:ReceiveTick' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:823][395]LogMetaData: Removing '/Game/Blueprints/BP_Food1.SKEL_BP_Food1_C:UserConstructionScript' ref from Metadata '/Game/BP_Food1.PackageMetaData'
+[2021.10.11-14.15.56:862][395]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BP_Food1" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BP_Food1.uasset" SILENT=true
+[2021.10.11-14.15.56:878][395]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BP_Food1F2A6008E48B85E9634757C8785014C3F.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BP_Food1.uasset'
+[2021.10.11-14.15.56:963][395]LogUObjectHash: Compacting FUObjectHashTables data took   2.76ms
+[2021.10.11-14.15.56:992][395]LogUObjectHash: Compacting FUObjectHashTables data took   2.12ms
+[2021.10.11-14.15.57:010][395]LogUObjectHash: Compacting FUObjectHashTables data took   0.49ms
+[2021.10.11-14.15.57:049][395]AssetCheck: New page: Asset Save: BP_Food1
+[2021.10.11-14.15.57:049][395]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/BP_Food1.BP_Food1
