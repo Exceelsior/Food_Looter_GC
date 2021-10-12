@@ -16,6 +16,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_SPARSE_DATA
 #define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execCameraZoomOut); \
+	DECLARE_FUNCTION(execCameraZoomIn); \
 	DECLARE_FUNCTION(execLookUp); \
 	DECLARE_FUNCTION(execTurn); \
 	DECLARE_FUNCTION(execMoveRight); \
@@ -24,6 +26,8 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 
 #define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execCameraZoomOut); \
+	DECLARE_FUNCTION(execCameraZoomIn); \
 	DECLARE_FUNCTION(execLookUp); \
 	DECLARE_FUNCTION(execTurn); \
 	DECLARE_FUNCTION(execMoveRight); \
@@ -78,6 +82,7 @@ public: \
 	FORCEINLINE static uint32 __PPO__AnimInstance() { return STRUCT_OFFSET(AMainCharacter, AnimInstance); } \
 	FORCEINLINE static uint32 __PPO__CameraYawSpeed() { return STRUCT_OFFSET(AMainCharacter, CameraYawSpeed); } \
 	FORCEINLINE static uint32 __PPO__CameraPitchSpeed() { return STRUCT_OFFSET(AMainCharacter, CameraPitchSpeed); } \
+	FORCEINLINE static uint32 __PPO__MaxCameraZoomDistance() { return STRUCT_OFFSET(AMainCharacter, MaxCameraZoomDistance); } \
 	FORCEINLINE static uint32 __PPO__CurrentWorld() { return STRUCT_OFFSET(AMainCharacter, CurrentWorld); }
 
 

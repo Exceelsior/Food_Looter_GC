@@ -22,6 +22,20 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UWorld_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AMainCharacter::execCameraZoomOut)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CameraZoomOut();
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMainCharacter::execCameraZoomIn)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->CameraZoomIn();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMainCharacter::execLookUp)
 	{
 		P_GET_PROPERTY(FFloatProperty,Z_Param_Rate);
@@ -58,12 +72,58 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	{
 		UClass* Class = AMainCharacter::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "CameraZoomIn", &AMainCharacter::execCameraZoomIn },
+			{ "CameraZoomOut", &AMainCharacter::execCameraZoomOut },
 			{ "LookUp", &AMainCharacter::execLookUp },
 			{ "MoveForward", &AMainCharacter::execMoveForward },
 			{ "MoveRight", &AMainCharacter::execMoveRight },
 			{ "Turn", &AMainCharacter::execTurn },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_AMainCharacter_CameraZoomIn_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMainCharacter_CameraZoomIn_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_CameraZoomIn_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "CameraZoomIn", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMainCharacter_CameraZoomIn_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_CameraZoomIn_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMainCharacter_CameraZoomIn()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_CameraZoomIn_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "CameraZoomOut", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMainCharacter_CameraZoomOut()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	struct Z_Construct_UFunction_AMainCharacter_LookUp_Statics
 	{
@@ -225,6 +285,10 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CameraPitchSpeed;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxCameraZoomDistance_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxCameraZoomDistance;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentWorld_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CurrentWorld;
@@ -237,6 +301,8 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		(UObject* (*)())Z_Construct_UPackage__Script_Food_Looter_GC,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMainCharacter_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_AMainCharacter_CameraZoomIn, "CameraZoomIn" }, // 637983670
+		{ &Z_Construct_UFunction_AMainCharacter_CameraZoomOut, "CameraZoomOut" }, // 1554125091
 		{ &Z_Construct_UFunction_AMainCharacter_LookUp, "LookUp" }, // 17996596
 		{ &Z_Construct_UFunction_AMainCharacter_MoveForward, "MoveForward" }, // 105776462
 		{ &Z_Construct_UFunction_AMainCharacter_MoveRight, "MoveRight" }, // 825783807
@@ -288,6 +354,13 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraPitchSpeed = { "CameraPitchSpeed", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, CameraPitchSpeed), METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraPitchSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraPitchSpeed_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance = { "MaxCameraZoomDistance", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, MaxCameraZoomDistance), METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentWorld_MetaData[] = {
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
@@ -299,6 +372,7 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_AnimInstance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraPitchSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentWorld,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMainCharacter_Statics::StaticCppClassTypeInfo = {
@@ -328,7 +402,7 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMainCharacter, 2002686209);
+	IMPLEMENT_CLASS(AMainCharacter, 665293063);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AMainCharacter>()
 	{
 		return AMainCharacter::StaticClass();

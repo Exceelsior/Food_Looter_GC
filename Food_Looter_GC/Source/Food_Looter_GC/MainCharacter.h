@@ -39,6 +39,11 @@ protected:
 	UPROPERTY(EditAnywhere)
 	float CameraPitchSpeed;
 
+	UPROPERTY(EditAnywhere)
+	float MaxCameraZoomDistance = 400.0f;
+
+	float CameraZoomValue;
+
 	UPROPERTY()
 	UWorld* CurrentWorld;
 	
@@ -53,6 +58,12 @@ protected:
 
 	UFUNCTION()
 	void LookUp(float Rate);
+
+	UFUNCTION()
+	void CameraZoomIn();
+
+	UFUNCTION()
+	void CameraZoomOut();
 
 	
 public:	

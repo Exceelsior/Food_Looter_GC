@@ -25,10 +25,10 @@ AMainCharacter::AMainCharacter()
 	ArmComponent = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraSpringArm"));
 	ArmComponent->SetupAttachment(RootComponent);
 	ArmComponent->SetRelativeLocationAndRotation(FVector(0.0f, 0.0f, 30.0f), FRotator(-50.0f, 0.0f, 0.0f));
-	ArmComponent->TargetArmLength = 400.0f;
 	ArmComponent->bEnableCameraLag = true;
 	ArmComponent->CameraLagSpeed = 6.0f;
-	ArmComponent->bDrawDebugLagMarkers = true;
+	ArmComponent->bDrawDebugLagMarkers = false;
+	ArmComponent->TargetArmLength = MaxCameraZoomDistance;
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraMain"));
 	CameraComponent->SetupAttachment(ArmComponent, USpringArmComponent::SocketName);
@@ -44,6 +44,9 @@ void AMainCharacter::BeginPlay()
 
 	AnimInstance = GetMesh()->GetAnimInstance();
 	//MoveSpeedProp = FindField<UFloatProperty>(AnimInstance->GetClass(), FName("MoveSpeed"));
+
+	CameraZoomValue = MaxCameraZoomDistance;
+
 }
 
 // Called every frame
@@ -92,6 +95,30 @@ void AMainCharacter::LookUp(float Rate)
 	AddControllerYawInput(Rate * CameraPitchSpeed * CurrentWorld->GetDeltaSeconds());
 }
 
+void AMainCharacter::CameraZoomIn()
+{
+	CameraZoomValue -= 20;
+
+	if (CameraZoomValue <= 80)
+	{
+		CameraZoomValue = 80.0;
+	}
+	
+	ArmComponent->TargetArmLength = CameraZoomValue;
+}
+
+void AMainCharacter::CameraZoomOut()
+{
+	CameraZoomValue += 20;
+
+	if (CameraZoomValue <= MaxCameraZoomDistance)
+	{
+		CameraZoomValue = MaxCameraZoomDistance;
+	}
+
+	ArmComponent->TargetArmLength = CameraZoomValue;
+}
+
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -106,6 +133,8 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	
 	PlayerInputComponent->BindAxis("Yaw", this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis("Pitch", this, &APawn::AddControllerPitchInput);
-	
+
+	PlayerInputComponent->BindAction("Zoom In", IE_Pressed, this, &AMainCharacter::CameraZoomIn);
+	PlayerInputComponent->BindAction("Zoom Out", IE_Pressed, this, &AMainCharacter::CameraZoomOut);
 }
 
