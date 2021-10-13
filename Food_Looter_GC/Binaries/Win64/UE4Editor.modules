@@ -3,9 +3,13 @@
 	"Modules": 
 	{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 		"Food_Looter_GC": "UE4Editor-Food_Looter_GC-5873.dll"
 =======
 		"Food_Looter_GC": "UE4Editor-Food_Looter_GC.dll"
+>>>>>>> Stashed changes
+=======
+		"Food_Looter_GC": "UE4Editor-Food_Looter_GC-8289.dll"
 >>>>>>> Stashed changes
 	}
 }

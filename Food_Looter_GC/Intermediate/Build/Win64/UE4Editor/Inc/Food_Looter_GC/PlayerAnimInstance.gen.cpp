@@ -51,7 +51,6 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UPlayerAnimInstance_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "HideCategories", "AnimInstance" },
 		{ "IncludePath", "PlayerAnimInstance.h" },
 		{ "ModuleRelativePath", "PlayerAnimInstance.h" },
@@ -102,7 +101,7 @@ void EmptyLinkFunctionForGeneratedCodePlayerAnimInstance() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UPlayerAnimInstance, 2874358442);
+	IMPLEMENT_CLASS(UPlayerAnimInstance, 2286900059);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<UPlayerAnimInstance>()
 	{
 		return UPlayerAnimInstance::StaticClass();

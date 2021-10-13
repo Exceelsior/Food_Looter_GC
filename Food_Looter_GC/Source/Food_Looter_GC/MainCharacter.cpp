@@ -92,7 +92,7 @@ void AMainCharacter::Turn(float Rate)
 
 void AMainCharacter::LookUp(float Rate)
 {
-	AddControllerYawInput(Rate * CameraPitchSpeed * CurrentWorld->GetDeltaSeconds());
+	AddControllerPitchInput(Rate * CameraPitchSpeed * CurrentWorld->GetDeltaSeconds());
 }
 
 void AMainCharacter::CameraZoomIn()
@@ -130,11 +130,10 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	PlayerInputComponent->BindAxis("Vertical", this, &AMainCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Horizontal", this, &AMainCharacter::MoveRight);
-	
-	PlayerInputComponent->BindAxis("Yaw", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("Pitch", this, &APawn::AddControllerPitchInput);
+
+	PlayerInputComponent->BindAxis("Yaw", this, &AMainCharacter::Turn);
+	PlayerInputComponent->BindAxis("Pitch", this, &AMainCharacter::LookUp);
 
 	PlayerInputComponent->BindAction("Zoom In", IE_Pressed, this, &AMainCharacter::CameraZoomIn);
 	PlayerInputComponent->BindAction("Zoom Out", IE_Pressed, this, &AMainCharacter::CameraZoomOut);
 }
-

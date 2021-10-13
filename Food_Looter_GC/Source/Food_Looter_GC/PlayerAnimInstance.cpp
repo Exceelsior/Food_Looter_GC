@@ -2,6 +2,8 @@
 
 
 #include "PlayerAnimInstance.h"
+#include "MainCharacter.h"
+
 void UPlayerAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();

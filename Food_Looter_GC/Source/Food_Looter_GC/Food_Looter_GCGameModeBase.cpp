@@ -15,7 +15,7 @@ void AFood_Looter_GCGameModeBase::BeginPlay()
 	for (int i = 0; i < 2; i++)
 	{
 		//Spawn it
-		GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
+		//GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
 	}
 
 	SaveTimerBetweenEnemies = TimerBetweenEnemies;
@@ -31,21 +31,21 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	if(Timer1Min <= 0)
 	{
 		Timer1Min = 2;
-		GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
+		//GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
 	}
 
 	//If an enemy is on the way to leave, timer to spawn the next one start
 	if(CanDecreaseTimer)
 		TimerBetweenEnemies -= DeltaSeconds;
 	
-	CompareFood();
+	//CompareFood();
 	if(Win)
 	{
 		//Do the win thing
 	}
 	else
 	{
-		ManageIa(GM->NbEnemiesHere, TimerBetweenEnemies);
+		//ManageIa(GM->NbEnemiesHere, TimerBetweenEnemies);
 		
 	}
 }

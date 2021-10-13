@@ -64,7 +64,6 @@ protected:
 
 	UFUNCTION()
 	void CameraZoomOut();
-
 	
 public:	
 	// Called every frame

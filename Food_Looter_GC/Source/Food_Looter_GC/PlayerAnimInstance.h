@@ -6,9 +6,7 @@
 #include "Animation/AnimInstance.h"
 #include "PlayerAnimInstance.generated.h"
 
-/**
- * 
- */
+
 UCLASS()
 class FOOD_LOOTER_GC_API UPlayerAnimInstance : public UAnimInstance
 {
@@ -32,4 +30,5 @@ class FOOD_LOOTER_GC_API UPlayerAnimInstance : public UAnimInstance
 	
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	class APawn* Pawn;
+
 };
