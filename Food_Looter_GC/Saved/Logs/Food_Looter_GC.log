@@ -1090,3 +1090,36 @@ LogConfig: Setting CVar [[r.setres:1280x720]]
 [2021.10.14-20.52.29:947][837]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
 [2021.10.14-20.55.28:705][407]LogWorld: UWorld::CleanupWorld for World_13, bSessionEnded=true, bCleanupResources=true
 [2021.10.14-20.55.28:705][407]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.14-20.58.17:993][113]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2021.10.14-20.59.45:270][ 73]LogAudioMixer: Display: Audio Buffer Underrun (starvation) detected.
+[2021.10.14-21.09.13:652][719]LogStaticMesh: Building static mesh SM_Item_Cheese_Slice_02...
+[2021.10.14-21.09.13:718][719]LogStaticMesh: Built static mesh [0.06s] /Game/PolygonFantasyKingdom/Meshes/Items/SM_Item_Cheese_Slice_02.SM_Item_Cheese_Slice_02
+[2021.10.14-21.09.13:906][719]LogActor: Warning: BP_Food1_C /Game/Maps/MapAntonin.MapAntonin:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.13:934][719]LogActor: Warning: BP_Food1_C /Engine/Transient.World_14:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.15:064][775]LogActor: Warning: BP_Food1_C /Game/Maps/MapAntonin.MapAntonin:PersistentLevel.BP_Food1_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.37:358][ 58]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Maps/MapAntonin" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapAntonin.umap" SILENT=true AUTOSAVING=false KEEPDIRTY=false
+[2021.10.14-21.09.37:671][ 58]LogUObjectHash: Compacting FUObjectHashTables data took   8.48ms
+[2021.10.14-21.09.37:868][ 58]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/MapAntoninBF71F48C4293238B3C9AFB8E1497310A.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Maps/MapAntonin.umap'
+[2021.10.14-21.09.37:981][ 58]AssetCheck: New page: Asset Save: MapAntonin
+[2021.10.14-21.09.37:981][ 58]LogContentValidation: Display: Validating World /Game/Maps/MapAntonin.MapAntonin
+[2021.10.14-21.09.41:254][245]LogWorld: UWorld::CleanupWorld for World_11, bSessionEnded=true, bCleanupResources=true
+[2021.10.14-21.09.41:254][245]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.14-21.09.43:267][344]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/BP_Food1.BP_Food1
+[2021.10.14-21.09.43:856][344]LogActor: Warning: BP_Food1_C /Engine/Transient.World_15:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.45:848][458]LogSlate: Window 'BP_Food1' being destroyed
+[2021.10.14-21.09.45:864][458]LogWorld: UWorld::CleanupWorld for World_15, bSessionEnded=true, bCleanupResources=true
+[2021.10.14-21.09.45:865][458]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2021.10.14-21.09.45:933][458]LogAssetEditorSubsystem: Opening Asset editor for Blueprint /Game/Blueprints/BP_Food1.BP_Food1
+[2021.10.14-21.09.46:393][458]LogActor: Warning: BP_Food1_C /Engine/Transient.World_16:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.57:206][ 30]BlueprintLog: New page: Compile BP_Food1
+[2021.10.14-21.09.57:224][ 30]LogActor: Warning: BP_Food1_C /Game/Maps/MapAntonin.MapAntonin:PersistentLevel.BP_Food1_2 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.57:366][ 30]LogActor: Warning: BP_Food1_C /Engine/Transient.World_14:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.57:367][ 30]LogActor: Warning: BP_Food1_C /Engine/Transient.World_16:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.57:451][ 30]LogUObjectHash: Compacting FUObjectHashTables data took   3.11ms
+[2021.10.14-21.09.57:495][ 30]LogActor: Warning: BP_Food1_C /Engine/Transient.World_14:PersistentLevel.BP_Food1_C_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.57:583][ 30]LogSlate: Took 0.012982 seconds to synchronously load lazily loaded font '../../../Engine/Content/Slate/Fonts/DroidSansMono.ttf' (77K)
+[2021.10.14-21.09.58:333][ 57]LogActor: Warning: BP_Food1_C /Engine/Transient.World_17:PersistentLevel.BP_Food1_C_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2021.10.14-21.09.58:377][ 57]Cmd: OBJ SAVEPACKAGE PACKAGE="/Game/Blueprints/BP_Food1" FILE="../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BP_Food1.uasset" SILENT=true
+[2021.10.14-21.09.58:398][ 57]LogSavePackage: Moving '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Saved/BP_Food1BC998D7846384F3ACBEC7B89BFC44FB0.tmp' to '../../../../../../Documents/GitHub/Food_Looter_GC/Food_Looter_GC/Content/Blueprints/BP_Food1.uasset'
+[2021.10.14-21.09.58:412][ 57]AssetCheck: New page: Asset Save: BP_Food1
+[2021.10.14-21.09.58:412][ 57]LogContentValidation: Display: Validating Blueprint /Game/Blueprints/BP_Food1.BP_Food1
