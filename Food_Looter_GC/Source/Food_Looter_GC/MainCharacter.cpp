@@ -141,6 +141,11 @@ void AMainCharacter::Interact()
 }
 
 
+void AMainCharacter::CarryFoodSwitch() {
+	
+	HasFood = !HasFood;
+}
+
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -159,4 +164,5 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	PlayerInputComponent->BindAction("Zoom Out", IE_Pressed, this, &AMainCharacter::CameraZoomOut);
 
 	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AMainCharacter::Interact);
+	PlayerInputComponent->BindAction("TestSwitch", IE_Pressed, this, &AMainCharacter::CarryFoodSwitch);
 }

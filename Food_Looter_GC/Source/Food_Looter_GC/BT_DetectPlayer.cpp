@@ -27,7 +27,7 @@ void UBT_DetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8
 		FVector AIForwardVector = AIPawn->GetActorForwardVector();
 		
 		if(PlayerIsInFieldOfView(PlayerPawn->GetActorLocation(), AIPawn->GetActorLocation(), AIForwardVector)
-		   && PlayerIsInRange(AIForwardVector, AIPawn->GetActorLocation(), 500, AIPawn))
+		   && PlayerIsInRange(AIForwardVector, AIPawn->GetActorLocation(), 800, AIPawn))
 		{
 			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
 			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AMainCharacter>(PlayerPawn));
@@ -43,7 +43,7 @@ bool UBT_DetectPlayer::PlayerIsInFieldOfView(FVector PlayerPosition, FVector AIP
 	float Dot = FVector::DotProduct(AIForwardVector, PlayerDirection);
 	float PlayerAngle = UKismetMathLibrary::DegAcos(Dot);
 
-	if (PlayerAngle <= 135)
+	if (PlayerAngle <= 90)
 	{
 		return true;
 	}
@@ -58,7 +58,7 @@ bool UBT_DetectPlayer::PlayerIsInRange(FVector ForwardVector, FVector StartTrace
 	FCollisionQueryParams* TraceParams = new FCollisionQueryParams();
 	TraceParams->AddIgnoredActor(IgnoreActor);
 
-	DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, true, -1, 0, 10);
+	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, true, -1, 0, 10);
     
 	if (GetWorld()->LineTraceSingleByChannel(*HitResult, StartTrace, EndTrace, ECollisionChannel::ECC_WorldStatic, *TraceParams))
 	{        
