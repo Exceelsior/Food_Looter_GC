@@ -35,3 +35,8 @@ float AFood::GetDivision() const
 {
 	return DividePlayerSpeedBy;
 }
+
+UStaticMeshComponent* AFood::GetMesh()
+{
+	return StaticMesh;
+}

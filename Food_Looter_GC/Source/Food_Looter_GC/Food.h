@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/GameMode.h"
 #include "Food.generated.h"
@@ -28,6 +29,9 @@ protected:
 	UStaticMeshComponent* StaticMesh;
 
 	UPROPERTY(EditAnywhere)
+	USphereComponent* SphereComponent;
+
+	UPROPERTY(EditAnywhere)
 	int Pts;
 
 	UPROPERTY(EditAnywhere)
@@ -42,5 +46,8 @@ public:
 
 	UFUNCTION()
 	float GetDivision() const;
+
+	UFUNCTION()
+	UStaticMeshComponent* GetMesh();
 
 };
