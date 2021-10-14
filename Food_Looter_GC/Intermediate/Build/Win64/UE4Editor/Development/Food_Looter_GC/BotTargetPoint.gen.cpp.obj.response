@@ -231,8 +231,8 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I "D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC"
-/I "D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Source"
+/I D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC
+/I D:\UProjects\Food_Looter_GC\Food_Looter_GC\Source
 /I ThirdParty\PhysX3\PxShared\include
 /I ThirdParty\PhysX3\PxShared\include\cudamanager
 /I ThirdParty\PhysX3\PxShared\include\filebuf
@@ -256,18 +256,18 @@
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\RenderDebug\public
 /I ThirdParty\PhysX3\APEX_1.4\shared\general\PairFilter\include
 /I ThirdParty\PhysX3\APEX_1.4\shared\internal\include
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910\INCLUDE"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC\BotTargetPoint.gen.cpp"
-/FI"D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h"
-/Fo"D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\BotTargetPoint.gen.cpp.obj"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
+/FI"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC\BotTargetPoint.gen.cpp"
+/FI"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h"
+/Fo"D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\BotTargetPoint.gen.cpp.obj"
 /TP
 /GR-
 /W4

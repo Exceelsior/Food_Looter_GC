@@ -13,9 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FOOD_LOOTER_GC_MainCharacter_generated_h
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_SPARSE_DATA
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_RPC_WRAPPERS \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_SPARSE_DATA
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execInteract); \
 	DECLARE_FUNCTION(execCameraZoomOut); \
 	DECLARE_FUNCTION(execCameraZoomIn); \
 	DECLARE_FUNCTION(execLookUp); \
@@ -24,8 +25,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execMoveForward);
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execInteract); \
 	DECLARE_FUNCTION(execCameraZoomOut); \
 	DECLARE_FUNCTION(execCameraZoomIn); \
 	DECLARE_FUNCTION(execLookUp); \
@@ -34,7 +36,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	DECLARE_FUNCTION(execMoveForward);
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_INCLASS_NO_PURE_DECLS \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAMainCharacter(); \
 	friend struct Z_Construct_UClass_AMainCharacter_Statics; \
@@ -43,7 +45,7 @@ public: \
 	DECLARE_SERIALIZER(AMainCharacter)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_INCLASS \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesAMainCharacter(); \
 	friend struct Z_Construct_UClass_AMainCharacter_Statics; \
@@ -52,7 +54,7 @@ public: \
 	DECLARE_SERIALIZER(AMainCharacter)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_STANDARD_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AMainCharacter(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AMainCharacter) \
@@ -65,7 +67,7 @@ private: \
 public:
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_ENHANCED_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AMainCharacter(AMainCharacter&&); \
@@ -76,37 +78,41 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AMainCharacter)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__ArmComponent() { return STRUCT_OFFSET(AMainCharacter, ArmComponent); } \
 	FORCEINLINE static uint32 __PPO__CameraComponent() { return STRUCT_OFFSET(AMainCharacter, CameraComponent); } \
+	FORCEINLINE static uint32 __PPO__FoodPoint() { return STRUCT_OFFSET(AMainCharacter, FoodPoint); } \
 	FORCEINLINE static uint32 __PPO__AnimInstance() { return STRUCT_OFFSET(AMainCharacter, AnimInstance); } \
 	FORCEINLINE static uint32 __PPO__CameraYawSpeed() { return STRUCT_OFFSET(AMainCharacter, CameraYawSpeed); } \
 	FORCEINLINE static uint32 __PPO__CameraPitchSpeed() { return STRUCT_OFFSET(AMainCharacter, CameraPitchSpeed); } \
 	FORCEINLINE static uint32 __PPO__MaxCameraZoomDistance() { return STRUCT_OFFSET(AMainCharacter, MaxCameraZoomDistance); } \
+	FORCEINLINE static uint32 __PPO__HasFood() { return STRUCT_OFFSET(AMainCharacter, HasFood); } \
+	FORCEINLINE static uint32 __PPO__Food() { return STRUCT_OFFSET(AMainCharacter, Food); } \
+	FORCEINLINE static uint32 __PPO__FoodEquiped() { return STRUCT_OFFSET(AMainCharacter, FoodEquiped); } \
 	FORCEINLINE static uint32 __PPO__CurrentWorld() { return STRUCT_OFFSET(AMainCharacter, CurrentWorld); }
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_11_PROLOG
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_GENERATED_BODY_LEGACY \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_12_PROLOG
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_RPC_WRAPPERS \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_INCLASS \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_STANDARD_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_RPC_WRAPPERS \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_INCLASS \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_GENERATED_BODY \
+#define Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_RPC_WRAPPERS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_INCLASS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_14_ENHANCED_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_INCLASS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_MainCharacter_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

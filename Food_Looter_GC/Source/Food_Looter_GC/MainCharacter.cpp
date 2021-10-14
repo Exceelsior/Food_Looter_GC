@@ -3,7 +3,9 @@
 
 #include "MainCharacter.h"
 
+#include "Food.h"
 #include "Camera/CameraComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
@@ -32,7 +34,9 @@ AMainCharacter::AMainCharacter()
 
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraMain"));
 	CameraComponent->SetupAttachment(ArmComponent, USpringArmComponent::SocketName);
-	
+
+	FoodPoint = CreateDefaultSubobject<USceneComponent>(TEXT("FoodPoint"));
+	FoodPoint->SetupAttachment(GetCapsuleComponent());
 }
 
 // Called when the game starts or when spawned
@@ -119,6 +123,28 @@ void AMainCharacter::CameraZoomOut()
 	ArmComponent->TargetArmLength = CameraZoomValue;
 }
 
+void AMainCharacter::Interact()
+{
+	if(!HasFood)
+	{
+		GetCapsuleComponent()->GetOverlappingActors(Food, AFood::StaticClass());
+
+		if(Food.Num() != 0)
+		{
+			//Pas sur de tout cve qu'il se passe la dedans
+			HasFood = true;
+			FoodEquiped = Cast<AFood>(Food[0]);
+
+			//Set position of FoodEquiped
+			FoodEquiped->SetActorLocation(FoodPoint->GetComponentLocation());
+		}
+	}
+	else
+	{
+		//TODO
+	}	
+}
+
 
 // Called to bind functionality to input
 void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -136,4 +162,6 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 	PlayerInputComponent->BindAction("Zoom In", IE_Pressed, this, &AMainCharacter::CameraZoomIn);
 	PlayerInputComponent->BindAction("Zoom Out", IE_Pressed, this, &AMainCharacter::CameraZoomOut);
+
+	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AMainCharacter::Interact);
 }

@@ -19,9 +19,19 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	UPackage* Z_Construct_UPackage__Script_Food_Looter_GC();
 	ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+	FOOD_LOOTER_GC_API UClass* Z_Construct_UClass_AFood_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UWorld_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AMainCharacter::execInteract)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->Interact();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMainCharacter::execCameraZoomOut)
 	{
 		P_FINISH;
@@ -74,6 +84,7 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CameraZoomIn", &AMainCharacter::execCameraZoomIn },
 			{ "CameraZoomOut", &AMainCharacter::execCameraZoomOut },
+			{ "Interact", &AMainCharacter::execInteract },
 			{ "LookUp", &AMainCharacter::execLookUp },
 			{ "MoveForward", &AMainCharacter::execMoveForward },
 			{ "MoveRight", &AMainCharacter::execMoveRight },
@@ -122,6 +133,28 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMainCharacter_Interact_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMainCharacter_Interact_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_Interact_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "Interact", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMainCharacter_Interact_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_Interact_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMainCharacter_Interact()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_Interact_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -176,7 +209,9 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMainCharacter_MoveForward_Statics::Function_MetaDataParams[] = {
+		{ "Comment", "//Functions\n" },
 		{ "ModuleRelativePath", "MainCharacter.h" },
+		{ "ToolTip", "Functions" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_MoveForward_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "MoveForward", nullptr, nullptr, sizeof(MainCharacter_eventMoveForward_Parms), Z_Construct_UFunction_AMainCharacter_MoveForward_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_MoveForward_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00080401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMainCharacter_MoveForward_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_MoveForward_Statics::Function_MetaDataParams)) };
@@ -273,6 +308,10 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CameraComponent;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FoodPoint_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FoodPoint;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AnimInstance_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_AnimInstance;
@@ -289,6 +328,20 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxCameraZoomDistance;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HasFood_MetaData[];
+#endif
+		static void NewProp_HasFood_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_HasFood;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_Food_Inner;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Food_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_Food;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FoodEquiped_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FoodEquiped;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentWorld_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CurrentWorld;
@@ -303,8 +356,9 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMainCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMainCharacter_CameraZoomIn, "CameraZoomIn" }, // 637983670
 		{ &Z_Construct_UFunction_AMainCharacter_CameraZoomOut, "CameraZoomOut" }, // 1554125091
+		{ &Z_Construct_UFunction_AMainCharacter_Interact, "Interact" }, // 3359198144
 		{ &Z_Construct_UFunction_AMainCharacter_LookUp, "LookUp" }, // 17996596
-		{ &Z_Construct_UFunction_AMainCharacter_MoveForward, "MoveForward" }, // 105776462
+		{ &Z_Construct_UFunction_AMainCharacter_MoveForward, "MoveForward" }, // 3832282413
 		{ &Z_Construct_UFunction_AMainCharacter_MoveRight, "MoveRight" }, // 825783807
 		{ &Z_Construct_UFunction_AMainCharacter_Turn, "Turn" }, // 3976119829
 	};
@@ -332,6 +386,14 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraComponent = { "CameraComponent", nullptr, (EPropertyFlags)0x002008000009000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, CameraComponent), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraComponent_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodPoint_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodPoint = { "FoodPoint", nullptr, (EPropertyFlags)0x00200800000a0009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, FoodPoint), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodPoint_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodPoint_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_AnimInstance_MetaData[] = {
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
@@ -340,9 +402,7 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed_MetaData[] = {
 		{ "Category", "MainCharacter" },
-		{ "Comment", "//UPROPERTY()\n//UFloatProperty* MoveSpeedProp;\n" },
 		{ "ModuleRelativePath", "MainCharacter.h" },
-		{ "ToolTip", "UPROPERTY()\nUFloatProperty* MoveSpeedProp;" },
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed = { "CameraYawSpeed", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, CameraYawSpeed), METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed_MetaData)) };
@@ -361,6 +421,32 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance = { "MaxCameraZoomDistance", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, MaxCameraZoomDistance), METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood_SetBit(void* Obj)
+	{
+		((AMainCharacter*)Obj)->HasFood = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood = { "HasFood", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMainCharacter), &Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food_Inner = { "Food", nullptr, (EPropertyFlags)0x0000000000020000, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UClass_AActor_NoRegister, METADATA_PARAMS(nullptr, 0) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food = { "Food", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, Food), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodEquiped_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodEquiped = { "FoodEquiped", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, FoodEquiped), Z_Construct_UClass_AFood_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodEquiped_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodEquiped_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentWorld_MetaData[] = {
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
@@ -369,10 +455,15 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMainCharacter_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_ArmComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraComponent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodPoint,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_AnimInstance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraPitchSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_HasFood,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_Food,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_FoodEquiped,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentWorld,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMainCharacter_Statics::StaticCppClassTypeInfo = {
@@ -402,7 +493,7 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMainCharacter, 665293063);
+	IMPLEMENT_CLASS(AMainCharacter, 2679439598);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AMainCharacter>()
 	{
 		return AMainCharacter::StaticClass();

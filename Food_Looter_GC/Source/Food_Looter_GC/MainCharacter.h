@@ -6,6 +6,7 @@
 #include "GameFramework/Character.h"
 #include "MainCharacter.generated.h"
 
+class AFood;
 class UCameraComponent;
 class USpringArmComponent;
 UCLASS()
@@ -27,11 +28,11 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	UCameraComponent* CameraComponent;
 
+	UPROPERTY(VisibleAnywhere)
+	USceneComponent* FoodPoint;
+
 	UPROPERTY()
 	UAnimInstance* AnimInstance;
-
-	//UPROPERTY()
-	//UFloatProperty* MoveSpeedProp;
 		
 	UPROPERTY(EditAnywhere)
 	float CameraYawSpeed;
@@ -40,13 +41,23 @@ protected:
 	float CameraPitchSpeed;
 
 	UPROPERTY(EditAnywhere)
-	float MaxCameraZoomDistance = 400.0f;
+	float MaxCameraZoomDistance = 600.0f;
 
 	float CameraZoomValue;
 
+	UPROPERTY(VisibleAnywhere)
+	bool HasFood = false;
+
+	UPROPERTY(VisibleAnywhere)
+	TArray<AActor*> Food;
+
+	UPROPERTY(VisibleAnywhere)
+	AFood* FoodEquiped;
+	
 	UPROPERTY()
 	UWorld* CurrentWorld;
 	
+	//Functions
 	UFUNCTION()
 	void MoveForward(float Value);
 
@@ -64,6 +75,9 @@ protected:
 
 	UFUNCTION()
 	void CameraZoomOut();
+
+	UFUNCTION()
+	void Interact();
 	
 public:	
 	// Called every frame

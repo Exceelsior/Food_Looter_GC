@@ -1,5 +1,5 @@
-D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h
-D:\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-D:\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Source\Food_Looter_GC/PlayerAnimInstance.h
-D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC\PlayerAnimInstance.generated.h
+D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\Definitions.Food_Looter_GC.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+D:\UProjects\Food_Looter_GC\Food_Looter_GC\Source\Food_Looter_GC/PlayerAnimInstance.h
+D:\UProjects\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Inc\Food_Looter_GC\PlayerAnimInstance.generated.h
