@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeFood_Looter_GC_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x6CDDCDB8,
-				0xF98380FE,
+				0xF8E23987,
+				0x5F2C086C,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);
