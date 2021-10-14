@@ -4194,4 +4194,7 @@ Generate project file?
 [2021.10.14-16.52.26:273][108]LogD3D11RHI: CleanupD3DDevice
 [2021.10.14-16.52.26:291][108]LogExit: Exiting.
 [2021.10.14-16.52.26:305][108]Log file closed, 10/14/21 18:52:26
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
