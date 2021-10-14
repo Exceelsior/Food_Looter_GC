@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
+#include "AIEnnemy.h"
 #include "EnemyAIController.generated.h"
 
 class UBehaviorTreeComponent;
@@ -24,6 +25,8 @@ class FOOD_LOOTER_GC_API AEnemyAIController : public AAIController
 
 	TArray<AActor*> BotTargetPoints;
 
+	AAIEnnemy* AIChar;
+
 	virtual void OnPossess(APawn* Pawn) override;
 	
 public:
@@ -31,6 +34,6 @@ public:
 	AEnemyAIController();
  
 	FORCEINLINE UBlackboardComponent* GetBlackboardComp() const { return BlackboardComp; }
- 
-	FORCEINLINE TArray<AActor*> GetAvailableTargetPoints() { return BotTargetPoints; }
+
+	FORCEINLINE AAIEnnemy* GetAIChar() { return AIChar;}
 };

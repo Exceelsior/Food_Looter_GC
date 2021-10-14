@@ -2,6 +2,8 @@
 
 
 #include "BTTargetPointSelection.h"
+
+#include "AIEnnemy.h"
 #include "BotTargetPoint.h"
 #include "EnemyAIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -16,7 +18,7 @@ EBTNodeResult::Type UBTTargetPointSelection::ExecuteTask(UBehaviorTreeComponent 
 		UBlackboardComponent* BlackboardComp = AICon->GetBlackboardComp();
 		ABotTargetPoint* CurrentPoint = Cast<ABotTargetPoint>(BlackboardComp->GetValueAsObject("LocationToGo"));
  
-		TArray<AActor*> AvailableTargetPoints = AICon->GetAvailableTargetPoints();
+		TArray<ABotTargetPoint*> AvailableTargetPoints = AICon->GetAIChar()->GetAvailableTargetPoints();
 		
 		int32 RandomIndex;
  
