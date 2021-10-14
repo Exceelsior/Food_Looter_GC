@@ -8,16 +8,17 @@ void UPlayerAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
 
-	Pawn = TryGetPawnOwner();
+	Player = Cast<AMainCharacter>(TryGetPawnOwner());
 }
 
 void UPlayerAnimInstance::UpdateAnimationProperties()
 {
-	if(Pawn!= nullptr)
+	if(Player!= nullptr)
 	{
-		FVector PawnVelocity = Pawn->GetVelocity();
+		FVector PawnVelocity = Player->GetVelocity();
 		FVector LateralSpeed = FVector(PawnVelocity.X, PawnVelocity.Y, 0);
-		MovementSpeed = LateralSpeed.Size();		
+		MovementSpeed = LateralSpeed.Size();
+		IsCarryingFood = Player->CheckIfCarryingFood();
 	}
 }
 

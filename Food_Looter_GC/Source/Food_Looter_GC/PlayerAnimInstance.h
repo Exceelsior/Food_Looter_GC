@@ -28,7 +28,13 @@ class FOOD_LOOTER_GC_API UPlayerAnimInstance : public UAnimInstance
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
 	float MovementSpeed;
 	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
+	bool IsCarryingFood;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
+	float CarryMovementSpeed;
+
 	UPROPERTY(EditAnywhere, Category = "Movement")
-	class APawn* Pawn;
+	class AMainCharacter* Player;
 
 };

@@ -22,6 +22,21 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	ENGINE_API UClass* Z_Construct_UClass_UAnimInstance_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UWorld_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AMainCharacter::execSetIsCarryingFood)
+	{
+		P_GET_UBOOL(Z_Param_newValue);
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->SetIsCarryingFood(Z_Param_newValue);
+		P_NATIVE_END;
+	}
+	DEFINE_FUNCTION(AMainCharacter::execCheckIfCarryingFood)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(bool*)Z_Param__Result=P_THIS->CheckIfCarryingFood();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AMainCharacter::execCameraZoomOut)
 	{
 		P_FINISH;
@@ -74,9 +89,11 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		static const FNameNativePtrPair Funcs[] = {
 			{ "CameraZoomIn", &AMainCharacter::execCameraZoomIn },
 			{ "CameraZoomOut", &AMainCharacter::execCameraZoomOut },
+			{ "CheckIfCarryingFood", &AMainCharacter::execCheckIfCarryingFood },
 			{ "LookUp", &AMainCharacter::execLookUp },
 			{ "MoveForward", &AMainCharacter::execMoveForward },
 			{ "MoveRight", &AMainCharacter::execMoveRight },
+			{ "SetIsCarryingFood", &AMainCharacter::execSetIsCarryingFood },
 			{ "Turn", &AMainCharacter::execTurn },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -122,6 +139,43 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_CameraZoomOut_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics
+	{
+		struct MainCharacter_eventCheckIfCarryingFood_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((MainCharacter_eventCheckIfCarryingFood_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(MainCharacter_eventCheckIfCarryingFood_Parms), &Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "CheckIfCarryingFood", nullptr, nullptr, sizeof(MainCharacter_eventCheckIfCarryingFood_Parms), Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -221,6 +275,43 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics
+	{
+		struct MainCharacter_eventSetIsCarryingFood_Parms
+		{
+			bool newValue;
+		};
+		static void NewProp_newValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_newValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::NewProp_newValue_SetBit(void* Obj)
+	{
+		((MainCharacter_eventSetIsCarryingFood_Parms*)Obj)->newValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::NewProp_newValue = { "newValue", nullptr, (EPropertyFlags)0x0010000000000080, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(MainCharacter_eventSetIsCarryingFood_Parms), &Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::NewProp_newValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::NewProp_newValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AMainCharacter, nullptr, "SetIsCarryingFood", nullptr, nullptr, sizeof(MainCharacter_eventSetIsCarryingFood_Parms), Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	struct Z_Construct_UFunction_AMainCharacter_Turn_Statics
 	{
 		struct MainCharacter_eventTurn_Parms
@@ -289,6 +380,15 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxCameraZoomDistance;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_IsCarryingFood_MetaData[];
+#endif
+		static void NewProp_IsCarryingFood_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_IsCarryingFood;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CarryMovementSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CarryMovementSpeed;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentWorld_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_CurrentWorld;
@@ -303,9 +403,11 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 	const FClassFunctionLinkInfo Z_Construct_UClass_AMainCharacter_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AMainCharacter_CameraZoomIn, "CameraZoomIn" }, // 637983670
 		{ &Z_Construct_UFunction_AMainCharacter_CameraZoomOut, "CameraZoomOut" }, // 1554125091
+		{ &Z_Construct_UFunction_AMainCharacter_CheckIfCarryingFood, "CheckIfCarryingFood" }, // 3547289525
 		{ &Z_Construct_UFunction_AMainCharacter_LookUp, "LookUp" }, // 17996596
 		{ &Z_Construct_UFunction_AMainCharacter_MoveForward, "MoveForward" }, // 105776462
 		{ &Z_Construct_UFunction_AMainCharacter_MoveRight, "MoveRight" }, // 825783807
+		{ &Z_Construct_UFunction_AMainCharacter_SetIsCarryingFood, "SetIsCarryingFood" }, // 3818161097
 		{ &Z_Construct_UFunction_AMainCharacter_Turn, "Turn" }, // 3976119829
 	};
 #if WITH_METADATA
@@ -361,6 +463,24 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance = { "MaxCameraZoomDistance", nullptr, (EPropertyFlags)0x0020080000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, MaxCameraZoomDistance), METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	void Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood_SetBit(void* Obj)
+	{
+		((AMainCharacter*)Obj)->IsCarryingFood = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood = { "IsCarryingFood", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(AMainCharacter), &Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood_SetBit, METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_CarryMovementSpeed_MetaData[] = {
+		{ "Category", "MainCharacter" },
+		{ "ModuleRelativePath", "MainCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AMainCharacter_Statics::NewProp_CarryMovementSpeed = { "CarryMovementSpeed", nullptr, (EPropertyFlags)0x0020080000020001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AMainCharacter, CarryMovementSpeed), METADATA_PARAMS(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CarryMovementSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AMainCharacter_Statics::NewProp_CarryMovementSpeed_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentWorld_MetaData[] = {
 		{ "ModuleRelativePath", "MainCharacter.h" },
 	};
@@ -373,6 +493,8 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraYawSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CameraPitchSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_MaxCameraZoomDistance,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_IsCarryingFood,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CarryMovementSpeed,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMainCharacter_Statics::NewProp_CurrentWorld,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AMainCharacter_Statics::StaticCppClassTypeInfo = {
@@ -402,7 +524,7 @@ void EmptyLinkFunctionForGeneratedCodeMainCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AMainCharacter, 665293063);
+	IMPLEMENT_CLASS(AMainCharacter, 263951388);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AMainCharacter>()
 	{
 		return AMainCharacter::StaticClass();

@@ -44,9 +44,15 @@ protected:
 
 	float CameraZoomValue;
 
+	UPROPERTY(VisibleAnywhere)
+		bool IsCarryingFood;
+
+	UPROPERTY(VisibleAnywhere)
+		float CarryMovementSpeed;
+
 	UPROPERTY()
 	UWorld* CurrentWorld;
-	
+
 	UFUNCTION()
 	void MoveForward(float Value);
 
@@ -64,6 +70,8 @@ protected:
 
 	UFUNCTION()
 	void CameraZoomOut();
+
+	
 	
 public:	
 	// Called every frame
@@ -71,5 +79,11 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UFUNCTION()
+		bool CheckIfCarryingFood() { return IsCarryingFood; }
+
+	UFUNCTION()
+		void SetIsCarryingFood(bool newValue) { IsCarryingFood = newValue; }
 
 };
