@@ -23,7 +23,7 @@ void AEnemyAIController::OnPossess(APawn* Enemy)
 {
 	Super::OnPossess(Enemy);
  
-	AAIEnnemy* AIChar = Cast<AAIEnnemy>(Enemy);
+	AIChar = Cast<AAIEnnemy>(Enemy);
  
 	if (AIChar)
 	{	
@@ -31,11 +31,7 @@ void AEnemyAIController::OnPossess(APawn* Enemy)
 		{
 			BlackboardComp->InitializeBlackboard(*(AIChar->BehaviorTree->BlackboardAsset));
 		}
- 
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABotTargetPoint::StaticClass(), BotTargetPoints);		
 		
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Target points amount : %d"), BotTargetPoints.Num()));
- 
 		BehaviorComp->StartTree(*AIChar->BehaviorTree);
 	}
 }

@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FOOD_LOOTER_GC_BT_DetectPlayer_generated_h
 
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_SPARSE_DATA
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_RPC_WRAPPERS
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_INCLASS_NO_PURE_DECLS \
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_SPARSE_DATA
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_RPC_WRAPPERS
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_RPC_WRAPPERS_NO_PURE_DECLS
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUBT_DetectPlayer(); \
 	friend struct Z_Construct_UClass_UBT_DetectPlayer_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(UBT_DetectPlayer)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_INCLASS \
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_INCLASS \
 private: \
 	static void StaticRegisterNativesUBT_DetectPlayer(); \
 	friend struct Z_Construct_UClass_UBT_DetectPlayer_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(UBT_DetectPlayer)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_STANDARD_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UBT_DetectPlayer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBT_DetectPlayer) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_ENHANCED_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UBT_DetectPlayer(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -60,28 +60,28 @@ public: \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBT_DetectPlayer)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_PRIVATE_PROPERTY_OFFSET
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_12_PROLOG
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_GENERATED_BODY_LEGACY \
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_PRIVATE_PROPERTY_OFFSET
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_13_PROLOG
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_RPC_WRAPPERS \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_INCLASS \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_STANDARD_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_RPC_WRAPPERS \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_INCLASS \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_GENERATED_BODY \
+#define Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_INCLASS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_15_ENHANCED_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_INCLASS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_BT_DetectPlayer_h_16_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
