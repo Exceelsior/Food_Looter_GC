@@ -83,7 +83,7 @@ void EmptyLinkFunctionForGeneratedCodeGameManager() {}
 		{ "ModuleRelativePath", "GameManager.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AGameManager_Statics::NewProp_NbFoodNeeded = { "NbFoodNeeded", nullptr, (EPropertyFlags)0x0010000000020001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameManager, NbFoodNeeded), METADATA_PARAMS(Z_Construct_UClass_AGameManager_Statics::NewProp_NbFoodNeeded_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameManager_Statics::NewProp_NbFoodNeeded_MetaData)) };
+	const UE4CodeGen_Private::FUnsizedIntPropertyParams Z_Construct_UClass_AGameManager_Statics::NewProp_NbFoodNeeded = { "NbFoodNeeded", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AGameManager, NbFoodNeeded), METADATA_PARAMS(Z_Construct_UClass_AGameManager_Statics::NewProp_NbFoodNeeded_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AGameManager_Statics::NewProp_NbFoodNeeded_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AGameManager_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameManager_Statics::NewProp_NbEnemiesHere_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AGameManager_Statics::NewProp_NbEnemiesHere,
@@ -117,7 +117,7 @@ void EmptyLinkFunctionForGeneratedCodeGameManager() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AGameManager, 244154756);
+	IMPLEMENT_CLASS(AGameManager, 2464684174);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AGameManager>()
 	{
 		return AGameManager::StaticClass();

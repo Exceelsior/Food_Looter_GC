@@ -21,7 +21,7 @@ class FOOD_LOOTER_GC_API AGameManager : public AGameStateBase
 	UPROPERTY(VisibleAnywhere)
 	int NbFood;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere)
 	int NbFoodNeeded;
 	
 };

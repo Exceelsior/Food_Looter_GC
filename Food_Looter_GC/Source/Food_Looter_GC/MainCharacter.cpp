@@ -115,11 +115,6 @@ void AMainCharacter::CameraZoomOut()
 {
 	CameraZoomValue += 20;
 
-	if (CameraZoomValue <= MaxCameraZoomDistance)
-	{
-		CameraZoomValue = MaxCameraZoomDistance;
-	}
-
 	ArmComponent->TargetArmLength = CameraZoomValue;
 }
 

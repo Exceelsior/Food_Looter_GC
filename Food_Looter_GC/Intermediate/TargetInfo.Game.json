@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "Food_Looter_GC",
-			"Path": "D:\\UProjects\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GC.Target.cs",
+			"Path": "D:\\Unreal\\FoodLooter\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GC.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "Food_Looter_GCEditor",
-			"Path": "D:\\UProjects\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GCEditor.Target.cs",
+			"Path": "D:\\Unreal\\FoodLooter\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GCEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]

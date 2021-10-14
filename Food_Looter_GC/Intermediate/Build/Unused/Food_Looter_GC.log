@@ -1,12 +1,18 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC).
+  Parsing headers for Food_Looter_GCEditor
+    Running UnrealHeaderTool "D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Food_Looter_GC.uproject" "D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\Food_Looter_GCEditor\Development\Food_Looter_GCEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\33781\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  LogInit: Display: Loading text-based GConfig....
+  Reflection code generated for Food_Looter_GCEditor in 5,6362303 seconds
   Building Food_Looter_GCEditor...
   Using Visual Studio 2019 14.28.29913 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
-  Building 4 actions with 8 processes...
-    [1/4] BT_DetectPlayer.cpp
-    [2/4] UE4Editor-Food_Looter_GC.lib
-       Creating library D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.lib and object D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.exp
-    [3/4] UE4Editor-Food_Looter_GC.dll
-       Creating library D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.suppressed.lib and object D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.suppressed.exp
-    [4/4] Food_Looter_GCEditor.target
-  Total time in Parallel executor: 12,35 seconds
-  Total execution time: 13,21 seconds
+  Building 6 actions with 8 processes...
+    [1/6] Food_Looter_GC.init.gen.cpp
+    [2/6] FoodLooter_UWidget.gen.cpp
+    [3/6] FoodLooter_UWidget.cpp
+    [4/6] UE4Editor-Food_Looter_GC-0006.lib
+       Creating library D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0006.lib and object D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0006.exp
+    [5/6] UE4Editor-Food_Looter_GC-0006.dll
+       Creating library D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0006.suppressed.lib and object D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC-0006.suppressed.exp
+    [6/6] Food_Looter_GCEditor.target
+  Total time in Parallel executor: 41,78 seconds
+  Total execution time: 48,64 seconds

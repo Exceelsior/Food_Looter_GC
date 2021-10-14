@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Food_Looter_GC.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{A6BE086B-CD1B-4DBE-98CE-890BFEDB0E76}</UniqueIdentifier>
+      <UniqueIdentifier>{BA985291-7CCE-4609-B10A-020725FA0980}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Food_Looter_GC.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{46876927-2BF0-40D2-AF95-D1EF759518A1}</UniqueIdentifier>
+      <UniqueIdentifier>{0FDBA98C-3956-4CC8-A68D-264EF41216B7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Food_Looter_GC">
-      <UniqueIdentifier>{301EDBFA-0E42-4B58-8A1A-D1C0A614326D}</UniqueIdentifier>
+      <UniqueIdentifier>{D01DFBC8-A238-43F7-9275-B4A24E3CC92C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Food_Looter_GC\AIEnnemy.cpp">
       <Filter>Source\Food_Looter_GC</Filter>
@@ -59,10 +59,28 @@
     <ClInclude Include="..\..\Source\Food_Looter_GC\EnemyAIController.h">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\EnemyAnimInstance.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\EnemyAnimInstance.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\Food_Looter_GC\Food.cpp">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Food_Looter_GC\Food.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\FoodLooter_HUD.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\FoodLooter_HUD.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\FoodLooter_UWidget.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\FoodLooter_UWidget.h">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClInclude>
     <None Include="..\..\Source\Food_Looter_GC\Food_Looter_GC.Build.cs">
