@@ -132,11 +132,12 @@ void AMainCharacter::Interact()
 
 			//Set position of FoodEquiped
 			FoodEquiped->SetActorLocation(FoodPoint->GetComponentLocation());
+			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "CarryFood");
 		}
 	}
 	else
 	{
-		//TODO
+		//Let the food drop, cause not hold anymore
 	}	
 }
 
