@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Food_Looter_GC.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{A85FF606-0E8A-49A8-B493-C0BD39244A38}</UniqueIdentifier>
+      <UniqueIdentifier>{EE2AD3D1-4E09-4BF8-A06F-57A1466BE70C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Food_Looter_GC.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{178CF8A2-B7E3-4750-A831-9D0650CAC196}</UniqueIdentifier>
+      <UniqueIdentifier>{F3E7DB79-97C6-4F3A-A818-51B0AA7CD39E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Food_Looter_GC">
-      <UniqueIdentifier>{5B2615EA-9A20-4227-891F-C0FE3DD6AE39}</UniqueIdentifier>
+      <UniqueIdentifier>{240B9B40-6C7F-46FA-853F-9D9E5AFA990C}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Food_Looter_GC\AIEnnemy.cpp">
       <Filter>Source\Food_Looter_GC</Filter>

@@ -9,6 +9,7 @@
 #include "Math/Vector.h"
 #include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
+#include "AIEnnemy.h"
 
 void UBT_DetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
@@ -21,7 +22,7 @@ void UBT_DetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8
 
 	if (PlayerController != nullptr && AIController != nullptr)
 	{
-		APawn* AIPawn = AIController->GetPawn();
+		AAIEnnemy* AIPawn = Cast<AAIEnnemy>(AIController->GetPawn());
 		APawn* PlayerPawn = PlayerController->GetPawn();
 
 		FVector AIForwardVector = AIPawn->GetActorForwardVector();
@@ -31,8 +32,14 @@ void UBT_DetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8
 		{
 			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
 			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AMainCharacter>(PlayerPawn));
+			AIPawn->SetChaseSpeed();
 		}
-		else AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 0);		
+		else
+		{
+			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 0);
+			AIPawn->ResetChaseSpeed();
+			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", nullptr);
+		}
 	}
 }
 
@@ -43,7 +50,7 @@ bool UBT_DetectPlayer::PlayerIsInFieldOfView(FVector PlayerPosition, FVector AIP
 	float Dot = FVector::DotProduct(AIForwardVector, PlayerDirection);
 	float PlayerAngle = UKismetMathLibrary::DegAcos(Dot);
 
-	if (PlayerAngle <= 90)
+	if (PlayerAngle <= 135)
 	{
 		return true;
 	}

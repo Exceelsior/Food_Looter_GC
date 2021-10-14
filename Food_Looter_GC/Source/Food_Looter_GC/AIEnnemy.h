@@ -24,6 +24,12 @@ public:
 	UPROPERTY(EditAnywhere)
 	TArray<ABotTargetPoint*> ArrayTarget;
 
+	UPROPERTY(EditAnywhere)
+		float WalkSpeed = 250;
+
+	UPROPERTY(EditAnywhere)
+		float ChaseSpeed = 500;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -36,5 +42,9 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	FORCEINLINE TArray<ABotTargetPoint*> GetAvailableTargetPoints() { return ArrayTarget; }
+
+	void SetChaseSpeed();
+
+	void ResetChaseSpeed();
 
 };

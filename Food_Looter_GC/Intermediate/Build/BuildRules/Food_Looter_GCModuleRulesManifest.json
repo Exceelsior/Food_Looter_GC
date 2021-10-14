@@ -1,8 +1,8 @@
 {
 	"SourceFiles": [
-		"D:\\Documents\\GitHub\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GC\\Food_Looter_GC.Build.cs",
-		"D:\\Documents\\GitHub\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GC.Target.cs",
-		"D:\\Documents\\GitHub\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GCEditor.Target.cs"
+		"D:\\Projets Dev\\Unreal Engine\\GTech 4\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GC\\Food_Looter_GC.Build.cs",
+		"D:\\Projets Dev\\Unreal Engine\\GTech 4\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GC.Target.cs",
+		"D:\\Projets Dev\\Unreal Engine\\GTech 4\\Food_Looter_GC\\Food_Looter_GC\\Source\\Food_Looter_GCEditor.Target.cs"
 	],
-	"EngineVersion": "4.27.1"
+	"EngineVersion": "4.27.0"
 }

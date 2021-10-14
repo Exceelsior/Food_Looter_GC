@@ -17,9 +17,17 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 	FOOD_LOOTER_GC_API UClass* Z_Construct_UClass_AFood();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
 	UPackage* Z_Construct_UPackage__Script_Food_Looter_GC();
-	ENGINE_API UClass* Z_Construct_UClass_AGameMode_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_AGameMode_NoRegister();
+	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AFood::execGetMesh)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		*(UStaticMeshComponent**)Z_Param__Result=P_THIS->GetMesh();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AFood::execGetDivision)
 	{
 		P_FINISH;
@@ -39,6 +47,7 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 		UClass* Class = AFood::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
 			{ "GetDivision", &AFood::execGetDivision },
+			{ "GetMesh", &AFood::execGetMesh },
 			{ "GetPts", &AFood::execGetPts },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
@@ -72,6 +81,46 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 		if (!ReturnFunction)
 		{
 			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AFood_GetDivision_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_AFood_GetMesh_Statics
+	{
+		struct Food_eventGetMesh_Parms
+		{
+			UStaticMeshComponent* ReturnValue;
+		};
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReturnValue_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFood_GetMesh_Statics::NewProp_ReturnValue_MetaData[] = {
+		{ "EditInline", "true" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UFunction_AFood_GetMesh_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000080588, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(Food_eventGetMesh_Parms, ReturnValue), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UFunction_AFood_GetMesh_Statics::NewProp_ReturnValue_MetaData, UE_ARRAY_COUNT(Z_Construct_UFunction_AFood_GetMesh_Statics::NewProp_ReturnValue_MetaData)) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_AFood_GetMesh_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_AFood_GetMesh_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AFood_GetMesh_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Food.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AFood_GetMesh_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AFood, nullptr, "GetMesh", nullptr, nullptr, sizeof(Food_eventGetMesh_Parms), Z_Construct_UFunction_AFood_GetMesh_Statics::PropPointers, UE_ARRAY_COUNT(Z_Construct_UFunction_AFood_GetMesh_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AFood_GetMesh_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AFood_GetMesh_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AFood_GetMesh()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AFood_GetMesh_Statics::FuncParams);
 		}
 		return ReturnFunction;
 	}
@@ -127,6 +176,10 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_StaticMesh;
 #if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_SphereComponent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_SphereComponent;
+#if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Pts_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FUnsizedIntPropertyParams NewProp_Pts;
@@ -144,6 +197,7 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_AFood_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_AFood_GetDivision, "GetDivision" }, // 3701524428
+		{ &Z_Construct_UFunction_AFood_GetMesh, "GetMesh" }, // 1714166749
 		{ &Z_Construct_UFunction_AFood_GetPts, "GetPts" }, // 4060221002
 	};
 #if WITH_METADATA
@@ -168,6 +222,14 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFood_Statics::NewProp_StaticMesh = { "StaticMesh", nullptr, (EPropertyFlags)0x0020080000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFood, StaticMesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFood_Statics::NewProp_StaticMesh_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFood_Statics::NewProp_StaticMesh_MetaData)) };
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFood_Statics::NewProp_SphereComponent_MetaData[] = {
+		{ "Category", "Food" },
+		{ "EditInline", "true" },
+		{ "ModuleRelativePath", "Food.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFood_Statics::NewProp_SphereComponent = { "SphereComponent", nullptr, (EPropertyFlags)0x0020080000080009, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFood, SphereComponent), Z_Construct_UClass_USphereComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFood_Statics::NewProp_SphereComponent_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFood_Statics::NewProp_SphereComponent_MetaData)) };
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFood_Statics::NewProp_Pts_MetaData[] = {
 		{ "Category", "Food" },
 		{ "ModuleRelativePath", "Food.h" },
@@ -184,6 +246,7 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AFood_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFood_Statics::NewProp_GM,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFood_Statics::NewProp_StaticMesh,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFood_Statics::NewProp_SphereComponent,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFood_Statics::NewProp_Pts,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AFood_Statics::NewProp_DividePlayerSpeedBy,
 	};
@@ -214,7 +277,7 @@ void EmptyLinkFunctionForGeneratedCodeFood() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFood, 603301937);
+	IMPLEMENT_CLASS(AFood, 2281642820);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AFood>()
 	{
 		return AFood::StaticClass();

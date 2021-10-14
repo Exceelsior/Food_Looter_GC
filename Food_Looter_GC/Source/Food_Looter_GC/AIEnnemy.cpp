@@ -3,6 +3,7 @@
 
 #include "AIEnnemy.h"
 #include "BehaviorTree/BehaviorTree.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
 AAIEnnemy::AAIEnnemy()
@@ -33,3 +34,13 @@ void AAIEnnemy::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 }
 
+void AAIEnnemy::SetChaseSpeed()
+{
+
+	GetCharacterMovement()->MaxWalkSpeed = ChaseSpeed;
+}
+
+void AAIEnnemy::ResetChaseSpeed()
+{
+	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+}

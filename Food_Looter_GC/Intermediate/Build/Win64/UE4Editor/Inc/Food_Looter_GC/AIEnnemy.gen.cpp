@@ -42,6 +42,14 @@ void EmptyLinkFunctionForGeneratedCodeAIEnnemy() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ArrayTarget_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ArrayTarget;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_WalkSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_WalkSpeed;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ChaseSpeed_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ChaseSpeed;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -72,10 +80,26 @@ void EmptyLinkFunctionForGeneratedCodeAIEnnemy() {}
 	};
 #endif
 	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ArrayTarget = { "ArrayTarget", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAIEnnemy, ArrayTarget), EArrayPropertyFlags::None, METADATA_PARAMS(Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ArrayTarget_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ArrayTarget_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAIEnnemy_Statics::NewProp_WalkSpeed_MetaData[] = {
+		{ "Category", "AIEnnemy" },
+		{ "ModuleRelativePath", "AIEnnemy.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnnemy_Statics::NewProp_WalkSpeed = { "WalkSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAIEnnemy, WalkSpeed), METADATA_PARAMS(Z_Construct_UClass_AAIEnnemy_Statics::NewProp_WalkSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAIEnnemy_Statics::NewProp_WalkSpeed_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ChaseSpeed_MetaData[] = {
+		{ "Category", "AIEnnemy" },
+		{ "ModuleRelativePath", "AIEnnemy.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ChaseSpeed = { "ChaseSpeed", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AAIEnnemy, ChaseSpeed), METADATA_PARAMS(Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ChaseSpeed_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ChaseSpeed_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AAIEnnemy_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnnemy_Statics::NewProp_BehaviorTree,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ArrayTarget_Inner,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ArrayTarget,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnnemy_Statics::NewProp_WalkSpeed,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AAIEnnemy_Statics::NewProp_ChaseSpeed,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_AAIEnnemy_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AAIEnnemy>::IsAbstract,
@@ -104,7 +128,7 @@ void EmptyLinkFunctionForGeneratedCodeAIEnnemy() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AAIEnnemy, 620752600);
+	IMPLEMENT_CLASS(AAIEnnemy, 602944622);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AAIEnnemy>()
 	{
 		return AAIEnnemy::StaticClass();
