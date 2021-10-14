@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\Food_Looter_GC.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{7F8418AD-02F8-45B8-9D17-E706B03C3A25}</UniqueIdentifier>
+      <UniqueIdentifier>{94131058-66B2-4F7B-BF26-D40F1AADE43A}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\Food_Looter_GC.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{7C79F034-21D5-4F58-9D18-443FB28395D0}</UniqueIdentifier>
+      <UniqueIdentifier>{E2F7E127-C38F-4450-A0B3-9613A438DAE1}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\Food_Looter_GC">
-      <UniqueIdentifier>{56840D9C-36B1-4018-A5BA-0E82FADB97A6}</UniqueIdentifier>
+      <UniqueIdentifier>{672E5447-DC68-427C-B5F0-322CC03340D1}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\Food_Looter_GC\AIEnnemy.cpp">
       <Filter>Source\Food_Looter_GC</Filter>
@@ -45,6 +45,12 @@
       <Filter>Source\Food_Looter_GC</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\Food_Looter_GC\BTTargetPointSelection.h">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\Food_Looter_GC\BT_DetectPlayer.cpp">
+      <Filter>Source\Food_Looter_GC</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\Food_Looter_GC\BT_DetectPlayer.h">
       <Filter>Source\Food_Looter_GC</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\Food_Looter_GC\EnemyAIController.cpp">

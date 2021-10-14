@@ -34,7 +34,7 @@ void AEnemyAIController::OnPossess(APawn* Enemy)
  
 		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABotTargetPoint::StaticClass(), BotTargetPoints);		
 		
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("New target position: %f"), BotTargetPoints.Num()));
+		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Target points amount : %d"), BotTargetPoints.Num()));
  
 		BehaviorComp->StartTree(*AIChar->BehaviorTree);
 	}
