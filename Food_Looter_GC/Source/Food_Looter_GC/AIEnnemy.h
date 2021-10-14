@@ -1,15 +1,16 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
+#include "BotTargetPoint.h"
 
 class UBehaviorTree;
 
 #include "CoreMinimal.h"
-#include "GameFramework/Pawn.h"
+#include "GameFramework/Character.h"
 #include "AIEnnemy.generated.h"
 
 UCLASS()
-class FOOD_LOOTER_GC_API AAIEnnemy : public APawn
+class FOOD_LOOTER_GC_API AAIEnnemy : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -19,6 +20,9 @@ public:
 
 	UPROPERTY(EditAnywhere, Category="AI")
 	UBehaviorTree* BehaviorTree;
+
+	UPROPERTY(EditAnywhere)
+	TArray<ABotTargetPoint*> ArrayTarget;
 
 protected:
 	// Called when the game starts or when spawned
@@ -30,5 +34,7 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	FORCEINLINE TArray<ABotTargetPoint*> GetAvailableTargetPoints() { return ArrayTarget; }
 
 };

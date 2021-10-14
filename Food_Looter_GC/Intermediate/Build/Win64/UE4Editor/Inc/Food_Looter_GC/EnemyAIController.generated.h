@@ -13,10 +13,10 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FOOD_LOOTER_GC_EnemyAIController_generated_h
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_SPARSE_DATA
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_RPC_WRAPPERS
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_RPC_WRAPPERS_NO_PURE_DECLS
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_INCLASS_NO_PURE_DECLS \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_SPARSE_DATA
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_RPC_WRAPPERS
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_RPC_WRAPPERS_NO_PURE_DECLS
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAEnemyAIController(); \
 	friend struct Z_Construct_UClass_AEnemyAIController_Statics; \
@@ -25,7 +25,7 @@ public: \
 	DECLARE_SERIALIZER(AEnemyAIController)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_INCLASS \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_INCLASS \
 private: \
 	static void StaticRegisterNativesAEnemyAIController(); \
 	friend struct Z_Construct_UClass_AEnemyAIController_Statics; \
@@ -34,7 +34,7 @@ public: \
 	DECLARE_SERIALIZER(AEnemyAIController)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_STANDARD_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API AEnemyAIController(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemyAIController) \
@@ -47,7 +47,7 @@ private: \
 public:
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_ENHANCED_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEnemyAIController(AEnemyAIController&&); \
@@ -58,31 +58,31 @@ public: \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AEnemyAIController)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_PRIVATE_PROPERTY_OFFSET \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__LocationToGoKey() { return STRUCT_OFFSET(AEnemyAIController, LocationToGoKey); }
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_13_PROLOG
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_GENERATED_BODY_LEGACY \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_14_PROLOG
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_RPC_WRAPPERS \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_INCLASS \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_STANDARD_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_RPC_WRAPPERS \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_INCLASS \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_GENERATED_BODY \
+#define Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_RPC_WRAPPERS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_INCLASS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_16_ENHANCED_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_INCLASS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_EnemyAIController_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
