@@ -132,14 +132,18 @@ void AMainCharacter::Interact()
 
 			//Set position of FoodEquiped
 			FoodEquiped->GetMesh()->SetSimulatePhysics(false);
+			FoodEquiped->SetActorEnableCollision(false);
 			FoodEquiped->SetActorLocation(FoodPoint->GetComponentLocation());
-			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, "CarryFood");
+			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+			
 		}
 	}
 	else
 	{
 		//Let the food drop, cause not hold anymore
+		HasFood = false;
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
+		FoodEquiped->SetActorEnableCollision(true);
 		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
 	}	
 }

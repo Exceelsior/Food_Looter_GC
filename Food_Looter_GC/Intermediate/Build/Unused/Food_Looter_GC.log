@@ -1,15 +1,6 @@
 ﻿  Using 'git status' to determine working set for adaptive non-unity build (D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC).
-  Failed to delete file 'D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Binaries\Win64\UE4Editor-Food_Looter_GC.pdb'
-      Exception: Le processus ne peut pas accéder au fichier 'D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Binaries\Win64\UE4Editor-Food_Looter_GC.pdb', car il est en cours d'utilisation par un autre processus.
-  Attempting to retry...
   Building Food_Looter_GCEditor...
   Using Visual Studio 2019 14.28.29913 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29910) and Windows 10.0.18362.0 SDK (C:\Program Files (x86)\Windows Kits\10).
   Building 4 actions with 8 processes...
-    [1/4] BT_DetectPlayer.cpp
-    [2/4] UE4Editor-Food_Looter_GC.lib
-       Creating library D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.lib and object D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.exp
-    [3/4] UE4Editor-Food_Looter_GC.dll
-       Creating library D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.suppressed.lib and object D:\Projets Dev\Unreal Engine\GTech 4\Food_Looter_GC\Food_Looter_GC\Intermediate\Build\Win64\UE4Editor\Development\Food_Looter_GC\UE4Editor-Food_Looter_GC.suppressed.exp
-    [4/4] Food_Looter_GCEditor.target
-  Total time in Parallel executor: 3,91 seconds
-  Total execution time: 5,89 seconds
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.MakeFile.Targets(45,5): warning MSB5021: Terminating the task executable "cmd" and its child processes because the build was canceled.
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.MakeFile.Targets(45,5): error MSB4181: The "Exec" task returned false but did not log an error.
