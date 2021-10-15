@@ -10,6 +10,7 @@ void AFood_Looter_GCGameModeBase::BeginPlay()
 	Super::BeginPlay();
 
 	Win = false;
+	Lose = false;
 	CanDecreaseTimer = false;
 	
 	for (int i = 0; i < 2; i++)
@@ -42,11 +43,15 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	if(Win)
 	{
 		//Do the win thing
+		GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Red,TEXT("You just win."));
+	}
+	else if(Lose)
+	{
+		//Lose Thing		
 	}
 	else
 	{
 		//ManageIa(GM->NbEnemiesHere, TimerBetweenEnemies);
-		
 	}
 }
 

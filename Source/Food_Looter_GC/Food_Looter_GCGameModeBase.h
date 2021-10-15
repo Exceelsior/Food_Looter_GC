@@ -19,6 +19,9 @@ private:
 	UPROPERTY(VisibleAnywhere)
 	bool Win;
 
+	UPROPERTY(VisibleAnywhere)
+	bool Lose;
+
 	//Temp actor that will be instantiated
 	UPROPERTY(VisibleAnywhere)
 	AActor* TempAct;
