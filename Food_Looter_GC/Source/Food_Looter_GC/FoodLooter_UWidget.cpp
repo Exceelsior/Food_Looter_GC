@@ -2,18 +2,14 @@
 
 
 #include "FoodLooter_UWidget.h"
+#include "Components/ProgressBar.h"
 
-//UFoodLooter_UWidget::UFoodLooter_UWidget(const FObjectInitializer &ObjectInitializer)
-//{
-
-//}
 
 void UFoodLooter_UWidget::UpdateFoodAmount(int32 Value)
 {
-	if (FoodSlider) {
-
-		FoodSlider->SetValue(Value);
-
+	if (FoodBar)
+	{
+		FoodBar->SetPercent(Value);
 	}
 }
 
@@ -29,5 +25,5 @@ void UFoodLooter_UWidget::GameLost()
 
 void UFoodLooter_UWidget::NativeConstruct()
 {
-	//Super::NativeConstruct();
+	Super::NativeConstruct();
 }

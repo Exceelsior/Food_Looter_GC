@@ -17,7 +17,7 @@ void EmptyLinkFunctionForGeneratedCodeFoodLooter_UWidget() {}
 	FOOD_LOOTER_GC_API UClass* Z_Construct_UClass_UFoodLooter_UWidget();
 	UMG_API UClass* Z_Construct_UClass_UUserWidget();
 	UPackage* Z_Construct_UPackage__Script_Food_Looter_GC();
-	UMG_API UClass* Z_Construct_UClass_USlider_NoRegister();
+	UMG_API UClass* Z_Construct_UClass_UProgressBar_NoRegister();
 // End Cross Module References
 	void UFoodLooter_UWidget::StaticRegisterNativesUFoodLooter_UWidget()
 	{
@@ -33,9 +33,9 @@ void EmptyLinkFunctionForGeneratedCodeFoodLooter_UWidget() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FoodSlider_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_FoodBar_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FoodSlider;
+		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_FoodBar;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -46,22 +46,21 @@ void EmptyLinkFunctionForGeneratedCodeFoodLooter_UWidget() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFoodLooter_UWidget_Statics::Class_MetaDataParams[] = {
-		{ "Comment", "/**\n * \n */" },
 		{ "IncludePath", "FoodLooter_UWidget.h" },
 		{ "ModuleRelativePath", "FoodLooter_UWidget.h" },
 	};
 #endif
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodSlider_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodBar_MetaData[] = {
 		{ "BindWidget", "" },
 		{ "Category", "FoodLooter_UWidget" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "FoodLooter_UWidget.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodSlider = { "FoodSlider", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFoodLooter_UWidget, FoodSlider), Z_Construct_UClass_USlider_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodSlider_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodSlider_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodBar = { "FoodBar", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(UFoodLooter_UWidget, FoodBar), Z_Construct_UClass_UProgressBar_NoRegister, METADATA_PARAMS(Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodBar_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodBar_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_UFoodLooter_UWidget_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodSlider,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_UFoodLooter_UWidget_Statics::NewProp_FoodBar,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_UFoodLooter_UWidget_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<UFoodLooter_UWidget>::IsAbstract,
@@ -90,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeFoodLooter_UWidget() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UFoodLooter_UWidget, 2494761174);
+	IMPLEMENT_CLASS(UFoodLooter_UWidget, 2420508621);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<UFoodLooter_UWidget>()
 	{
 		return UFoodLooter_UWidget::StaticClass();

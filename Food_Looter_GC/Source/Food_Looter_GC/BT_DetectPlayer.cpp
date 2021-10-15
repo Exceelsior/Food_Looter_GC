@@ -28,7 +28,7 @@ void UBT_DetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8
 		FVector AIForwardVector = AIPawn->GetActorForwardVector();
 		
 		if(PlayerIsInFieldOfView(PlayerPawn->GetActorLocation(), AIPawn->GetActorLocation(), AIForwardVector)
-		   && PlayerIsInRange(AIForwardVector, AIPawn->GetActorLocation(), 800, AIPawn))
+		   && PlayerIsInRange(AIForwardVector, AIPawn->GetActorLocation(), 1000, AIPawn))
 		{
 			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
 			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AMainCharacter>(PlayerPawn));

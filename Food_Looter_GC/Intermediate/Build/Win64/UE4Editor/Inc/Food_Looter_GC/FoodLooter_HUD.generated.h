@@ -13,10 +13,22 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define FOOD_LOOTER_GC_FoodLooter_HUD_generated_h
 
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_SPARSE_DATA
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_RPC_WRAPPERS
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_INCLASS_NO_PURE_DECLS \
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_SPARSE_DATA
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execGameLost); \
+	DECLARE_FUNCTION(execGameWon); \
+	DECLARE_FUNCTION(execUpdateFoodAmount);
+
+
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execGameLost); \
+	DECLARE_FUNCTION(execGameWon); \
+	DECLARE_FUNCTION(execUpdateFoodAmount);
+
+
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAFoodLooter_HUD(); \
 	friend struct Z_Construct_UClass_AFoodLooter_HUD_Statics; \
@@ -25,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(AFoodLooter_HUD)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_INCLASS \
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_INCLASS \
 private: \
 	static void StaticRegisterNativesAFoodLooter_HUD(); \
 	friend struct Z_Construct_UClass_AFoodLooter_HUD_Statics; \
@@ -34,9 +46,9 @@ public: \
 	DECLARE_SERIALIZER(AFoodLooter_HUD)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_STANDARD_CONSTRUCTORS \
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AFoodLooter_HUD(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AFoodLooter_HUD(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFoodLooter_HUD) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AFoodLooter_HUD); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFoodLooter_HUD); \
@@ -47,9 +59,7 @@ private: \
 public:
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AFoodLooter_HUD(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AFoodLooter_HUD(AFoodLooter_HUD&&); \
@@ -57,31 +67,31 @@ private: \
 public: \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AFoodLooter_HUD); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AFoodLooter_HUD); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AFoodLooter_HUD)
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(AFoodLooter_HUD)
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_PRIVATE_PROPERTY_OFFSET
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_12_PROLOG
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_GENERATED_BODY_LEGACY \
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_PRIVATE_PROPERTY_OFFSET
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_PROLOG
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_RPC_WRAPPERS \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_INCLASS \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_STANDARD_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_RPC_WRAPPERS \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_INCLASS \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_GENERATED_BODY \
+#define Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_PRIVATE_PROPERTY_OFFSET \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_SPARSE_DATA \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_INCLASS_NO_PURE_DECLS \
-	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_15_ENHANCED_CONSTRUCTORS \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_PRIVATE_PROPERTY_OFFSET \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_SPARSE_DATA \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_RPC_WRAPPERS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_INCLASS_NO_PURE_DECLS \
+	Food_Looter_GC_Source_Food_Looter_GC_FoodLooter_HUD_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
