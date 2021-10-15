@@ -28,4 +28,5 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UProgressBar* FoodBar;
+	
 };
