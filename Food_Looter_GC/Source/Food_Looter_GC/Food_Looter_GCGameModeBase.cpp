@@ -2,7 +2,7 @@
 
 
 #include "Food_Looter_GCGameModeBase.h"
-#include "GameManager.h"
+#include "FLGameManager.h"
 #include "Kismet/GameplayStatics.h"
 
 void AFood_Looter_GCGameModeBase::BeginPlay()

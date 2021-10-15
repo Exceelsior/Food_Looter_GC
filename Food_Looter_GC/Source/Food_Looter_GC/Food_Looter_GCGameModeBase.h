@@ -6,7 +6,7 @@
 #include "GameFramework/GameMode.h"
 #include "Food_Looter_GCGameModeBase.generated.h"
 
-class AGameManager;
+class AFLGameManager;
 /**
  * 
  */
@@ -38,7 +38,7 @@ public:
 	TSubclassOf<AActor> EnemyClass;
 
 	UPROPERTY(EditAnywhere)
-	AGameManager* GM;
+	AFLGameManager* GM;
 
 	UPROPERTY(EditAnywhere)
 	float Timer1Min;

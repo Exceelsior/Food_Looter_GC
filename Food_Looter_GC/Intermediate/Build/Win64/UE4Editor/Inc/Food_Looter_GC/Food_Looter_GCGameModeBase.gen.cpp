@@ -19,7 +19,7 @@ void EmptyLinkFunctionForGeneratedCodeFood_Looter_GCGameModeBase() {}
 	UPackage* Z_Construct_UPackage__Script_Food_Looter_GC();
 	ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
 	COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
-	FOOD_LOOTER_GC_API UClass* Z_Construct_UClass_AGameManager_NoRegister();
+	FOOD_LOOTER_GC_API UClass* Z_Construct_UClass_AFLGameManager_NoRegister();
 // End Cross Module References
 	DEFINE_FUNCTION(AFood_Looter_GCGameModeBase::execManageIa)
 	{
@@ -312,7 +312,7 @@ void EmptyLinkFunctionForGeneratedCodeFood_Looter_GCGameModeBase() {}
 		{ "ModuleRelativePath", "Food_Looter_GCGameModeBase.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_GM = { "GM", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFood_Looter_GCGameModeBase, GM), Z_Construct_UClass_AGameManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_GM_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_GM_MetaData)) };
+	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_GM = { "GM", nullptr, (EPropertyFlags)0x0010000000000001, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(AFood_Looter_GCGameModeBase, GM), Z_Construct_UClass_AFLGameManager_NoRegister, METADATA_PARAMS(Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_GM_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_GM_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AFood_Looter_GCGameModeBase_Statics::NewProp_Timer1Min_MetaData[] = {
 		{ "Category", "Food_Looter_GCGameModeBase" },
@@ -365,7 +365,7 @@ void EmptyLinkFunctionForGeneratedCodeFood_Looter_GCGameModeBase() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AFood_Looter_GCGameModeBase, 256413131);
+	IMPLEMENT_CLASS(AFood_Looter_GCGameModeBase, 739383704);
 	template<> FOOD_LOOTER_GC_API UClass* StaticClass<AFood_Looter_GCGameModeBase>()
 	{
 		return AFood_Looter_GCGameModeBase::StaticClass();

@@ -3,31 +3,31 @@
 
 #include "BTTargetPointSelection.h"
 
-#include "AIEnnemy.h"
-#include "BotTargetPoint.h"
-#include "EnemyAIController.h"
+#include "FLEnemy.h"
+#include "FLTargetPoint.h"
+#include "FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 EBTNodeResult::Type UBTTargetPointSelection::ExecuteTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory)
 {
-	AEnemyAIController* AICon = Cast<AEnemyAIController>(OwnerComp.GetAIOwner());
+	AFLEnemyController* AICon = Cast<AFLEnemyController>(OwnerComp.GetAIOwner());
  
 	if (AICon)
 	{
        
 		UBlackboardComponent* BlackboardComp = AICon->GetBlackboardComp();
-		ABotTargetPoint* CurrentPoint = Cast<ABotTargetPoint>(BlackboardComp->GetValueAsObject("LocationToGo"));
+		AFLTargetPoint* CurrentPoint = Cast<AFLTargetPoint>(BlackboardComp->GetValueAsObject("LocationToGo"));
  
-		TArray<ABotTargetPoint*> AvailableTargetPoints = AICon->GetAIChar()->GetAvailableTargetPoints();
+		TArray<AFLTargetPoint*> AvailableTargetPoints = AICon->GetAIChar()->GetAvailableTargetPoints();
 		
 		int32 RandomIndex;
  
-		ABotTargetPoint* NextTargetPoint = nullptr;
+		AFLTargetPoint* NextTargetPoint = nullptr;
  
 		do
 		{
 			RandomIndex = FMath::RandRange(0, AvailableTargetPoints.Num()-1);
-			NextTargetPoint = Cast<ABotTargetPoint>(AvailableTargetPoints[RandomIndex]);
+			NextTargetPoint = Cast<AFLTargetPoint>(AvailableTargetPoints[RandomIndex]);
 			
 		} while (CurrentPoint == NextTargetPoint);
  
