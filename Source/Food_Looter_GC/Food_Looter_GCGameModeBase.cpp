@@ -4,13 +4,12 @@
 #include "Food_Looter_GCGameModeBase.h"
 #include "FLGameManager.h"
 #include "Kismet/GameplayStatics.h"
+#include "FLHUD.h"
 
 void AFood_Looter_GCGameModeBase::BeginPlay()
 {
 	Super::BeginPlay();
-
-	Win = false;
-	Lose = false;
+	
 	CanDecreaseTimer = false;
 
 	GM = Cast<AFLGameManager>(this->GetWorld()->GetGameState());
@@ -40,29 +39,10 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	//If an enemy is on the way to leave, timer to spawn the next one start
 	if(CanDecreaseTimer)
 		TimerBetweenEnemies -= DeltaSeconds;
+	
 
-	CompareFood();
-	if(Win)
-	{
-		//Do the win thing
-		GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Red,TEXT("You just win."));
-	}
-	else if(Lose)
-	{
-		//Lose Thing
-	}
-	else
-	{
-		//ManageIa(GM->NbEnemiesHere, TimerBetweenEnemies);
-	}
-}
+	//ManageIa(GM->NbEnemiesHere, TimerBetweenEnemies);
 
-void AFood_Looter_GCGameModeBase::CompareFood()
-{
-	if(GM->NbFood >= GM->NbFoodNeeded)
-		Win = true;
-	else
-		Win = false;
 }
 
 void AFood_Looter_GCGameModeBase::ManageIa(TArray<AActor*> List, float Timer)
@@ -81,3 +61,4 @@ void AFood_Looter_GCGameModeBase::ManageIa(TArray<AActor*> List, float Timer)
 	//     Timer
 	// }
 }
+

@@ -25,7 +25,7 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 	UFUNCTION()
-	void UpdateFoodAmount(int32 Value);
+	void UpdateFoodAmount(float Value);
 
 	UFUNCTION()
 	void GameWon();

@@ -23,5 +23,14 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 
 	UPROPERTY(EditAnywhere)
 	int NbFoodNeeded;
+
 	
+	UFUNCTION()
+	void GameWon();
+
+	UFUNCTION()
+	void GameLost();
+
+	UFUNCTION()
+	void CompareFood();
 };

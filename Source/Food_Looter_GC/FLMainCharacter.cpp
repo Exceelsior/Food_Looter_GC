@@ -3,12 +3,15 @@
 
 #include "FLMainCharacter.h"
 
+#include "FLEnemy.h"
 #include "FLFood.h"
+#include "FLGameManager.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AFLMainCharacter::AFLMainCharacter()
@@ -37,6 +40,9 @@ AFLMainCharacter::AFLMainCharacter()
 
 	FoodPoint = CreateDefaultSubobject<USceneComponent>(TEXT("FoodPoint"));
 	FoodPoint->SetupAttachment(GetCapsuleComponent());
+
+	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFLMainCharacter::OnTouched);
+	
 }
 
 // Called when the game starts or when spawned
@@ -155,6 +161,18 @@ void AFLMainCharacter::Interact()
 void AFLMainCharacter::CarryFoodSwitch() {
 	
 	HasFood = !HasFood;
+}
+
+void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	AFLEnemy* Enemy = Cast<AFLEnemy>(OtherActor);
+
+	if(Enemy)
+	{
+		Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>())->GameLost();
+	}
+	
 }
 
 // Called to bind functionality to input

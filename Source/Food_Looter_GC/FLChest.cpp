@@ -5,6 +5,8 @@
 
 #include "FLFood.h"
 #include "FLGameManager.h"
+#include "FLHUD.h"
+#include "Food_Looter_GCGameModeBase.h"
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -38,5 +40,8 @@ void AFLChest::OnFoodDrop(UPrimitiveComponent* OverlappedComponent, AActor* Othe
 {
 	AFLFood* TempFood = Cast<AFLFood>(OtherActor);
 	GM->NbFood += TempFood->GetPts();
+
+	GM->CompareFood();
+	
 	TempFood->Destroy();
 }

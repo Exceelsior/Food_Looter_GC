@@ -15,12 +15,6 @@ class FOOD_LOOTER_GC_API AFood_Looter_GCGameModeBase : public AGameMode
 
 private:
     UPROPERTY(VisibleAnywhere)
-    bool Win;
-
-    UPROPERTY(VisibleAnywhere)
-    bool Lose;
-
-    UPROPERTY(VisibleAnywhere)
     AFLGameManager* GM;
     
     //Temp actor that will be instantiated
@@ -55,9 +49,5 @@ public:
     virtual void BeginPlay() override;
 
     UFUNCTION()
-    void CompareFood();
-
-    UFUNCTION()
-    void ManageIa(TArray<AActor*> List, float Timer);
-
+    void ManageIa(TArray<AActor*> List, float Timer);    
 };

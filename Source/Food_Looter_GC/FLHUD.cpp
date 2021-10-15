@@ -36,7 +36,7 @@ void AFLHUD::DrawHUD()
 	Super::DrawHUD();
 }
 
-void AFLHUD::UpdateFoodAmount(int32 Value) {
+void AFLHUD::UpdateFoodAmount(float Value) {
 	FoodLooterWidget->UpdateFoodAmount(Value);
 }
 

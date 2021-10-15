@@ -18,7 +18,7 @@ public:
 
 	//UFoodLooter_UWidget(const FObjectInitializer& ObjectInitializer);
 
-	void UpdateFoodAmount(int32 Value);
+	void UpdateFoodAmount(float Value);
 
 	void GameWon();
 
