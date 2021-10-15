@@ -7,59 +7,57 @@
 #include "Food_Looter_GCGameModeBase.generated.h"
 
 class AFLGameManager;
-/**
- * 
- */
+
 UCLASS()
 class FOOD_LOOTER_GC_API AFood_Looter_GCGameModeBase : public AGameMode
 {
-	GENERATED_BODY()
+    GENERATED_BODY()
 
 private:
-	UPROPERTY(VisibleAnywhere)
-	bool Win;
+    UPROPERTY(VisibleAnywhere)
+    bool Win;
 
-	UPROPERTY(VisibleAnywhere)
-	bool Lose;
+    UPROPERTY(VisibleAnywhere)
+    bool Lose;
 
-	//Temp actor that will be instantiated
-	UPROPERTY(VisibleAnywhere)
-	AActor* TempAct;
+    UPROPERTY(VisibleAnywhere)
+    AFLGameManager* GM;
+    
+    //Temp actor that will be instantiated
+    UPROPERTY(VisibleAnywhere)
+    AActor* TempAct;
 
-	//Spawn point of enemies
-	UPROPERTY(EditAnywhere)
-	AActor* PtSpawn;
+    //Spawn point of enemies
+    UPROPERTY(EditAnywhere)
+    AActor* PtSpawn;
 
-	UPROPERTY(VisibleAnywhere)
-	float SaveTimerBetweenEnemies;
+    UPROPERTY(VisibleAnywhere)
+    float SaveTimerBetweenEnemies;
 
-	UPROPERTY(VisibleAnywhere)
-	bool CanDecreaseTimer;
-	
+    UPROPERTY(VisibleAnywhere)
+    bool CanDecreaseTimer;
+
 public:
-	UPROPERTY(EditAnywhere)
-	TSubclassOf<AActor> EnemyClass;
+    UPROPERTY(EditAnywhere)
+    TSubclassOf<AActor> EnemyClass;
+    
+    UPROPERTY(EditAnywhere)
+    float Timer1Min;
 
-	UPROPERTY(EditAnywhere)
-	AFLGameManager* GM;
+    UPROPERTY(EditAnywhere)
+    float TimerBetweenEnemies;
 
-	UPROPERTY(EditAnywhere)
-	float Timer1Min;
+    //Functions
+    UFUNCTION()
+    virtual void Tick(float DeltaSeconds) override;
 
-	UPROPERTY(EditAnywhere)
-	float TimerBetweenEnemies;
-	
-	//Functions
-	UFUNCTION()
-	virtual void Tick(float DeltaSeconds) override;
+    UFUNCTION()
+    virtual void BeginPlay() override;
 
-	UFUNCTION()
-	virtual void BeginPlay() override;
+    UFUNCTION()
+    void CompareFood();
 
-	UFUNCTION()
-	void CompareFood();
+    UFUNCTION()
+    void ManageIa(TArray<AActor*> List, float Timer);
 
-	UFUNCTION()
-	void ManageIa(TArray<AActor*> List, float Timer);
-	
 };

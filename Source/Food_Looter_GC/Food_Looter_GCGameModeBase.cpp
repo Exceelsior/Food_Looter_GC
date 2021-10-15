@@ -12,6 +12,8 @@ void AFood_Looter_GCGameModeBase::BeginPlay()
 	Win = false;
 	Lose = false;
 	CanDecreaseTimer = false;
+
+	GM = Cast<AFLGameManager>(this->GetWorld()->GetGameState());
 	
 	for (int i = 0; i < 2; i++)
 	{
@@ -38,8 +40,8 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	//If an enemy is on the way to leave, timer to spawn the next one start
 	if(CanDecreaseTimer)
 		TimerBetweenEnemies -= DeltaSeconds;
-	
-	//CompareFood();
+
+	CompareFood();
 	if(Win)
 	{
 		//Do the win thing
@@ -47,7 +49,7 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	}
 	else if(Lose)
 	{
-		//Lose Thing		
+		//Lose Thing
 	}
 	else
 	{
@@ -66,7 +68,7 @@ void AFood_Looter_GCGameModeBase::CompareFood()
 void AFood_Looter_GCGameModeBase::ManageIa(TArray<AActor*> List, float Timer)
 {
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), EnemyClass, GM->NbEnemiesHere);
-	
+
 	//If no one, spawn one
 	if(List.Num() == NULL)
 	{
@@ -76,6 +78,6 @@ void AFood_Looter_GCGameModeBase::ManageIa(TArray<AActor*> List, float Timer)
 	// TODO when code of the enemy is available
 	// if(Timer <= 0)
 	// {
-	// 	Timer
+	//     Timer
 	// }
 }
