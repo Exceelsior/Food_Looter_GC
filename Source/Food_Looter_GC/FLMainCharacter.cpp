@@ -135,7 +135,8 @@ void AFLMainCharacter::Interact()
 			FoodEquiped->SetActorEnableCollision(false);
 			FoodEquiped->SetActorLocation(FoodPoint->GetComponentLocation());
 			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-			
+
+			GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
 		}
 	}
 	else
@@ -145,6 +146,8 @@ void AFLMainCharacter::Interact()
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 		FoodEquiped->SetActorEnableCollision(true);
 		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
+
+		GetCharacterMovement()->MaxWalkSpeed *= FoodEquiped->GetDivision();
 	}	
 }
 
