@@ -2,8 +2,11 @@
 
 
 #include "FLEnemy.h"
+
+#include "FLGameManager.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AFLEnemy::AFLEnemy()
@@ -17,6 +20,9 @@ AFLEnemy::AFLEnemy()
 void AFLEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+
+	GM = Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>());
+	
 	
 }
 
@@ -25,6 +31,8 @@ void AFLEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if(ArrayTarget.Num() == 0)
+		ArrayTarget = GM->GetFoodPositions();
 }
 
 // Called to bind functionality to input

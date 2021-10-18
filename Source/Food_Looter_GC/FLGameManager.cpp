@@ -3,6 +3,14 @@
 
 #include "FLGameManager.h"
 #include "FLHUD.h"
+#include "Kismet/GameplayStatics.h"
+
+void AFLGameManager::BeginPlay()
+{
+	Super::BeginPlay();
+
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATargetPoint::StaticClass(), FoodPositions);
+}
 
 void AFLGameManager::GameLost()
 {
@@ -20,6 +28,11 @@ void AFLGameManager::CompareFood()
 	{
 		GameWon();
 	}
+}
+
+TArray<AActor*> AFLGameManager::GetFoodPositions()
+{
+	return FoodPositions;
 }
 
 void AFLGameManager::GameWon()

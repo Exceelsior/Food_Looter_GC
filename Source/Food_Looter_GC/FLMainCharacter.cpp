@@ -157,12 +157,6 @@ void AFLMainCharacter::Interact()
 	}	
 }
 
-
-void AFLMainCharacter::CarryFoodSwitch() {
-	
-	HasFood = !HasFood;
-}
-
 void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
@@ -193,5 +187,4 @@ void AFLMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAction("Zoom Out", IE_Pressed, this, &AFLMainCharacter::CameraZoomOut);
 
 	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AFLMainCharacter::Interact);
-	PlayerInputComponent->BindAction("TestSwitch", IE_Pressed, this, &AFLMainCharacter::CarryFoodSwitch);
 }

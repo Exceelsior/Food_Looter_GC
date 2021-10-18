@@ -7,6 +7,7 @@
 #include "FLEnemy.h"
 #include "FLEnemyController.generated.h"
 
+class AFLGameManager;
 class UBehaviorTreeComponent;
 /**
  * 
@@ -15,16 +16,20 @@ UCLASS()
 class FOOD_LOOTER_GC_API AFLEnemyController : public AAIController
 {
 	GENERATED_BODY()
-	
+
+	UPROPERTY()
 	UBehaviorTreeComponent* BehaviorComp;
-	
+
+	UPROPERTY()
 	UBlackboardComponent* BlackboardComp;
 
 	UPROPERTY(EditDefaultsOnly, Category = "AI")
 	FName LocationToGoKey;
 
+	UPROPERTY()
 	TArray<AActor*> BotTargetPoints;
 
+	UPROPERTY()
 	AFLEnemy* AIChar;
 
 	virtual void OnPossess(APawn* Pawn) override;

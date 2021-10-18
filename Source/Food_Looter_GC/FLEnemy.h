@@ -3,6 +3,7 @@
 #pragma once
 #include "FLTargetPoint.h"
 
+class AFLGameManager;
 class UBehaviorTree;
 
 #include "CoreMinimal.h"
@@ -21,8 +22,11 @@ public:
 	UPROPERTY(EditAnywhere, Category="AI")
 	UBehaviorTree* BehaviorTree;
 
-	UPROPERTY(EditAnywhere)
-	TArray<AFLTargetPoint*> ArrayTarget;
+	UPROPERTY(VisibleAnywhere)
+	TArray<AActor*> ArrayTarget;
+
+	UPROPERTY(VisibleAnywhere)
+	AFLGameManager* GM;
 
 	UPROPERTY(EditAnywhere)
 		float WalkSpeed = 250;
@@ -41,7 +45,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	FORCEINLINE TArray<AFLTargetPoint*> GetAvailableTargetPoints() { return ArrayTarget; }
+	FORCEINLINE TArray<AActor*> GetAvailableTargetPoints() { return ArrayTarget; }
 
 	void SetChaseSpeed();
 

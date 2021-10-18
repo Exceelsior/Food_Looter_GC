@@ -3,6 +3,7 @@
 
 #include "FLEnemyController.h"
 #include "FLEnemy.h"
+#include "FLGameManager.h"
 #include "FLTargetPoint.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/BehaviorTreeComponent.h"
@@ -16,13 +17,12 @@ AFLEnemyController::AFLEnemyController()
 	BlackboardComp = CreateDefaultSubobject<UBlackboardComponent>(TEXT("BlackboardComp"));
  
 	LocationToGoKey = "LocationToGo";
- 
 }
  
 void AFLEnemyController::OnPossess(APawn* Enemy)
 {
 	Super::OnPossess(Enemy);
- 
+	
 	AIChar = Cast<AFLEnemy>(Enemy);
  
 	if (AIChar)
