@@ -40,10 +40,12 @@ void AFLHUD::UpdateFoodAmount(float Value) {
 	FoodLooterWidget->UpdateFoodAmount(Value);
 }
 
-void AFLHUD::GameWon() {
-	GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Green,TEXT("Victory !"));
+void AFLHUD::GameWon()
+{
+	FoodLooterWidget->GameWon();
 }
 
-void AFLHUD::GameLost() {
-	GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Red,TEXT("Defeat !"));
+void AFLHUD::GameLost()
+{
+	FoodLooterWidget->GameLost();
 }
