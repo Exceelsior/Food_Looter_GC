@@ -5,6 +5,7 @@
 
 #include "FLGameManager.h"
 #include "BehaviorTree/BehaviorTree.h"
+#include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -13,6 +14,9 @@ AFLEnemy::AFLEnemy()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+
+	PlayerDetectionCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Player Detection Capsule"));
+	PlayerDetectionCapsule->SetupAttachment(RootComponent);
 }
 
 // Called when the game starts or when spawned

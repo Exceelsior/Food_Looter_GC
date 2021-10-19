@@ -10,7 +10,6 @@ void UFLUWidget::UpdateFoodAmount(float Value)
 {
 	if (FoodBar)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 1.5, FColor::Red,TEXT("On devrait paseer par SetPercent !"));
 		FoodBar->SetPercent(Value);
 	}
 }

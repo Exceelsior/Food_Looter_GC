@@ -25,6 +25,9 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	TArray<AActor*> ArrayTarget;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	UCapsuleComponent* PlayerDetectionCapsule;
+	
 	UPROPERTY(VisibleAnywhere)
 	AFLGameManager* GM;
 
