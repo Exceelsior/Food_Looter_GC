@@ -38,5 +38,4 @@ TArray<AActor*> AFLGameManager::GetFoodPositions()
 void AFLGameManager::GameWon()
 {
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameWon();
-	
 }

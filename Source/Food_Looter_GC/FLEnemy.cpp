@@ -13,7 +13,8 @@ AFLEnemy::AFLEnemy()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	ArrayTarget.Empty();
+	
 }
 
 // Called when the game starts or when spawned
@@ -22,7 +23,6 @@ void AFLEnemy::BeginPlay()
 	Super::BeginPlay();
 
 	GM = Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>());
-	
 	
 }
 
