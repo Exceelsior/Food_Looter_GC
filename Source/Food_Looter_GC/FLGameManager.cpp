@@ -12,6 +12,16 @@ void AFLGameManager::BeginPlay()
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATargetPoint::StaticClass(), FoodPositions);
 }
 
+void AFLGameManager::AddEnemy()
+{
+	NbEnemyInScene++;
+}
+
+void AFLGameManager::RemoveEnemy()
+{
+	NbEnemyInScene--;
+}
+
 void AFLGameManager::GameLost()
 {
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameLost();
