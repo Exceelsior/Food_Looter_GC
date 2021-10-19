@@ -20,13 +20,20 @@ public:
 
 	//UFoodLooter_UWidget(const FObjectInitializer& ObjectInitializer);
 
+	UFUNCTION()
 	void UpdateFoodAmount(float Value);
 
+	UFUNCTION()
 	void GameWon();
 
+	UFUNCTION()
 	void GameLost();
 
+	UFUNCTION()
 	virtual void NativeConstruct() override;
+
+	UFUNCTION()
+	void PlayAgain();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UProgressBar* FoodBar;
