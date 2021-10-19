@@ -6,7 +6,9 @@
 #include "FLEnemy.h"
 #include "FLTargetPoint.h"
 #include "FLEnemyController.h"
+#include "FLGameManager.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GameFramework/GameModeBase.h"
 
 EBTNodeResult::Type UBTTargetPointSelection::ExecuteTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory)
 {
@@ -18,7 +20,7 @@ EBTNodeResult::Type UBTTargetPointSelection::ExecuteTask(UBehaviorTreeComponent 
 		UBlackboardComponent* BlackboardComp = AICon->GetBlackboardComp();
 		AFLTargetPoint* CurrentPoint = Cast<AFLTargetPoint>(BlackboardComp->GetValueAsObject("LocationToGo"));
  
-		TArray<AActor*> AvailableTargetPoints = AICon->GetAIChar()->GetAvailableTargetPoints();
+		AvailableTargetPoints = Cast<AFLGameManager>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameManager>())->GetFoodPositions();
 		
 		int32 RandomIndex;
  

@@ -15,5 +15,8 @@ class FOOD_LOOTER_GC_API UBTTargetPointSelection : public UBTTaskNode
 	GENERATED_BODY()
 
 	virtual EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
+
+	UPROPERTY()
+	TArray<AActor*> AvailableTargetPoints;
 	
 };

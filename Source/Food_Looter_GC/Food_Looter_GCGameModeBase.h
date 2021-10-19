@@ -39,7 +39,7 @@ public:
     TSubclassOf<AActor> EnemyClass;
     
     UPROPERTY(EditAnywhere)
-    float Timer1Min;
+    float Timer1Min = 60;
 
     UPROPERTY(EditAnywhere)
     float TimerBetweenEnemies;
