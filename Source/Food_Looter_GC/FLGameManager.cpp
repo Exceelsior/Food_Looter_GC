@@ -17,7 +17,7 @@ void AFLGameManager::GameLost()
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameLost();
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
 	GetWorld()->GetFirstPlayerController()->SetIgnoreLookInput(true);
-	
+	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 }
 
 void AFLGameManager::CompareFood()
@@ -38,4 +38,7 @@ TArray<AActor*> AFLGameManager::GetFoodPositions()
 void AFLGameManager::GameWon()
 {
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameWon();
+	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
+	GetWorld()->GetFirstPlayerController()->SetIgnoreLookInput(true);
+	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 }

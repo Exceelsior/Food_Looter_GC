@@ -3,6 +3,7 @@
 
 #include "FLUWidget.h"
 #include "Components/ProgressBar.h"
+#include "Kismet/GameplayStatics.h"
 
 
 void UFLUWidget::UpdateFoodAmount(float Value)
@@ -33,6 +34,13 @@ void UFLUWidget::NativeConstruct()
 	VictoryTextBlock->SetVisibility(ESlateVisibility::Hidden);
 	DefeatTextBlock->SetVisibility(ESlateVisibility::Hidden);
 	ReplayButton->SetVisibility(ESlateVisibility::Hidden);
-	
+
+	ReplayButton->OnClicked.AddDynamic(this, &UFLUWidget::UFLUWidget::PlayAgain);
+;	
+}
+
+void UFLUWidget::PlayAgain()
+{
+	UGameplayStatics::OpenLevel(this, FName(*GetWorld()->GetName()), false);
 }
  
