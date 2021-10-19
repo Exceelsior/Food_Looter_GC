@@ -22,14 +22,17 @@ private:
     AActor* TempAct;
 
     //Spawn point of enemies
-    UPROPERTY(EditAnywhere)
-    AActor* PtSpawn;
-
     UPROPERTY(VisibleAnywhere)
-    float SaveTimerBetweenEnemies;
+    AActor* SpawnPoint;
 
     UPROPERTY(VisibleAnywhere)
     bool CanDecreaseTimer;
+
+    UPROPERTY()
+    bool FirstTwoEnemySpawned = false;
+    
+    UPROPERTY()
+    bool ThirdEnemySpawned = false;
 
 public:
     UPROPERTY(EditAnywhere)
@@ -43,11 +46,17 @@ public:
 
     //Functions
     UFUNCTION()
+    void SetSpawnPoint(AActor* SpwnPt);
+    
+    UFUNCTION()
     virtual void Tick(float DeltaSeconds) override;
 
     UFUNCTION()
     virtual void BeginPlay() override;
 
     UFUNCTION()
-    void ManageIa(TArray<AActor*> List, float Timer);    
+    void ManageIa(int NbEnemy);
+
+    UFUNCTION()
+    void SpawnEnemy();
 };

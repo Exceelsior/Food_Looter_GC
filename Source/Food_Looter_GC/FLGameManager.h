@@ -17,7 +17,10 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 
 	public:
 	UPROPERTY(VisibleAnywhere)
-	TArray<AActor*> NbEnemiesHere;
+	TArray<AActor*> ListEnemies;
+
+	UPROPERTY(VisibleAnywhere)
+	int NbEnemyInScene;
 
 	UPROPERTY(EditAnywhere)
 	TArray<AActor*> FoodPositions;
@@ -29,7 +32,7 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 	int NbFoodInRoom;
 
 	UPROPERTY(EditAnywhere)
-	int NbFoodNeeded;
+	int NbFoodNeeded;	
 
 	UPROPERTY(VisibleAnywhere)
 	ULevelScriptBlueprint* LvlBP;
@@ -49,4 +52,10 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 
 	UFUNCTION()
 	virtual void BeginPlay() override;
+
+	UFUNCTION()
+	void AddEnemy();
+	
+	UFUNCTION()
+	void RemoveEnemy();
 };

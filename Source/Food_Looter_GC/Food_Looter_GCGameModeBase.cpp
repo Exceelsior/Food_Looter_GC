@@ -12,15 +12,12 @@ void AFood_Looter_GCGameModeBase::BeginPlay()
 	
 	CanDecreaseTimer = false;
 
-	GM = Cast<AFLGameManager>(this->GetWorld()->GetGameState());
-	
-	for (int i = 0; i < 2; i++)
-	{
-		//Spawn it
-		//GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
-	}
+	GM = Cast<AFLGameManager>(this->GetWorld()->GetGameState());	
+}
 
-	SaveTimerBetweenEnemies = TimerBetweenEnemies;
+void AFood_Looter_GCGameModeBase::SetSpawnPoint(AActor* SpwnPt)
+{
+	SpawnPoint = SpwnPt;
 }
 
 void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
@@ -29,36 +26,50 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 
 	Timer1Min -= DeltaSeconds;
 
-	//If the minute has passed, +1 enemy
-	if(Timer1Min <= 0)
+	if(!FirstTwoEnemySpawned)
 	{
-		Timer1Min = 2;
-		//GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
+		for (int i = 0; i < 2; i++)
+		{
+			//Spawn it
+			SpawnEnemy();			
+		}
+		FirstTwoEnemySpawned = true;
+	}
+
+	//If the minute has passed, +1 enemy
+	if(Timer1Min <= 0 && ThirdEnemySpawned == false)
+	{
+		ThirdEnemySpawned = true;
+		SpawnEnemy();
 	}
 
 	//If an enemy is on the way to leave, timer to spawn the next one start
 	if(CanDecreaseTimer)
 		TimerBetweenEnemies -= DeltaSeconds;
 	
-
-	//ManageIa(GM->NbEnemiesHere, TimerBetweenEnemies);
+	ManageIa(GM->NbEnemyInScene);
 
 }
 
-void AFood_Looter_GCGameModeBase::ManageIa(TArray<AActor*> List, float Timer)
+void AFood_Looter_GCGameModeBase::ManageIa(int NbEnemy)
 {
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), EnemyClass, GM->NbEnemiesHere);
-
 	//If no one, spawn one
-	if(List.Num() == NULL)
+	if(NbEnemy == 0)
 	{
-		TempAct = GetWorld()->SpawnActor<AActor>(EnemyClass, PtSpawn->GetActorLocation(), PtSpawn->GetActorRotation());
+		SpawnEnemy();
 	}
-
-	// TODO when code of the enemy is available
-	// if(Timer <= 0)
-	// {
-	//     Timer
-	// }
+	
+	if(TimerBetweenEnemies <= 0)
+	{
+		TimerBetweenEnemies = FMath::RandRange(0,5);
+	}
 }
+
+void AFood_Looter_GCGameModeBase::SpawnEnemy()
+{
+	AActor* SpawnedEnemy = GetWorld()->SpawnActor<AActor>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+	GM->AddEnemy();
+}
+
+
 
