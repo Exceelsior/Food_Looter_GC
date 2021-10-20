@@ -26,13 +26,16 @@ void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8*
 		APawn* PlayerPawn = PlayerController->GetPawn();
 
 		FVector AIForwardVector = AIPawn->GetActorForwardVector();
+		FVector PlayerDirection = (PlayerPawn->GetActorLocation() - AIPawn->GetActorLocation()).GetSafeNormal();
 		
-		if(PlayerIsInFieldOfView(PlayerPawn->GetActorLocation(), AIPawn->GetActorLocation(), AIForwardVector)
-		   && PlayerIsInRange(AIForwardVector, AIPawn->GetActorLocation(), 1000, AIPawn))
+		if(PlayerIsInFieldOfView(PlayerDirection, AIForwardVector))
 		{
-			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
-			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
-			AIPawn->SetChaseSpeed();
+			if(PlayerIsInRange(PlayerDirection, AIPawn->GetActorLocation()+ FVector (0,0,50), 1000, AIPawn))
+			{
+				AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
+				AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
+				AIPawn->SetChaseSpeed();
+			}
 		}
 		else
 		{
@@ -43,29 +46,28 @@ void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8*
 	}
 }
 
-bool UBTDetectPlayer::PlayerIsInFieldOfView(FVector PlayerPosition, FVector AIPosition, FVector AIForwardVector)
-{
-	
-	FVector PlayerDirection = ( PlayerPosition - AIPosition).GetSafeNormal();
+bool UBTDetectPlayer::PlayerIsInFieldOfView(FVector PlayerDirection, FVector AIForwardVector)
+{		
 	float Dot = FVector::DotProduct(AIForwardVector, PlayerDirection);
-	float PlayerAngle = UKismetMathLibrary::DegAcos(Dot);
+	float PlayerAngle = FMath::RadiansToDegrees(FMath::Acos(Dot));
 
-	if (PlayerAngle <= 135)
+	if (PlayerAngle < 67.5f)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("%f"),PlayerAngle);
 		return true;
 	}
-	else return false;
+	return false;
 }
 
 
-bool UBTDetectPlayer::PlayerIsInRange(FVector ForwardVector, FVector StartTrace, float MaxDistance, AActor* IgnoreActor)
+bool UBTDetectPlayer::PlayerIsInRange(FVector PlayerDirection, FVector StartTrace, float MaxDistance, AActor* IgnoreActor)
 {
 	FHitResult* HitResult = new FHitResult();
-	FVector EndTrace = StartTrace + (ForwardVector * MaxDistance);
+	FVector EndTrace = StartTrace + (PlayerDirection * MaxDistance);
 	FCollisionQueryParams* TraceParams = new FCollisionQueryParams();
 	TraceParams->AddIgnoredActor(IgnoreActor);
 
-	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, true, -1, 0, 10);
+	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, false, 5, 0, 10);
     
 	if (GetWorld()->LineTraceSingleByChannel(*HitResult, StartTrace, EndTrace, ECollisionChannel::ECC_WorldStatic, *TraceParams))
 	{        

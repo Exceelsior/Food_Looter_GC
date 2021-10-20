@@ -19,7 +19,7 @@ protected:
 
 		virtual void ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory) override;
 	
-	bool PlayerIsInFieldOfView(FVector PlayerPosition, FVector AIPosition, FVector AIForwardVector);
+	bool PlayerIsInFieldOfView(FVector PlayerDirection, FVector AIForwardVector);
 	
-	bool PlayerIsInRange(FVector ForwardVector, FVector StartTrace, float MaxDistance, AActor* IgnoreActor);
+	bool PlayerIsInRange(FVector PlayerDirection, FVector StartTrace, float MaxDistance, AActor* IgnoreActor);
 };
