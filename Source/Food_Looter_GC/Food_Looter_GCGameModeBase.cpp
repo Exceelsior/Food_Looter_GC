@@ -4,6 +4,7 @@
 #include "Food_Looter_GCGameModeBase.h"
 
 #include "FLEnemy.h"
+#include "FLFood.h"
 #include "FLGameManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLTargetPoint.h"
@@ -70,14 +71,17 @@ void AFood_Looter_GCGameModeBase::ManageIa(int NbEnemy)
 
 void AFood_Looter_GCGameModeBase::SpawnEnemy()
 {
-	AActor* SpawnedEnemy = GetWorld()->SpawnActor<AActor>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+	AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
 
 	if(CheckPoints())
 	{
-		Cast<AFLEnemy>(SpawnedEnemy)->HasFood = true;
-		GetWorld()->SpawnActor<AActor>(FoodClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+		AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
+		SpawnedEnemy->HasFood = true;
+
+		TempFood->GetMesh()->SetSimulatePhysics(false);
+		TempFood->SetActorEnableCollision(false);
+		TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 	}
-	
 	
 	GM->AddEnemy();
 }
