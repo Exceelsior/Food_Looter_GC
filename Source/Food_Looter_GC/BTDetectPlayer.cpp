@@ -7,7 +7,6 @@
 #include "FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Math/Vector.h"
-#include "Kismet/KismetMathLibrary.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLEnemy.h"
 
@@ -33,6 +32,7 @@ void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8*
 			if(PlayerIsInRange(PlayerDirection, AIPawn->GetActorLocation()+ FVector (0,0,50), 1000, AIPawn))
 			{
 				AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
+				AIController->GetBlackboardComp()->SetValueAsInt("HasLostPlayer", 1);
 				AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
 				AIPawn->SetChaseSpeed();
 			}

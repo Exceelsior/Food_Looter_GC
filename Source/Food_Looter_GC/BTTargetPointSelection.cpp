@@ -25,13 +25,14 @@ EBTNodeResult::Type UBTTargetPointSelection::ExecuteTask(UBehaviorTreeComponent 
 		int32 RandomIndex;
  
 		AFLTargetPoint* NextTargetPoint = nullptr;
- 
+		
 		do
 		{
 			RandomIndex = FMath::RandRange(0, AvailableTargetPoints.Num()-1);
 			NextTargetPoint = Cast<AFLTargetPoint>(AvailableTargetPoints[RandomIndex]);
 			
-		} while (CurrentPoint == NextTargetPoint);
+			
+		} while (CurrentPoint == NextTargetPoint && !NextTargetPoint->GetIsFull());
  
 		BlackboardComp->SetValueAsObject("LocationToGo", NextTargetPoint);
  
