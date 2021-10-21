@@ -8,6 +8,7 @@
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
+#include "FLFood.h"
 
 // Sets default values
 AFLEnemy::AFLEnemy()
@@ -15,8 +16,9 @@ AFLEnemy::AFLEnemy()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	PlayerDetectionCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Player Detection Capsule"));
-	PlayerDetectionCapsule->SetupAttachment(RootComponent);
+	DetectionCapsule = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Player Detection Capsule"));
+	DetectionCapsule->SetupAttachment(RootComponent);
+	DetectionCapsule->OnComponentBeginOverlap.AddDynamic(this, &AFLEnemy::ObjectInRange);
 }
 
 // Called when the game starts or when spawned
@@ -60,4 +62,46 @@ void AFLEnemy::SetChaseSpeed()
 void AFLEnemy::ResetChaseSpeed()
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
+}
+
+void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	AFLTargetPoint* TargetPoint = Cast<AFLTargetPoint>(OtherActor);
+	
+	AFLFood* Food = Cast<AFLFood>(OtherActor);
+	
+	if(TargetPoint != nullptr && HasFood && !TargetPoint->GetIsFull())
+	{
+		DropFoodOnPoint(TargetPoint);
+	}
+	else if(Food != nullptr && !HasFood && Food == FoodEquiped)
+	{
+		PickUpFood(Food);
+	}
+		
+}
+
+void AFLEnemy::SetFood(AFLFood* Food)
+{
+	FoodEquiped = Food;
+}
+
+void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
+{
+	HasFood = false;
+	FoodEquiped->GetMesh()->SetSimulatePhysics(true);
+	FoodEquiped->SetActorEnableCollision(true);
+	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
+	FoodEquiped = nullptr;
+	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
+}
+
+void AFLEnemy::PickUpFood(AFLFood* Food)
+{
+	HasFood = true;
+
+	Food->GetMesh()->SetSimulatePhysics(false);
+	Food->SetActorEnableCollision(false);
+	Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+	FoodEquiped = Food;
 }

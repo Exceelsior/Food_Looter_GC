@@ -3,6 +3,12 @@
 
 #include "FLTargetPoint.h"
 
+AFLTargetPoint::AFLTargetPoint()
+{
+	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereCollider"));
+	SphereComponent->SetupAttachment(RootComponent);
+}
+
 bool AFLTargetPoint::GetIsFull()
 {
 	return IsFull;

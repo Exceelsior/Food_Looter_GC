@@ -81,6 +81,7 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 		TempFood->GetMesh()->SetSimulatePhysics(false);
 		TempFood->SetActorEnableCollision(false);
 		TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+		SpawnedEnemy->SetFood(TempFood);
 	}
 	
 	GM->AddEnemy();

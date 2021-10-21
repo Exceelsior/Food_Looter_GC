@@ -26,10 +26,13 @@ public:
 	TArray<AActor*> ArrayTarget;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	UCapsuleComponent* PlayerDetectionCapsule;
+	UCapsuleComponent* DetectionCapsule;
 	
 	UPROPERTY(VisibleAnywhere)
 	AFLGameManager* GM;
+
+	UPROPERTY(VisibleAnywhere)
+	class AFLFood* FoodEquiped;
 
 	UPROPERTY(EditAnywhere)
 		float WalkSpeed = 250;
@@ -39,6 +42,15 @@ public:
 
 	UPROPERTY(VisibleAnywhere)
 	bool HasFood = false;
+
+	UFUNCTION()
+	void ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
+
+	UFUNCTION()
+	void DropFoodOnPoint(AFLTargetPoint* TargetPoint);
+
+	UFUNCTION()
+	void PickUpFood(AFLFood* Food);
 
 protected:
 	// Called when the game starts or when spawned
@@ -56,5 +68,7 @@ public:
 	void SetChaseSpeed();
 
 	void ResetChaseSpeed();
+
+	void SetFood(AFLFood* Food);
 
 };
