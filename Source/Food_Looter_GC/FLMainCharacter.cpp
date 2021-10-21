@@ -38,9 +38,6 @@ AFLMainCharacter::AFLMainCharacter()
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraMain"));
 	CameraComponent->SetupAttachment(ArmComponent, USpringArmComponent::SocketName);
 
-	FoodPoint = CreateDefaultSubobject<USceneComponent>(TEXT("FoodPoint"));
-	FoodPoint->SetupAttachment(GetCapsuleComponent());
-
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFLMainCharacter::OnTouched);
 	
 }
@@ -139,7 +136,6 @@ void AFLMainCharacter::Interact()
 			//Set position of FoodEquiped
 			FoodEquiped->GetMesh()->SetSimulatePhysics(false);
 			FoodEquiped->SetActorEnableCollision(false);
-			FoodEquiped->SetActorLocation(FoodPoint->GetComponentLocation());
 			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 
 			GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
