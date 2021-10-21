@@ -75,7 +75,7 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 
 	if(CheckPoints())
 	{
-		AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+		AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
 		SpawnedEnemy->HasFood = true;
 
 		TempFood->GetMesh()->SetSimulatePhysics(false);
