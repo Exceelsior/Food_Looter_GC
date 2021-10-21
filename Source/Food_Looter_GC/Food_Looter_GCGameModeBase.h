@@ -21,10 +21,6 @@ private:
     UPROPERTY(VisibleAnywhere)
     AActor* TempAct;
 
-    //Spawn point of enemies
-    UPROPERTY(VisibleAnywhere)
-    AActor* SpawnPoint;
-
     UPROPERTY(VisibleAnywhere)
     bool CanDecreaseTimer;
 
@@ -35,6 +31,10 @@ private:
     bool ThirdEnemySpawned = false;
 
 public:
+    //Spawn point of enemies
+    UPROPERTY(VisibleAnywhere)
+    AActor* SpawnPoint;
+    
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> EnemyClass;
 

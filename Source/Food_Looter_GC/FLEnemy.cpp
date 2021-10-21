@@ -3,12 +3,15 @@
 
 #include "FLEnemy.h"
 
+#include "FLEnemyController.h"
 #include "FLGameManager.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLFood.h"
+#include "Food_Looter_GCGameModeBase.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 // Sets default values
 AFLEnemy::AFLEnemy()
@@ -28,7 +31,7 @@ void AFLEnemy::BeginPlay()
 
 	ArrayTarget.Empty();	
 	GM = Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>());
-
+	EnemyController = Cast<AFLEnemyController>(GetController());
 }
 
 // Called every frame
@@ -86,14 +89,27 @@ void AFLEnemy::SetFood(AFLFood* Food)
 	FoodEquiped = Food;
 }
 
+void AFLEnemy::UpdateHasFoodInBlackBoard()
+{
+	if(HasFood)
+		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 1);
+	else
+		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 0);
+}
+
 void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 {
 	HasFood = false;
-	FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 	FoodEquiped->SetActorEnableCollision(true);
 	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
-	FoodEquiped = nullptr;
 	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
+	FoodEquiped = nullptr;
+	TargetPoint->SetIsFull(true);
+	//TO DO : inform the gamemode that the foodpoint is full
+	//The gamemode has to inform the AI's Behavior Tree !
+	
+	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->SpawnPoint);
+	UpdateHasFoodInBlackBoard();
 }
 
 void AFLEnemy::PickUpFood(AFLFood* Food)
@@ -104,4 +120,5 @@ void AFLEnemy::PickUpFood(AFLFood* Food)
 	Food->SetActorEnableCollision(false);
 	Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 	FoodEquiped = Food;
+	UpdateHasFoodInBlackBoard();
 }
