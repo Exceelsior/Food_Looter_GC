@@ -3,3 +3,12 @@
 
 #include "FLTargetPoint.h"
 
+bool AFLTargetPoint::GetIsFull()
+{
+	return IsFull;
+}
+
+void AFLTargetPoint::SetIsFull(bool b)
+{
+	IsFull = b;
+}
