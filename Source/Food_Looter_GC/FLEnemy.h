@@ -37,6 +37,9 @@ public:
 	UPROPERTY(EditAnywhere)
 		float ChaseSpeed = 500;
 
+	UPROPERTY(VisibleAnywhere)
+	bool HasFood = false;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

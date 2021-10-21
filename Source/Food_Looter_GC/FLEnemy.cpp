@@ -36,6 +36,7 @@ void AFLEnemy::Tick(float DeltaTime)
 
 	if(ArrayTarget.Num() == 0)
 		ArrayTarget = GM->GetFoodPositions();
+	
 }
 
 // Called to bind functionality to input

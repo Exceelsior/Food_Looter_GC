@@ -2,8 +2,11 @@
 
 
 #include "Food_Looter_GCGameModeBase.h"
+
+#include "FLEnemy.h"
 #include "FLGameManager.h"
 #include "Kismet/GameplayStatics.h"
+#include "FLTargetPoint.h"
 #include "FLHUD.h"
 
 void AFood_Looter_GCGameModeBase::BeginPlay()
@@ -68,7 +71,28 @@ void AFood_Looter_GCGameModeBase::ManageIa(int NbEnemy)
 void AFood_Looter_GCGameModeBase::SpawnEnemy()
 {
 	AActor* SpawnedEnemy = GetWorld()->SpawnActor<AActor>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+
+	if(CheckPoints())
+	{
+		Cast<AFLEnemy>(SpawnedEnemy)->HasFood = true;
+		GetWorld()->SpawnActor<AActor>(FoodClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+	}
+	
+	
 	GM->AddEnemy();
+}
+
+bool AFood_Looter_GCGameModeBase::CheckPoints()
+{
+	bool CanHaveFood = false;
+	
+	for(int i = 0; i < GM->FoodPositions.Num(); i++)
+	{
+		if(!Cast<AFLTargetPoint>(GM->FoodPositions[i])->GetIsFull())
+			CanHaveFood = true;
+	}
+
+	return CanHaveFood;
 }
 
 

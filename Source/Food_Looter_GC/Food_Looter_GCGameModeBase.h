@@ -37,6 +37,9 @@ private:
 public:
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> EnemyClass;
+
+    UPROPERTY(EditAnywhere)
+    TSubclassOf<AActor> FoodClass;
     
     UPROPERTY(EditAnywhere)
     float Timer1Min = 60;
@@ -59,4 +62,7 @@ public:
 
     UFUNCTION()
     void SpawnEnemy();
+
+    UFUNCTION()
+    bool CheckPoints();
 };
