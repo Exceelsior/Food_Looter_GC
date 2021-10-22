@@ -4,21 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
-<<<<<<< Updated upstream
-#include "BTTargetPointSelection.generated.h"
-=======
 #include "BTTaskTargetPointSelection.generated.h"
->>>>>>> Stashed changes
 
 /**
  * 
  */
 UCLASS()
-<<<<<<< Updated upstream
-class FOOD_LOOTER_GC_API UBTTargetPointSelection : public UBTTaskNode
-=======
 class FOOD_LOOTER_GC_API UBTTaskTargetPointSelection : public UBTTaskNode
->>>>>>> Stashed changes
 {
 	GENERATED_BODY()
 

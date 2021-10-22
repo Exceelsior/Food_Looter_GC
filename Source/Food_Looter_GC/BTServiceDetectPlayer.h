@@ -5,21 +5,13 @@
 #include "CoreMinimal.h"
 #include "FLEnemyController.h"
 #include "BehaviorTree/BTService.h"
-<<<<<<< Updated upstream
-#include "BTDetectPlayer.generated.h"
-=======
 #include "BTServiceDetectPlayer.generated.h"
->>>>>>> Stashed changes
 
 /**
  * 
  */
 UCLASS()
-<<<<<<< Updated upstream
-class FOOD_LOOTER_GC_API UBTDetectPlayer : public UBTService
-=======
 class FOOD_LOOTER_GC_API UBTServiceDetectPlayer : public UBTService
->>>>>>> Stashed changes
 {
 	GENERATED_BODY()
 

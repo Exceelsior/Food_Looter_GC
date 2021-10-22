@@ -45,16 +45,13 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	bool HasFood = false;
 
-<<<<<<< Updated upstream
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool HasLost;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool HasWon;
-=======
 	UPROPERTY(VisibleAnywhere)
 	float TrackTimer;
->>>>>>> Stashed changes
 
 	UFUNCTION()
 	void ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
@@ -89,7 +86,6 @@ public:
 
 	void UpdateHasFoodInBlackBoard();
 
-<<<<<<< Updated upstream
 	bool CheckIfHasWon() { return HasWon; }
 
 	bool CheckIfHasLost() { return HasLost; }
@@ -97,8 +93,6 @@ public:
 	void SetHasWon(bool Value) { HasWon = Value; }
 
 	void SetHasLost(bool Value) { HasLost = Value; }
-=======
+	
 	void ResetTrackTimer();
-
->>>>>>> Stashed changes
 };
