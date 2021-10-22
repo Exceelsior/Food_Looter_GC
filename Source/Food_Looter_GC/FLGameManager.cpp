@@ -13,6 +13,7 @@ void AFLGameManager::BeginPlay()
 	Super::BeginPlay();
 
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATargetPoint::StaticClass(), FoodPositions);
+	
 }
 
 void AFLGameManager::AddEnemy(AFLEnemy* Enemy)

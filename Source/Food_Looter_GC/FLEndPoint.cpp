@@ -44,7 +44,7 @@ void AFLEndPoint::OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 	if(Enemy)
 	{
 		GetWorld()->GetAuthGameMode()->GetGameState<AFLGameManager>()->RemoveEnemy(Enemy);
-		Destroy(Enemy);	
+		Enemy->Destroy();
 	}
 }
 
