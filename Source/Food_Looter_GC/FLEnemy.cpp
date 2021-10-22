@@ -42,10 +42,16 @@ void AFLEnemy::Tick(float DeltaTime)
 	if(ArrayTarget.Num() == 0)
 		ArrayTarget = GM->GetFoodPositions();
 
-	if(TrackTimer > 0)
+	if(TrackTimer > 0 && IsTrackingPlayer)
 	{
-		TrackTimer -= DeltaTime;
+		TrackTimer -= DeltaTime;		
 		EnemyController->GetBlackboardComp()->SetValueAsFloat("TrackTimer", TrackTimer);
+	}
+	else if (TrackTimer <= 0 && IsTrackingPlayer)
+	{
+		EnemyController->GetBlackboardComp()->SetValueAsFloat("TrackTimer", TrackTimer);
+		EnemyController->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer", 0);
+		IsTrackingPlayer = false;
 	}
 }
 
@@ -105,6 +111,7 @@ void AFLEnemy::UpdateHasFoodInBlackBoard()
 void AFLEnemy::ResetTrackTimer()
 {
 	TrackTimer = 3;
+	IsTrackingPlayer = true;
 }
 
 void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
@@ -118,7 +125,7 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	//TO DO : inform the gamemode that the foodpoint is full
 	//The gamemode has to inform the AI's Behavior Tree !
 	
-	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
+	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->SpawnPoint);
 	UpdateHasFoodInBlackBoard();
 }
 

@@ -16,32 +16,32 @@ void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp,
 	
 	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
 
-	AFLEnemyController* AIController = Cast<AFLEnemyController>(OwnerComp.GetAIOwner());
+	AFLEnemyController* EnemyController = Cast<AFLEnemyController>(OwnerComp.GetAIOwner());
 	
-	if (PlayerController != nullptr && AIController != nullptr)
+	if (PlayerController != nullptr && EnemyController != nullptr)
 	{
-		AFLEnemy* AIPawn = Cast<AFLEnemy>(AIController->GetPawn());
+		AFLEnemy* EnemyPawn = Cast<AFLEnemy>(EnemyController->GetPawn());
 		APawn* PlayerPawn = PlayerController->GetPawn();
 
-		FVector AIForwardVector = AIPawn->GetActorForwardVector();
-		FVector PlayerDirection = (PlayerPawn->GetActorLocation() - AIPawn->GetActorLocation()).GetSafeNormal();
+		FVector AIForwardVector = EnemyPawn->GetActorForwardVector();
+		FVector PlayerDirection = (PlayerPawn->GetActorLocation() - EnemyPawn->GetActorLocation()).GetSafeNormal();
 		
 		
 		if(PlayerIsInFieldOfView(PlayerDirection, AIForwardVector)
-			&& PlayerIsInRange(PlayerDirection, AIPawn->GetActorLocation()+ FVector (0,0,50), 1000, AIPawn))
+			&& PlayerIsInRange(PlayerDirection, EnemyPawn->GetActorLocation()+ FVector (0,0,50), 1000, EnemyPawn))
 		{			
-			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
-			AIController->GetBlackboardComp()->SetValueAsInt("HasLostPlayer", 1);
-			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
-			AIController->GetBlackboardComp()->SetValueAsVector("LastPlayerPosition", PlayerPawn->GetActorLocation());
-			AIController->GetBlackboardComp()->SetValueAsVector("PlayerDirection", PlayerPawn->GetActorForwardVector());
-			AIPawn->SetChaseSpeed();	
+			EnemyController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
+			EnemyController->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer",1);
+			EnemyController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
+			EnemyController->GetBlackboardComp()->SetValueAsVector("LastPlayerPosition", PlayerPawn->GetActorLocation());
+			EnemyPawn->PlayerDirection = PlayerPawn->GetActorForwardVector();
+			EnemyPawn->SetChaseSpeed();
 		}
 		else
 		{
-			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 0);
-			AIPawn->ResetChaseSpeed();
-			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", nullptr);
+			EnemyController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 0);
+			EnemyPawn->ResetChaseSpeed();
+			EnemyController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", nullptr);
 		}
 	}
 }

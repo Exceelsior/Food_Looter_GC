@@ -50,8 +50,14 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool HasWon;
+	
 	UPROPERTY(VisibleAnywhere)
 	float TrackTimer;
+
+	bool HasSeenPlayer = false;
+	bool IsTrackingPlayer = false;
+
+	FVector PlayerDirection;
 
 	UFUNCTION()
 	void ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
