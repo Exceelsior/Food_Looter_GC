@@ -19,11 +19,6 @@ void AFood_Looter_GCGameModeBase::BeginPlay()
 	GM = Cast<AFLGameManager>(this->GetWorld()->GetGameState());	
 }
 
-void AFood_Looter_GCGameModeBase::SetSpawnPoint(AActor* SpwnPt)
-{
-	SpawnPoint = SpwnPt;
-}
-
 void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 {
 	Super::Tick(DeltaSeconds);

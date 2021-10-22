@@ -34,6 +34,9 @@ public:
     //Spawn point of enemies
     UPROPERTY(VisibleAnywhere)
     AActor* SpawnPoint;
+
+    UPROPERTY(VisibleAnywhere)
+    AActor* EndPoint;
     
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> EnemyClass;
@@ -47,10 +50,7 @@ public:
     UPROPERTY(EditAnywhere)
     float TimerBetweenEnemies;
 
-    //Functions
-    UFUNCTION()
-    void SetSpawnPoint(AActor* SpwnPt);
-    
+    //Functions    
     UFUNCTION()
     virtual void Tick(float DeltaSeconds) override;
 
