@@ -2,7 +2,7 @@
 
 
 #include "FLEnemy.h"
-
+#include "BehaviorTree/BlackboardComponent.h"
 #include "FLEnemyController.h"
 #include "FLGameManager.h"
 #include "BehaviorTree/BehaviorTree.h"
@@ -41,7 +41,12 @@ void AFLEnemy::Tick(float DeltaTime)
 
 	if(ArrayTarget.Num() == 0)
 		ArrayTarget = GM->GetFoodPositions();
-	
+
+	if(TrackTimer > 0)
+	{
+		TrackTimer -= DeltaTime;
+		EnemyController->GetBlackboardComp()->SetValueAsFloat("TrackTimer", TrackTimer);
+	}
 }
 
 // Called to bind functionality to input
@@ -95,6 +100,11 @@ void AFLEnemy::UpdateHasFoodInBlackBoard()
 		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 1);
 	else
 		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 0);
+}
+
+void AFLEnemy::ResetTrackTimer()
+{
+	TrackTimer = 3;
 }
 
 void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)

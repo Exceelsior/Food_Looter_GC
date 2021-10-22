@@ -27,7 +27,7 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 
 	if(!FirstTwoEnemySpawned)
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 1; i++)
 		{
 			//Spawn it
 			SpawnEnemy();			
@@ -36,11 +36,11 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	}
 
 	//If the minute has passed, +1 enemy
-	if(Timer1Min <= 0 && ThirdEnemySpawned == false)
+	/*if(Timer1Min <= 0 && ThirdEnemySpawned == false)
 	{
 		ThirdEnemySpawned = true;
 		SpawnEnemy();
-	}
+	}*/
 
 	//If an enemy is on the way to leave, timer to spawn the next one start
 	if(CanDecreaseTimer)
