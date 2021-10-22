@@ -37,4 +37,10 @@ class FOOD_LOOTER_GC_API UFLPlayerAnimInstance : public UAnimInstance
 	UPROPERTY(EditAnywhere, Category = "Movement")
 	class AFLMainCharacter* Player;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
+	bool HasWon;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
+	bool HasLost;
+
 };

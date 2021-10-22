@@ -56,6 +56,12 @@ protected:
 	
 	UPROPERTY()
 	UWorld* CurrentWorld;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool HasLost;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool HasWon;
 	
 	//Functions
 	UFUNCTION()
@@ -82,6 +88,8 @@ protected:
 	UFUNCTION()
 	void OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
 
+	
+	
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
@@ -91,4 +99,12 @@ public:
 
 	bool CheckIfCarryingFood() { return HasFood; };
 
+	bool CheckIfHasWon() { return HasWon; }
+
+	bool CheckIfHasLost() { return HasLost; }
+
+	void SetHasWon(bool Value) { HasWon = Value; }
+
+	void SetHasLost(bool Value) { HasLost = Value; }
+	
 };

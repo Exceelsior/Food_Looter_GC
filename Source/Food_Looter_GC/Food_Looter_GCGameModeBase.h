@@ -64,5 +64,5 @@ public:
     void SpawnEnemy();
 
     UFUNCTION()
-    bool CheckPoints();
+    bool CheckFoodInRoom();
 };

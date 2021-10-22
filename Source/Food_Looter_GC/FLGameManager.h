@@ -3,9 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
 #include "Engine/TargetPoint.h"
 #include "GameFramework/GameStateBase.h"
 #include "FLGameManager.generated.h"
+
+class AFLEnemy;
 
 /**
  * 
@@ -17,10 +20,7 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 
 	public:
 	UPROPERTY(VisibleAnywhere)
-	TArray<AActor*> ListEnemies;
-
-	UPROPERTY(VisibleAnywhere)
-	int NbEnemyInScene;
+	TArray<AFLEnemy*> ListEnemies;
 
 	UPROPERTY(EditAnywhere)
 	TArray<AActor*> FoodPositions;
@@ -54,8 +54,8 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 	virtual void BeginPlay() override;
 
 	UFUNCTION()
-	void AddEnemy();
+	void AddEnemy(AFLEnemy* Enemy);
 	
 	UFUNCTION()
-	void RemoveEnemy();
+	void RemoveEnemy(AFLEnemy* Enemy);
 };

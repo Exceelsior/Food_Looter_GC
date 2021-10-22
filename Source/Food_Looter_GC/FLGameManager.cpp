@@ -2,7 +2,10 @@
 
 
 #include "FLGameManager.h"
+
+#include "FLEnemy.h"
 #include "FLHUD.h"
+#include "FLMainCharacter.h"
 #include "Kismet/GameplayStatics.h"
 
 void AFLGameManager::BeginPlay()
@@ -12,14 +15,14 @@ void AFLGameManager::BeginPlay()
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ATargetPoint::StaticClass(), FoodPositions);
 }
 
-void AFLGameManager::AddEnemy()
+void AFLGameManager::AddEnemy(AFLEnemy* Enemy)
 {
-	NbEnemyInScene++;
+	ListEnemies.Add(Enemy);
 }
 
-void AFLGameManager::RemoveEnemy()
+void AFLGameManager::RemoveEnemy(AFLEnemy* Enemy)
 {
-	NbEnemyInScene--;
+	ListEnemies.Remove(Enemy);
 }
 
 void AFLGameManager::GameLost()
@@ -28,6 +31,12 @@ void AFLGameManager::GameLost()
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
 	GetWorld()->GetFirstPlayerController()->SetIgnoreLookInput(true);
 	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
+	
+	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasLost(true);
+	for(AFLEnemy* Enemy : ListEnemies)
+	{
+		Enemy->SetHasWon(true);
+	}
 }
 
 void AFLGameManager::CompareFood()
@@ -51,4 +60,10 @@ void AFLGameManager::GameWon()
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
 	GetWorld()->GetFirstPlayerController()->SetIgnoreLookInput(true);
 	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
+	
+	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasWon(true);
+	for(AFLEnemy* Enemy : ListEnemies)
+	{
+		Enemy->SetHasLost(true);
+	}
 }

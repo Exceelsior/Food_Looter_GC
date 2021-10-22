@@ -3,20 +3,24 @@
 
 #include "FLEnemyAnimInstance.h"
 
+#include "FLEnemy.h"
+
 void UFLEnemyAnimInstance::NativeInitializeAnimation()
 {
 	Super::NativeInitializeAnimation();
 
-	Pawn = TryGetPawnOwner();
+	Enemy = Cast<AFLEnemy>(TryGetPawnOwner());
 }
 
 void UFLEnemyAnimInstance::UpdateAnimationProperties()
 {
-	if (Pawn != nullptr)
+	if (Enemy != nullptr)
 	{
-		FVector PawnVelocity = Pawn->GetVelocity();
+		FVector PawnVelocity = Enemy->GetVelocity();
 		FVector LateralSpeed = FVector(PawnVelocity.X, PawnVelocity.Y, 0);
 		MovementSpeed = LateralSpeed.Size();
+		HasLost = Enemy->CheckIfHasLost();
+		HasWon = Enemy->CheckIfHasWon();
 	}
 }
 

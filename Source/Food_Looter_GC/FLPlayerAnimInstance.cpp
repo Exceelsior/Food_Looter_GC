@@ -19,6 +19,8 @@ void UFLPlayerAnimInstance::UpdateAnimationProperties()
 		FVector LateralSpeed = FVector(PawnVelocity.X, PawnVelocity.Y, 0);
 		MovementSpeed = LateralSpeed.Size();
 		IsCarryingFood = Player->CheckIfCarryingFood();
+		HasLost = Player->CheckIfHasLost();
+		HasWon = Player->CheckIfHasWon();
 	}
 }
 

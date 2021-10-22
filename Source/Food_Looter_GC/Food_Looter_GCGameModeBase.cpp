@@ -51,7 +51,7 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	if(CanDecreaseTimer)
 		TimerBetweenEnemies -= DeltaSeconds;
 	
-	ManageIa(GM->NbEnemyInScene);
+	ManageIa(GM->ListEnemies.Num());
 
 }
 
@@ -73,7 +73,7 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 {
 	AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
 
-	if(CheckPoints())
+	if(CheckFoodInRoom())
 	{
 		AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
 		SpawnedEnemy->HasFood = true;
@@ -83,20 +83,19 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 		TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 		SpawnedEnemy->SetFood(TempFood);
 		SpawnedEnemy->UpdateHasFoodInBlackBoard();
+
+		GM->NbFoodInRoom += 1;
 	}
 	
-	GM->AddEnemy();
+	GM->AddEnemy(SpawnedEnemy);
 }
 
-bool AFood_Looter_GCGameModeBase::CheckPoints()
+bool AFood_Looter_GCGameModeBase::CheckFoodInRoom()
 {
 	bool CanHaveFood = false;
 	
-	for(int i = 0; i < GM->FoodPositions.Num(); i++)
-	{
-		if(!Cast<AFLTargetPoint>(GM->FoodPositions[i])->GetIsFull())
-			CanHaveFood = true;
-	}
+	if(GM->NbFoodInRoom < 5)
+		CanHaveFood = true;
 
 	return CanHaveFood;
 }
