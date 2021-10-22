@@ -19,7 +19,7 @@ void AFLSpawnPoint::BeginPlay()
 	Super::BeginPlay();
 
 	GameMode = Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode());
-	GameMode->EndPoint = this;
+	GameMode->SpawnPoint = this;
 }
 
 // Called every frame

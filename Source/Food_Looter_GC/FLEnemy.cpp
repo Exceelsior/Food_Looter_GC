@@ -108,7 +108,7 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	//TO DO : inform the gamemode that the foodpoint is full
 	//The gamemode has to inform the AI's Behavior Tree !
 	
-	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->SpawnPoint);
+	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
 	UpdateHasFoodInBlackBoard();
 }
 
