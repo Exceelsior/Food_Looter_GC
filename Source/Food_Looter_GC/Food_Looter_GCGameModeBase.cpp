@@ -36,53 +36,73 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 	}
 
 	//If the minute has passed, +1 enemy
-	/*if(Timer1Min <= 0 && ThirdEnemySpawned == false)
+	if(Timer1Min <= 0)
 	{
 		ThirdEnemySpawned = true;
-		SpawnEnemy();
-	}*/
+	}
 
 	//If an enemy is on the way to leave, timer to spawn the next one start
 	if(CanDecreaseTimer)
 		TimerBetweenEnemies -= DeltaSeconds;
 	
-	ManageIa(GM->ListEnemies.Num());
+	ManageIa(GM->ListEnemies.Num(), DeltaSeconds);
 
 }
 
-void AFood_Looter_GCGameModeBase::ManageIa(int NbEnemy)
+void AFood_Looter_GCGameModeBase::ManageIa(int NbEnemy, float DeltaSec)
 {
+	
+
 	//If no one, spawn one
 	if(NbEnemy == 0)
 	{
 		SpawnEnemy();
 	}
-	
-	if(TimerBetweenEnemies <= 0)
+
+	//Dependeing on the time in game, NumberMax is 2 or 3
+	if(!ThirdEnemySpawned)
+		NbEnemyMax = 2;
+	else
 	{
-		TimerBetweenEnemies = FMath::RandRange(0,5);
+		NbEnemyMax = 3;		
+		SpawnEnemy();
+	}
+
+	//Spawn to have always maximum enemies on scene
+	if(NbEnemy > 0 && NbEnemy < NbEnemyMax)
+	{
+		TimerBetweenEnemies -= DeltaSec;
+
+		if(TimerBetweenEnemies <= 0)
+		{
+			SpawnEnemy();
+			TimerBetweenEnemies = FMath::RandRange(0,5);
+		}
 	}
 }
 
 void AFood_Looter_GCGameModeBase::SpawnEnemy()
 {
-	AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
-
-	if(CheckFoodInRoom())
+	if(GM->ListEnemies.Num() < NbEnemyMax)
 	{
-		AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
-		SpawnedEnemy->HasFood = true;
+		AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyClass, SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
 
-		TempFood->GetMesh()->SetSimulatePhysics(false);
-		TempFood->SetActorEnableCollision(false);
-		TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-		SpawnedEnemy->SetFood(TempFood);
-		SpawnedEnemy->UpdateHasFoodInBlackBoard();
+		if(CheckFoodInRoom())
+		{
+			AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
+			SpawnedEnemy->HasFood = true;
 
-		GM->NbFoodInRoom += 1;
-	}
+			TempFood->GetMesh()->SetSimulatePhysics(false);
+			TempFood->SetActorEnableCollision(false);
+			TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+			SpawnedEnemy->SetFood(TempFood);
+			SpawnedEnemy->UpdateHasFoodInBlackBoard();
+
+			GM->NbFoodInRoom += 1;
+		}
 	
-	GM->AddEnemy(SpawnedEnemy);
+		GM->AddEnemy(SpawnedEnemy);
+	}
 }
 
 bool AFood_Looter_GCGameModeBase::CheckFoodInRoom()

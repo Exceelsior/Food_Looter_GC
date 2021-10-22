@@ -9,6 +9,8 @@
 #include "Math/Vector.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLEnemy.h"
+#include "FLGameManager.h"
+#include "GameFramework/GameModeBase.h"
 
 void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
@@ -82,6 +84,22 @@ bool UBTServiceDetectPlayer::PlayerIsInRange(FVector PlayerDirection, FVector St
 
 	return false;
 }
+
+/*void FCollisionQueryParams::AddIgnoredEnemy(const AFLEnemy* InIgnoreEnemy)
+{
+	if(InIgnoreEnemy)
+	{
+		IgnoreActors.Add(InIgnoreEnemy->GetUniqueID());
+	}
+}
+
+void FCollisionQueryParams::AddIgnoredEnemies(const TArray<AFLEnemy*> &InIgnoreEnemies)
+{
+	for (int32 Idx = 0; Idx < InIgnoreEnemies.Num(); ++Idx)
+	{
+		AddIgnoredEnemy(InIgnoreEnemies[Idx]);
+	}
+}*/
 
 
 

@@ -50,6 +50,8 @@ public:
     UPROPERTY(EditAnywhere)
     float TimerBetweenEnemies;
 
+    int NbEnemyMax;
+
     //Functions    
     UFUNCTION()
     virtual void Tick(float DeltaSeconds) override;
@@ -58,7 +60,7 @@ public:
     virtual void BeginPlay() override;
 
     UFUNCTION()
-    void ManageIa(int NbEnemy);
+    void ManageIa(int NbEnemy, float DeltaSec);
 
     UFUNCTION()
     void SpawnEnemy();

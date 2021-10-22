@@ -6,9 +6,11 @@
 #include "FLEnemy.h"
 #include "FLFood.h"
 #include "FLGameManager.h"
+#include "FLSafeZone.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Components/SplineComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -39,7 +41,6 @@ AFLMainCharacter::AFLMainCharacter()
 	CameraComponent->SetupAttachment(ArmComponent, USpringArmComponent::SocketName);
 
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFLMainCharacter::OnTouched);
-	
 }
 
 // Called when the game starts or when spawned
@@ -53,6 +54,7 @@ void AFLMainCharacter::BeginPlay()
 	//MoveSpeedProp = FindField<UFloatProperty>(AnimInstance->GetClass(), FName("MoveSpeed"));
 
 	CameraZoomValue = MaxCameraZoomDistance;
+	GameManager = Cast<AFLGameManager>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameManager>());
 
 }
 
@@ -60,6 +62,10 @@ void AFLMainCharacter::BeginPlay()
 void AFLMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if(GetCapsuleComponent()->IsOverlappingActor(PlayerSafeZone))
+	{
+		GameManager->UpdatePlayerSafeStateInEnemiesBlackBoards();
+	}
 }
 
 
@@ -157,13 +163,20 @@ void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActo
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	AFLEnemy* Enemy = Cast<AFLEnemy>(OtherActor);
-
+	
 	if(Enemy)
 	{
 		Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>())->GameLost();
 	}
+	if (PlayerSafeZone == nullptr)
+	{
+		AFLSafeZone* SafeZone = Cast<AFLSafeZone>(OtherActor);
+		PlayerSafeZone = SafeZone;
+	}
 	
 }
+
+
 
 // Called to bind functionality to input
 void AFLMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

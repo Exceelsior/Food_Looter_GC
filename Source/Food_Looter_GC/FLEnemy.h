@@ -37,10 +37,10 @@ public:
 	class AFLFood* FoodEquiped;
 
 	UPROPERTY(EditAnywhere)
-		float WalkSpeed = 150;
+		float WalkSpeed = 200;
 
 	UPROPERTY(EditAnywhere)
-		float ChaseSpeed = 200;
+		float ChaseSpeed = 400;
 
 	UPROPERTY(VisibleAnywhere)
 	bool HasFood = false;

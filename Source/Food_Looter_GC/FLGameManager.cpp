@@ -4,9 +4,11 @@
 #include "FLGameManager.h"
 
 #include "FLEnemy.h"
+#include "FLEnemyController.h"
 #include "FLHUD.h"
 #include "FLMainCharacter.h"
 #include "Kismet/GameplayStatics.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 void AFLGameManager::BeginPlay()
 {
@@ -42,9 +44,9 @@ void AFLGameManager::GameLost()
 
 void AFLGameManager::CompareFood()
 {
-	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->UpdateFoodAmount((float)NbFood/NbFoodNeeded);
+	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->UpdateFoodAmount((float)NbFoodPlayer/NbFoodNeeded);
 		
-	if(NbFood >= NbFoodNeeded)
+	if(NbFoodPlayer >= NbFoodNeeded)
 	{
 		GameWon();
 	}
@@ -53,6 +55,14 @@ void AFLGameManager::CompareFood()
 TArray<AActor*> AFLGameManager::GetFoodPositions()
 {
 	return FoodPositions;
+}
+
+void AFLGameManager::UpdatePlayerSafeStateInEnemiesBlackBoards()
+{
+	for(AFLEnemy* Enemy : ListEnemies)
+	{
+		Cast<AFLEnemyController>(Enemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer", 0);
+	}
 }
 
 void AFLGameManager::GameWon()

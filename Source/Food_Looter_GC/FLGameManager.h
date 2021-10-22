@@ -26,18 +26,22 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 	TArray<AActor*> FoodPositions;
 	
 	UPROPERTY(VisibleAnywhere)
-	int NbFood;
+	int NbFoodPlayer;
 
 	UPROPERTY(VisibleAnywhere)
 	int NbFoodInRoom;
 
 	UPROPERTY(EditAnywhere)
-	int NbFoodNeeded;	
-
+	int NbFoodNeeded;		
+	
 	UPROPERTY(VisibleAnywhere)
 	ULevelScriptBlueprint* LvlBP;
 
-	//Functions	
+	//Functions
+
+	UFUNCTION()
+	void UpdatePlayerSafeStateInEnemiesBlackBoards();
+	
 	UFUNCTION()
 	void GameWon();
 

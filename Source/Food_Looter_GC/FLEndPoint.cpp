@@ -16,14 +16,14 @@ AFLEndPoint::AFLEndPoint()
 
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("Sphere Collider"));
 	SphereComponent->SetupAttachment(RootComponent);
-	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AFLEndPoint::OnTouched);
+	
 }
 
 // Called when the game starts or when spawned
 void AFLEndPoint::BeginPlay()
 {
 	Super::BeginPlay();
-
+	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AFLEndPoint::OnTouched);
 	GameMode = Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode());
 	GameMode->EndPoint = this;
 }
