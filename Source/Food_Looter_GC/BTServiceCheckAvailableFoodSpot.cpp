@@ -1,14 +1,13 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BTFindAvailableFoodSpot.h"
-
+#include "BTServiceCheckAvailableFoodSpot.h"
 #include "FLEnemyController.h"
 #include "FLGameManager.h"
 #include "FLTargetPoint.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
-void UBTFindAvailableFoodSpot::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
+void UBTServiceCheckAvailableFoodSpot::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	Super::ScheduleNextTick(OwnerComp, NodeMemory);
 

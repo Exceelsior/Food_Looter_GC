@@ -5,13 +5,13 @@
 #include "CoreMinimal.h"
 #include "FLEnemyController.h"
 #include "BehaviorTree/BTService.h"
-#include "BTDetectPlayer.generated.h"
+#include "BTServiceDetectPlayer.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class FOOD_LOOTER_GC_API UBTDetectPlayer : public UBTService
+class FOOD_LOOTER_GC_API UBTServiceDetectPlayer : public UBTService
 {
 	GENERATED_BODY()
 

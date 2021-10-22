@@ -37,10 +37,10 @@ public:
 	class AFLFood* FoodEquiped;
 
 	UPROPERTY(EditAnywhere)
-		float WalkSpeed = 250;
+		float WalkSpeed = 150;
 
 	UPROPERTY(EditAnywhere)
-		float ChaseSpeed = 500;
+		float ChaseSpeed = 200;
 
 	UPROPERTY(VisibleAnywhere)
 	bool HasFood = false;
@@ -50,6 +50,8 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool HasWon;
+	UPROPERTY(VisibleAnywhere)
+	float TrackTimer;
 
 	UFUNCTION()
 	void ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
@@ -91,4 +93,6 @@ public:
 	void SetHasWon(bool Value) { HasWon = Value; }
 
 	void SetHasLost(bool Value) { HasLost = Value; }
+	
+	void ResetTrackTimer();
 };

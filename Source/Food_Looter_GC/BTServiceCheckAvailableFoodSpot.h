@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTService.h"
-#include "BTFindAvailableFoodSpot.generated.h"
+#include "BTServiceCheckAvailableFoodSpot.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class FOOD_LOOTER_GC_API UBTFindAvailableFoodSpot : public UBTService
+class FOOD_LOOTER_GC_API UBTServiceCheckAvailableFoodSpot : public UBTService
 {
 	GENERATED_BODY()
 

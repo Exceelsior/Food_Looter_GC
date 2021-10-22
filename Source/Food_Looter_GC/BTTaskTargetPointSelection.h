@@ -4,13 +4,13 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
-#include "BTTargetPointSelection.generated.h"
+#include "BTTaskTargetPointSelection.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class FOOD_LOOTER_GC_API UBTTargetPointSelection : public UBTTaskNode
+class FOOD_LOOTER_GC_API UBTTaskTargetPointSelection : public UBTTaskNode
 {
 	GENERATED_BODY()
 

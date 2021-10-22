@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "BTDetectPlayer.h"
+#include "BTServiceDetectPlayer.h"
 #include "FLMainCharacter.h"
 #include "DrawDebugHelpers.h"
 #include "FLEnemyController.h"
@@ -10,7 +10,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "FLEnemy.h"
 
-void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
+void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
 	Super::ScheduleNextTick(OwnerComp, NodeMemory);
 	
@@ -18,7 +18,6 @@ void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8*
 
 	AFLEnemyController* AIController = Cast<AFLEnemyController>(OwnerComp.GetAIOwner());
 	
-
 	if (PlayerController != nullptr && AIController != nullptr)
 	{
 		AFLEnemy* AIPawn = Cast<AFLEnemy>(AIController->GetPawn());
@@ -27,15 +26,16 @@ void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8*
 		FVector AIForwardVector = AIPawn->GetActorForwardVector();
 		FVector PlayerDirection = (PlayerPawn->GetActorLocation() - AIPawn->GetActorLocation()).GetSafeNormal();
 		
-		if(PlayerIsInFieldOfView(PlayerDirection, AIForwardVector))
-		{
-			if(PlayerIsInRange(PlayerDirection, AIPawn->GetActorLocation()+ FVector (0,0,50), 1000, AIPawn))
-			{
-				AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
-				AIController->GetBlackboardComp()->SetValueAsInt("HasLostPlayer", 1);
-				AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
-				AIPawn->SetChaseSpeed();
-			}
+		
+		if(PlayerIsInFieldOfView(PlayerDirection, AIForwardVector)
+			&& PlayerIsInRange(PlayerDirection, AIPawn->GetActorLocation()+ FVector (0,0,50), 1000, AIPawn))
+		{			
+			AIController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 1);
+			AIController->GetBlackboardComp()->SetValueAsInt("HasLostPlayer", 1);
+			AIController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
+			AIController->GetBlackboardComp()->SetValueAsVector("LastPlayerPosition", PlayerPawn->GetActorLocation());
+			AIController->GetBlackboardComp()->SetValueAsVector("PlayerDirection", PlayerPawn->GetActorForwardVector());
+			AIPawn->SetChaseSpeed();	
 		}
 		else
 		{
@@ -46,21 +46,20 @@ void UBTDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8*
 	}
 }
 
-bool UBTDetectPlayer::PlayerIsInFieldOfView(FVector PlayerDirection, FVector AIForwardVector)
+bool UBTServiceDetectPlayer::PlayerIsInFieldOfView(FVector PlayerDirection, FVector AIForwardVector)
 {		
 	float Dot = FVector::DotProduct(AIForwardVector, PlayerDirection);
 	float PlayerAngle = FMath::RadiansToDegrees(FMath::Acos(Dot));
 
 	if (PlayerAngle < 67.5f)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("%f"),PlayerAngle);
 		return true;
 	}
 	return false;
 }
 
 
-bool UBTDetectPlayer::PlayerIsInRange(FVector PlayerDirection, FVector StartTrace, float MaxDistance, AActor* IgnoreActor)
+bool UBTServiceDetectPlayer::PlayerIsInRange(FVector PlayerDirection, FVector StartTrace, float MaxDistance, AActor* IgnoreActor)
 {
 	FHitResult* HitResult = new FHitResult();
 	FVector EndTrace = StartTrace + (PlayerDirection * MaxDistance);
@@ -70,6 +69,10 @@ bool UBTDetectPlayer::PlayerIsInRange(FVector PlayerDirection, FVector StartTrac
 	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, false, 5, 0, 10);
     
 	if (GetWorld()->LineTraceSingleByChannel(*HitResult, StartTrace, EndTrace, ECollisionChannel::ECC_WorldStatic, *TraceParams))
+
+		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, false, 5, 0, 10);
+    
+	if (GetWorld()->LineTraceSingleByChannel(*HitResult, StartTrace, EndTrace, ECC_WorldStatic, *TraceParams))
 	{        
 		AFLMainCharacter* MainCharacter = Cast<AFLMainCharacter>(HitResult->GetActor());
         
