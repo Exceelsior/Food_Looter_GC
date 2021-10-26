@@ -33,6 +33,9 @@ protected:
 
 	UPROPERTY()
 	UAnimInstance* AnimInstance;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
+	USceneCaptureComponent2D* FaceCameraComponent;
 		
 	UPROPERTY(EditAnywhere)
 	float CameraYawSpeed;

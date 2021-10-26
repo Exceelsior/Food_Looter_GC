@@ -9,6 +9,7 @@
 #include "FLSafeZone.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
+#include "Components/SceneCaptureComponent2D.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Components/SplineComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -40,6 +41,8 @@ AFLMainCharacter::AFLMainCharacter()
 	CameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraMain"));
 	CameraComponent->SetupAttachment(ArmComponent, USpringArmComponent::SocketName);
 
+	FaceCameraComponent = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("Face Capture Component"));
+	FaceCameraComponent->SetupAttachment(GetMesh());
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFLMainCharacter::OnTouched);
 }
 
