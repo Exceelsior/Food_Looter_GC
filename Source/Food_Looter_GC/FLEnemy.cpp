@@ -138,6 +138,10 @@ void AFLEnemy::DropFood()
 		FoodEquiped->SetActorEnableCollision(true);
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
+		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsObject("FoodPosition", FoodEquiped);
+		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 1);
+		
 	}
 	
 }
@@ -148,5 +152,6 @@ void AFLEnemy::PickUpFood(AFLFood* Food)
 	Food->GetMesh()->SetSimulatePhysics(false);
 	Food->SetActorEnableCollision(false);
 	Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+	Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
 	UpdateHasFoodInBlackBoard();
 }
