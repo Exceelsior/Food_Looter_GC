@@ -101,4 +101,6 @@ public:
 	void SetHasLost(bool Value) { HasLost = Value; }
 	
 	void ResetTrackTimer();
+
+	void DropFood();
 };

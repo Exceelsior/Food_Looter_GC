@@ -38,6 +38,12 @@ void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp,
 			EnemyController->GetBlackboardComp()->SetValueAsVector("LastPlayerPosition", PlayerPawn->GetActorLocation());
 			EnemyPawn->PlayerDirection = PlayerPawn->GetActorForwardVector();
 			EnemyPawn->SetChaseSpeed();
+
+			//TODO : L'ennemi lâche sa food
+			if(EnemyPawn->HasFood)
+			{
+				EnemyPawn->DropFood();
+			}
 		}
 		else
 		{

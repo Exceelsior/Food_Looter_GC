@@ -62,6 +62,7 @@ void AFLMainCharacter::BeginPlay()
 void AFLMainCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	
 	if(GetCapsuleComponent()->IsOverlappingActor(PlayerSafeZone))
 	{
 		GameManager->UpdatePlayerSafeStateInEnemiesBlackBoards();
@@ -153,7 +154,7 @@ void AFLMainCharacter::Interact()
 		HasFood = false;
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 		FoodEquiped->SetActorEnableCollision(true);
-		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
+		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
 		GetCharacterMovement()->MaxWalkSpeed *= FoodEquiped->GetDivision();
 	}	

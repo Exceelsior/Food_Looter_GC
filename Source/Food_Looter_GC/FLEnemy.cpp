@@ -118,8 +118,9 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 {
 	HasFood = false;
 	FoodEquiped->SetActorEnableCollision(true);
-	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepRelativeTransform);
+	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
+	FoodEquiped->SetActorRotation(TargetPoint->GetActorRotation());
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
 	//TO DO : inform the gamemode that the foodpoint is full
@@ -129,13 +130,23 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	UpdateHasFoodInBlackBoard();
 }
 
+void AFLEnemy::DropFood()
+{
+	if(HasFood)
+	{
+		HasFood = false;
+		FoodEquiped->SetActorEnableCollision(true);
+		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
+		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+	}
+	
+}
+
 void AFLEnemy::PickUpFood(AFLFood* Food)
 {
 	HasFood = true;
-
 	Food->GetMesh()->SetSimulatePhysics(false);
 	Food->SetActorEnableCollision(false);
 	Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-	FoodEquiped = Food;
 	UpdateHasFoodInBlackBoard();
 }
