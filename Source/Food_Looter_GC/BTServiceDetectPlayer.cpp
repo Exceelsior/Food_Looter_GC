@@ -75,11 +75,7 @@ bool UBTServiceDetectPlayer::PlayerIsInRange(FVector PlayerDirection, FVector St
 	TraceParams->AddIgnoredActor(IgnoreActor);
 
 	//DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, false, 5, 0, 10);
-    
-	if (GetWorld()->LineTraceSingleByChannel(*HitResult, StartTrace, EndTrace, ECollisionChannel::ECC_WorldStatic, *TraceParams))
-
-		DrawDebugLine(GetWorld(), StartTrace, EndTrace, FColor::Emerald, false, 5, 0, 10);
-    
+	
 	if (GetWorld()->LineTraceSingleByChannel(*HitResult, StartTrace, EndTrace, ECC_WorldStatic, *TraceParams))
 	{        
 		AFLMainCharacter* MainCharacter = Cast<AFLMainCharacter>(HitResult->GetActor());

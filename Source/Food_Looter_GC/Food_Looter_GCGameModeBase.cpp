@@ -4,11 +4,13 @@
 #include "Food_Looter_GCGameModeBase.h"
 
 #include "FLEnemy.h"
+#include "FLEnemyController.h"
 #include "FLFood.h"
 #include "FLGameManager.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLTargetPoint.h"
 #include "FLHUD.h"
+#include "BehaviorTree/BlackboardComponent.h"
 
 void AFood_Looter_GCGameModeBase::BeginPlay()
 {
@@ -99,6 +101,10 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 			SpawnedEnemy->UpdateHasFoodInBlackBoard();
 
 			GM->NbFoodInRoom += 1;
+			if(GM->NbFoodInRoom < 5)
+				Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 1);
+			else
+				Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 0);
 		}
 	
 		GM->AddEnemy(SpawnedEnemy);

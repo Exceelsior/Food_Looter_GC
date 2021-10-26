@@ -43,6 +43,9 @@ public:
 		float ChaseSpeed = 400;
 
 	UPROPERTY(VisibleAnywhere)
+	int RoamNumber = 0;
+
+	UPROPERTY(VisibleAnywhere)
 	bool HasFood = false;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

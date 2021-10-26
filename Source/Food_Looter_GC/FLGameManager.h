@@ -28,7 +28,7 @@ class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
 	UPROPERTY(VisibleAnywhere)
 	int NbFoodPlayer;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(EditAnywhere)
 	int NbFoodInRoom;
 
 	UPROPERTY(EditAnywhere)
