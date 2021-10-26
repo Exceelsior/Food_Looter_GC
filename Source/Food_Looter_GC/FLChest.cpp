@@ -40,6 +40,7 @@ void AFLChest::OnFoodDrop(UPrimitiveComponent* OverlappedComponent, AActor* Othe
 {
 	AFLFood* TempFood = Cast<AFLFood>(OtherActor);
 	GM->NbFoodPlayer += TempFood->GetPts();
+	GM->NbFoodInRoom -= 1;
 
 	GM->CompareFood();
 	
