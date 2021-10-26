@@ -10,12 +10,12 @@
 
 EBTNodeResult::Type UBTTaskTargetPointSelection::ExecuteTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory)
 {
-	AFLEnemyController* AIController = Cast<AFLEnemyController>(OwnerComp.GetAIOwner());
+	AFLEnemyController* EnemyController = Cast<AFLEnemyController>(OwnerComp.GetAIOwner());
  
-	if (AIController)
+	if (EnemyController)
 	{
        
-		UBlackboardComponent* BlackboardComp = AIController->GetBlackboardComp();
+		UBlackboardComponent* BlackboardComp = EnemyController->GetBlackboardComp();
 		AFLTargetPoint* CurrentPoint = Cast<AFLTargetPoint>(BlackboardComp->GetValueAsObject("LocationToGo"));
  
 		AvailableTargetPoints = Cast<AFLGameManager>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameManager>())->GetFoodPositions();
