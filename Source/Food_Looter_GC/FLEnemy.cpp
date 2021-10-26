@@ -39,6 +39,9 @@ void AFLEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if(TimerPickUpFood > 0)
+		TimerPickUpFood -= DeltaTime;
+	
 	if(ArrayTarget.Num() == 0)
 		ArrayTarget = GM->GetFoodPositions();
 
@@ -84,14 +87,29 @@ void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* O
 	
 	AFLFood* Food = Cast<AFLFood>(OtherActor);
 	
+	// UE_LOG(LogTemp, Warning, TEXT("%b"), HasFood);
+	// if(Food)
+	// 	UE_LOG(LogTemp, Warning, TEXT("%s"), Food->GetClass());
+	// UE_LOG(LogTemp, Warning, TEXT("%s"), FoodEquiped->GetClass());
+	
 	if(TargetPoint != nullptr && HasFood && !TargetPoint->GetIsFull())
 	{
 		DropFoodOnPoint(TargetPoint);
 	}
-	else if(Food != nullptr && !HasFood && Food == FoodEquiped)
+	else if(Food != nullptr && !HasFood && Food == FoodEquiped && !AlreadyDroppedFood)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("KJFBV"));
+		
 		PickUpFood(Food);
 	}
+	/*if(!HasFood)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("KJFBV 2"));
+	}
+	if(Food == FoodEquiped)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("KJFBV 3"));
+	}*/
 		
 }
 
@@ -116,7 +134,10 @@ void AFLEnemy::ResetTrackTimer()
 
 void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 {
-	HasFood = false;
+	AlreadyDroppedFood = true;
+	HasFood = false;	
+
+	//FoodEquiped->GetMesh()->AddForce(-(this->GetActorForwardVector())*100*FoodEquiped->GetMesh()->GetMass());
 	FoodEquiped->SetActorEnableCollision(true);
 	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
@@ -134,6 +155,8 @@ void AFLEnemy::DropFood()
 {
 	if(HasFood)
 	{
+		TimerPickUpFood = 3;
+		
 		HasFood = false;
 		FoodEquiped->SetActorEnableCollision(true);
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
@@ -148,10 +171,13 @@ void AFLEnemy::DropFood()
 
 void AFLEnemy::PickUpFood(AFLFood* Food)
 {
-	HasFood = true;
-	Food->GetMesh()->SetSimulatePhysics(false);
-	Food->SetActorEnableCollision(false);
-	Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-	Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
-	UpdateHasFoodInBlackBoard();
+	if(TimerPickUpFood <= 0)
+	{
+		HasFood = true;
+		Food->GetMesh()->SetSimulatePhysics(false);
+		Food->SetActorEnableCollision(false);
+		Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
+		UpdateHasFoodInBlackBoard();
+	}
 }
