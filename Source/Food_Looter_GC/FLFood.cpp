@@ -9,7 +9,6 @@ AFLFood::AFLFood()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("FoodMesh"));
 	RootComponent = StaticMesh;
 	SphereComponent = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComponent"));
@@ -44,4 +43,14 @@ float AFLFood::GetDivision() const
 UStaticMeshComponent* AFLFood::GetMesh()
 {
 	return StaticMesh;
+}
+
+void AFLFood::SetMyFoodPoint(ATargetPoint* Tp)
+{
+	MyFoodPoint = Tp;
+}
+
+ATargetPoint* AFLFood::GetMyFoodPoint()
+{
+	return MyFoodPoint;
 }

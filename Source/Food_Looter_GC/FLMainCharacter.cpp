@@ -148,6 +148,9 @@ void AFLMainCharacter::Interact()
 			FoodEquiped->SetActorEnableCollision(false);
 			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 
+			if(FoodEquiped->GetMyFoodPoint() != nullptr)
+				Cast<AFLTargetPoint>(FoodEquiped->GetMyFoodPoint())->SetIsFull(false);
+
 			GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
 		}
 	}

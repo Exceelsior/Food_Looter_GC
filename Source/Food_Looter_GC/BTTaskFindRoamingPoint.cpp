@@ -23,7 +23,7 @@ EBTNodeResult::Type UBTTaskFindRoamingPoint::ExecuteTask(UBehaviorTreeComponent&
 			FNavLocation ResultLocation;
 			
 			do
-				NavSys->GetRandomReachablePointInRadius(EnemyController->GetPawn()->GetActorLocation(), 2000, ResultLocation);
+				NavSys->GetRandomReachablePointInRadius(EnemyController->GetPawn()->GetActorLocation(), 4000, ResultLocation);
 			while((ResultLocation.Location - EnemyPawn->GetActorLocation()).Size() < 500);
 			
 			EnemyController->GetBlackboardComp()->SetValueAsVector("RoamPoint", ResultLocation.Location);

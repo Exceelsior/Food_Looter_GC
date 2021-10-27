@@ -39,6 +39,9 @@ void AFLEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if(TimerPickUpFood > 0)
+		TimerPickUpFood -= DeltaTime;
+	
 	if(ArrayTarget.Num() == 0)
 		ArrayTarget = GM->GetFoodPositions();
 
@@ -88,8 +91,10 @@ void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* O
 	{
 		DropFoodOnPoint(TargetPoint);
 	}
-	else if(Food != nullptr && !HasFood && Food == FoodEquiped)
+	else if(Food != nullptr && !HasFood && Food == FoodEquiped && !AlreadyDroppedFood)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("KJFBV"));
+		
 		PickUpFood(Food);
 	}
 		
@@ -116,15 +121,17 @@ void AFLEnemy::ResetTrackTimer()
 
 void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 {
-	HasFood = false;
+	AlreadyDroppedFood = true;
+	HasFood = false;	
+
+	//FoodEquiped->GetMesh()->AddForce(-(this->GetActorForwardVector())*100*FoodEquiped->GetMesh()->GetMass());
 	FoodEquiped->SetActorEnableCollision(true);
 	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
 	FoodEquiped->SetActorRotation(TargetPoint->GetActorRotation());
+	FoodEquiped->SetMyFoodPoint(TargetPoint);
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
-	//TO DO : inform the gamemode that the foodpoint is full
-	//The gamemode has to inform the AI's Behavior Tree !
 	
 	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
 	UpdateHasFoodInBlackBoard();
@@ -134,6 +141,8 @@ void AFLEnemy::DropFood()
 {
 	if(HasFood)
 	{
+		TimerPickUpFood = 3;
+		
 		HasFood = false;
 		FoodEquiped->SetActorEnableCollision(true);
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
@@ -148,10 +157,13 @@ void AFLEnemy::DropFood()
 
 void AFLEnemy::PickUpFood(AFLFood* Food)
 {
-	HasFood = true;
-	Food->GetMesh()->SetSimulatePhysics(false);
-	Food->SetActorEnableCollision(false);
-	Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-	Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
-	UpdateHasFoodInBlackBoard();
+	if(TimerPickUpFood <= 0)
+	{
+		HasFood = true;
+		Food->GetMesh()->SetSimulatePhysics(false);
+		Food->SetActorEnableCollision(false);
+		Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
+		UpdateHasFoodInBlackBoard();
+	}
 }

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/SphereComponent.h"
+#include "Engine/TargetPoint.h"
 #include "GameFramework/Actor.h"
 #include "GameFramework/GameMode.h"
 #include "FLFood.generated.h"
@@ -31,6 +32,9 @@ protected:
 	UPROPERTY(EditAnywhere)
 	USphereComponent* SphereComponent;
 
+	UPROPERTY(VisibleAnywhere)
+	ATargetPoint* MyFoodPoint;
+
 	UPROPERTY(EditAnywhere)
 	int Pts;
 
@@ -49,5 +53,11 @@ public:
 
 	UFUNCTION()
 	UStaticMeshComponent* GetMesh();
+
+	UFUNCTION()
+	void SetMyFoodPoint(ATargetPoint* Tp);
+
+	UFUNCTION()
+	ATargetPoint* GetMyFoodPoint();
 
 };
