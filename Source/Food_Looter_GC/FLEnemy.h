@@ -42,6 +42,9 @@ public:
 	UPROPERTY(EditAnywhere)
 		float ChaseSpeed = 400;
 
+	UPROPERTY(EditAnywhere)
+	float TimerPickUpFood;
+
 	UPROPERTY(VisibleAnywhere)
 	int RoamNumber = 0;
 
@@ -53,6 +56,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool HasWon;
+	
+	UPROPERTY(VisibleAnywhere)
+	bool AlreadyDroppedFood = false;
 	
 	UPROPERTY(VisibleAnywhere)
 	float TrackTimer;
