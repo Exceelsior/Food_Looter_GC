@@ -87,11 +87,6 @@ void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* O
 	
 	AFLFood* Food = Cast<AFLFood>(OtherActor);
 	
-	// UE_LOG(LogTemp, Warning, TEXT("%b"), HasFood);
-	// if(Food)
-	// 	UE_LOG(LogTemp, Warning, TEXT("%s"), Food->GetClass());
-	// UE_LOG(LogTemp, Warning, TEXT("%s"), FoodEquiped->GetClass());
-	
 	if(TargetPoint != nullptr && HasFood && !TargetPoint->GetIsFull())
 	{
 		DropFoodOnPoint(TargetPoint);
@@ -102,14 +97,6 @@ void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* O
 		
 		PickUpFood(Food);
 	}
-	/*if(!HasFood)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("KJFBV 2"));
-	}
-	if(Food == FoodEquiped)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("KJFBV 3"));
-	}*/
 		
 }
 
@@ -144,8 +131,6 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	FoodEquiped->SetActorRotation(TargetPoint->GetActorRotation());
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
-	//TO DO : inform the gamemode that the foodpoint is full
-	//The gamemode has to inform the AI's Behavior Tree !
 	
 	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
 	UpdateHasFoodInBlackBoard();
