@@ -101,12 +101,11 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 			SpawnedEnemy->UpdateHasFoodInBlackBoard();
 
 			GM->NbFoodInRoom += 1;
-			if(GM->NbFoodInRoom < 5)
-				Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 1);
-			else
-				Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 0);
+			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 1);
 		}
-	
+		else
+			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 0);
+		
 		GM->AddEnemy(SpawnedEnemy);
 	}
 }
