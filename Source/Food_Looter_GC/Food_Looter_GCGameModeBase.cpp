@@ -29,6 +29,15 @@ void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)
 
 	if(!FirstTwoEnemySpawned)
 	{
+		//Spawn the first food
+		int RandomNum = FMath::RandRange(0, GM->GetFoodPositions().Num() - 1);
+		AFLTargetPoint* FirstFoodPoint = Cast<AFLTargetPoint>(GM->GetFoodPositions()[RandomNum]);
+
+		//Spawn Food at start at a random position
+		GetWorld()->SpawnActor<AFLFood>(FoodClass, FirstFoodPoint->GetActorLocation(), FirstFoodPoint->GetActorRotation());
+		FirstFoodPoint->SetIsFull(true);
+		GM->NbFoodInRoom++;
+		
 		for (int i = 0; i < 1; i++)
 		{
 			//Spawn it
