@@ -44,3 +44,13 @@ UStaticMeshComponent* AFLFood::GetMesh()
 {
 	return StaticMesh;
 }
+
+void AFLFood::SetMyFoodPoint(ATargetPoint* Tp)
+{
+	MyFoodPoint = Tp;
+}
+
+ATargetPoint* AFLFood::GetMyFoodPoint()
+{
+	return MyFoodPoint;
+}

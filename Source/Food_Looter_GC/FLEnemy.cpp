@@ -129,6 +129,7 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
 	FoodEquiped->SetActorRotation(TargetPoint->GetActorRotation());
+	FoodEquiped->SetMyFoodPoint(TargetPoint);
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
 	
