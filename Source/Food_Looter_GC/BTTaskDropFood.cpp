@@ -2,7 +2,6 @@
 
 
 #include "BTTaskDropFood.h"
-
 #include "FLEnemyController.h"
 #include "FLFood.h"
 #include "BehaviorTree/BlackboardComponent.h"
@@ -26,6 +25,7 @@ EBTNodeResult::Type UBTTaskDropFood::ExecuteTask(UBehaviorTreeComponent& OwnerCo
 
 			EnemyController->GetBlackboardComp()->SetValueAsVector("FoodPosition", EnemyPawn->FoodEquiped->GetActorLocation());
 			EnemyController->GetBlackboardComp()->SetValueAsInt("HasLostFood", 1);
+			EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 0);
 
 			return EBTNodeResult::Succeeded;
 		}
