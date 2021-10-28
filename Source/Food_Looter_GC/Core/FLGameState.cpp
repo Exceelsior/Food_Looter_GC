@@ -37,8 +37,12 @@ void AFLGameState::GameLost()
 	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 	
 	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasLost(true);
+	
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
+		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
+		if(EnemyController)
+			EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 		Enemy->SetHasWon(true);
 	}
 }
@@ -76,6 +80,9 @@ void AFLGameState::GameWon()
 	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasWon(true);
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
+		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
+		if(EnemyController)
+			EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 		Enemy->SetHasLost(true);
 	}
 }
