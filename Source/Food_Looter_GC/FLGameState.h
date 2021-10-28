@@ -47,7 +47,10 @@ class FOOD_LOOTER_GC_API AFLGameState : public AGameStateBase
 
 	UFUNCTION()
 	void GameLost();
-
+	
+	UFUNCTION()
+	void PauseGame();
+	
 	UFUNCTION()
 	void CompareFood();
 

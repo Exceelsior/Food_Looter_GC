@@ -33,6 +33,9 @@ public:
 	UFUNCTION()
 	void GameLost();
 
+	UFUNCTION()
+	void PauseGame();
+	
 	UPROPERTY(EditDefaultsOnly, Category = "Widgets")
 	TSubclassOf<UUserWidget> FoodLooterWidgetClass;
 

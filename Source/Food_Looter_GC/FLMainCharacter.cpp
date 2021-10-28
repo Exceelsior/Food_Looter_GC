@@ -57,7 +57,7 @@ void AFLMainCharacter::BeginPlay()
 	//MoveSpeedProp = FindField<UFloatProperty>(AnimInstance->GetClass(), FName("MoveSpeed"));
 
 	CameraZoomValue = MaxCameraZoomDistance;
-	GameManager = Cast<AFLGameState>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>());
+	GameState = Cast<AFLGameState>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>());
 
 }
 
@@ -68,7 +68,7 @@ void AFLMainCharacter::Tick(float DeltaTime)
 	
 	if(GetCapsuleComponent()->IsOverlappingActor(PlayerSafeZone))
 	{
-		GameManager->UpdatePlayerSafeStateInEnemiesBlackBoards();
+		GameState->UpdatePlayerSafeStateInEnemiesBlackBoards();
 	}
 }
 
@@ -173,7 +173,7 @@ void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActo
 	
 	if(Enemy)
 	{
-		Cast<AFLGameState>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameState>())->GameLost();
+		GameState->GameLost();
 	}
 	if (PlayerSafeZone == nullptr)
 	{
@@ -183,7 +183,10 @@ void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActo
 	
 }
 
-
+void AFLMainCharacter::PauseGame()
+{
+	GameState->PauseGame();
+}
 
 // Called to bind functionality to input
 void AFLMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -203,4 +206,8 @@ void AFLMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAction("Zoom Out", IE_Pressed, this, &AFLMainCharacter::CameraZoomOut);
 
 	PlayerInputComponent->BindAction("Interact", IE_Pressed, this, &AFLMainCharacter::Interact);
+
+	PlayerInputComponent->BindAction("PauseGame", IE_Pressed, this, &AFLMainCharacter::PauseGame).bExecuteWhenPaused = true;
+
+	
 }

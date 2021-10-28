@@ -49,3 +49,8 @@ void AFLHUD::GameLost()
 {
 	FoodLooterWidget->GameLost();
 }
+
+void AFLHUD::PauseGame()
+{
+	FoodLooterWidget->PauseGame();
+}

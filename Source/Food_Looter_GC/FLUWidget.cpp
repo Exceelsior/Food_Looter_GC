@@ -19,6 +19,7 @@ void UFLUWidget::GameWon()
 	VictoryTextBlock->SetVisibility(ESlateVisibility::Visible);
 	ReplayButton->SetVisibility(ESlateVisibility::Visible);
 	QuitButton->SetVisibility(ESlateVisibility::Visible);
+	PauseBackground->SetVisibility(ESlateVisibility::Visible);
 }
 
 void UFLUWidget::GameLost()
@@ -26,20 +27,24 @@ void UFLUWidget::GameLost()
 	DefeatTextBlock->SetVisibility(ESlateVisibility::Visible);
 	ReplayButton->SetVisibility(ESlateVisibility::Visible);
 	QuitButton->SetVisibility(ESlateVisibility::Visible);
+	PauseBackground->SetVisibility(ESlateVisibility::Visible);
 }
 
 void UFLUWidget::NativeConstruct()
 {
-	Super::NativeConstruct();
-
+	Super::NativeConstruct();	
+	
 	VictoryTextBlock->SetVisibility(ESlateVisibility::Hidden);
 	DefeatTextBlock->SetVisibility(ESlateVisibility::Hidden);
 	ReplayButton->SetVisibility(ESlateVisibility::Hidden);
 	QuitButton->SetVisibility(ESlateVisibility::Hidden);
-
+	PauseTextBlock->SetVisibility(ESlateVisibility::Hidden);
+	PauseBackground->SetVisibility(ESlateVisibility::Hidden);	
+	
 	QuitButton->OnClicked.AddDynamic(this, &UFLUWidget::QuitGame);
+	
 	ReplayButton->OnClicked.AddDynamic(this, &UFLUWidget::UFLUWidget::PlayAgain);
-
+	
 }
 
 void UFLUWidget::PlayAgain()
@@ -50,4 +55,29 @@ void UFLUWidget::PlayAgain()
 void UFLUWidget::QuitGame()
 {
 	UKismetSystemLibrary::QuitGame(GetWorld(), GetWorld()->GetFirstPlayerController(), EQuitPreference::Quit, true);
+}
+
+void UFLUWidget::PauseGame()
+{
+	IsGamePaused = !IsGamePaused;
+	
+	GetWorld()->GetFirstPlayerController()->SetPause(IsGamePaused);
+	
+	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(IsGamePaused);
+	
+	if(IsGamePaused)
+	{
+		PauseTextBlock->SetVisibility(ESlateVisibility::Visible);
+		PauseBackground->SetVisibility(ESlateVisibility::Visible);
+		ReplayButton->SetVisibility(ESlateVisibility::Visible);
+		QuitButton->SetVisibility(ESlateVisibility::Visible);
+	}
+	else
+	{
+		PauseTextBlock->SetVisibility(ESlateVisibility::Hidden);
+		PauseBackground->SetVisibility(ESlateVisibility::Hidden);
+		ReplayButton->SetVisibility(ESlateVisibility::Hidden);
+		QuitButton->SetVisibility(ESlateVisibility::Hidden);
+	}
+	
 }

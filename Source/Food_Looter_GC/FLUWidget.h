@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "Components/Button.h"
+#include "Components/Image.h"
 #include "Components/TextBlock.h"
 //#include "Runtime/UMG/Public/UMG.h"
 #include "FLUWidget.generated.h"
@@ -37,6 +38,13 @@ public:
 
 	UFUNCTION()
 	void QuitGame();
+
+	UFUNCTION()
+	void PauseGame();
+
+	UPROPERTY(VisibleAnywhere)
+	bool IsGamePaused;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UProgressBar* FoodBar;
 	
@@ -46,6 +54,12 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UTextBlock* DefeatTextBlock;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+	UTextBlock* PauseTextBlock;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+	UImage* PauseBackground;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UButton* ReplayButton;
 

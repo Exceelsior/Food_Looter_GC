@@ -9,6 +9,9 @@
 class AFLFood;
 class UCameraComponent;
 class USpringArmComponent;
+class AFLGameState;
+class AFLSafeZone;
+
 UCLASS()
 class FOOD_LOOTER_GC_API AFLMainCharacter : public ACharacter
 {
@@ -70,10 +73,10 @@ protected:
 	bool HasWon;
 
 	UPROPERTY(VisibleAnywhere)
-	class AFLSafeZone* PlayerSafeZone;
+	AFLSafeZone* PlayerSafeZone;
 	
 	UPROPERTY(VisibleAnywhere)
-	class AFLGameState* GameManager;
+	AFLGameState* GameState;
 	
 	//Functions
 	UFUNCTION()
@@ -99,7 +102,9 @@ protected:
 
 	UFUNCTION()
 	void OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
-	
+
+	UFUNCTION()
+	void PauseGame();
 	
 public:	
 	// Called every frame

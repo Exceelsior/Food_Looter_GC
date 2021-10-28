@@ -78,3 +78,9 @@ void AFLGameState::GameWon()
 		Enemy->SetHasLost(true);
 	}
 }
+
+void AFLGameState::PauseGame()
+{
+	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->PauseGame();
+}
+
