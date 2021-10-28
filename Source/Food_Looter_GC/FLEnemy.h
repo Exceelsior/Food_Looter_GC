@@ -37,10 +37,8 @@ public:
 	class AFLFood* FoodEquiped;
 
 	UPROPERTY(EditAnywhere)
-		float WalkSpeed = 200;
+		float WalkSpeed = 400;
 
-	UPROPERTY(EditAnywhere)
-		float ChaseSpeed = 400;
 
 	UPROPERTY(EditAnywhere)
 	float TimerPickUpFood;
@@ -93,9 +91,7 @@ public:
 
 	FORCEINLINE TArray<AActor*> GetAvailableTargetPoints();
 
-	void SetChaseSpeed();
-
-	void ResetChaseSpeed();
+	void RefreshWalkSpeed();
 
 	void SetFood(AFLFood* Food);
 

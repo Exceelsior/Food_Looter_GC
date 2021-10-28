@@ -37,18 +37,18 @@ void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp,
 			EnemyController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
 			EnemyController->GetBlackboardComp()->SetValueAsVector("LastPlayerPosition", PlayerPawn->GetActorLocation());
 			EnemyPawn->PlayerDirection = PlayerPawn->GetActorForwardVector();
-			EnemyPawn->SetChaseSpeed();
 
 			//The enemy drops his food
 			if(EnemyPawn->HasFood)
 			{
 				EnemyPawn->DropFood();
 			}
+
+			EnemyPawn->RefreshWalkSpeed();
 		}
 		else
 		{
 			EnemyController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 0);
-			EnemyPawn->ResetChaseSpeed();
 			EnemyController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", nullptr);
 		}
 	}

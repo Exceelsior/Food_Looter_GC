@@ -70,12 +70,7 @@ TArray<AActor*> AFLEnemy::GetAvailableTargetPoints()
 	return ArrayTarget; 
 }
 
-void AFLEnemy::SetChaseSpeed()
-{
-	GetCharacterMovement()->MaxWalkSpeed = ChaseSpeed;
-}
-
-void AFLEnemy::ResetChaseSpeed()
+void AFLEnemy::RefreshWalkSpeed()
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
@@ -128,11 +123,13 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	FoodEquiped->SetMyFoodPoint(TargetPoint);
 
 	WalkSpeed *= FoodEquiped->GetDivision();
+	RefreshWalkSpeed();
 	
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
 	
 	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
+	
 	UpdateHasFoodInBlackBoard();
 }
 
@@ -167,5 +164,7 @@ void AFLEnemy::PickUpFood(AFLFood* Food)
 		UpdateHasFoodInBlackBoard();
 
 		WalkSpeed /= Food->GetDivision();
+
+		RefreshWalkSpeed();
 	}
 }
