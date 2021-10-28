@@ -72,7 +72,6 @@ TArray<AActor*> AFLEnemy::GetAvailableTargetPoints()
 
 void AFLEnemy::SetChaseSpeed()
 {
-
 	GetCharacterMovement()->MaxWalkSpeed = ChaseSpeed;
 }
 
@@ -92,12 +91,9 @@ void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* O
 		DropFoodOnPoint(TargetPoint);
 	}
 	else if(Food != nullptr && !HasFood && Food == FoodEquiped && !AlreadyDroppedFood)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("KJFBV"));
-		
+	{		
 		PickUpFood(Food);
 	}
-		
 }
 
 void AFLEnemy::SetFood(AFLFood* Food)
@@ -130,6 +126,9 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	FoodEquiped->SetActorLocation(TargetPoint->GetActorLocation());
 	FoodEquiped->SetActorRotation(TargetPoint->GetActorRotation());
 	FoodEquiped->SetMyFoodPoint(TargetPoint);
+
+	WalkSpeed *= FoodEquiped->GetDivision();
+	
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
 	
@@ -147,8 +146,9 @@ void AFLEnemy::DropFood()
 		FoodEquiped->SetActorEnableCollision(true);
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+		WalkSpeed *= FoodEquiped->GetDivision();
 
-		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsObject("FoodPosition", FoodEquiped);
+		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsVector("FoodPosition", FoodEquiped->GetActorLocation());
 		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 1);
 		
 	}
@@ -165,5 +165,7 @@ void AFLEnemy::PickUpFood(AFLFood* Food)
 		Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
 		UpdateHasFoodInBlackBoard();
+
+		WalkSpeed /= Food->GetDivision();
 	}
 }

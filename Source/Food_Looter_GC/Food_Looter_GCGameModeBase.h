@@ -43,6 +43,9 @@ public:
 
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> FoodClass;
+
+    UPROPERTY(EditAnywhere)
+    TSubclassOf<AActor> SuperFoodClass;
     
     UPROPERTY(EditAnywhere)
     float Timer1Min = 60;
