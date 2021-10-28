@@ -2,15 +2,13 @@
 
 
 #include "BTServiceDetectPlayer.h"
-#include "FLMainCharacter.h"
+#include "../Player/FLMainCharacter.h"
 #include "DrawDebugHelpers.h"
-#include "FLEnemyController.h"
+#include "../Enemy/FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Math/Vector.h"
 #include "Kismet/GameplayStatics.h"
-#include "FLEnemy.h"
-#include "FLGameState.h"
-#include "GameFramework/GameModeBase.h"
+#include "../Enemy/FLEnemy.h"
 
 void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
@@ -37,12 +35,10 @@ void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp,
 			EnemyController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", Cast<AFLMainCharacter>(PlayerPawn));
 			EnemyController->GetBlackboardComp()->SetValueAsVector("LastPlayerPosition", PlayerPawn->GetActorLocation());
 			EnemyPawn->PlayerDirection = PlayerPawn->GetActorForwardVector();
-			EnemyPawn->SetChaseSpeed();
 		}
 		else
 		{
 			EnemyController->GetBlackboardComp()->SetValueAsInt("HasDetectedPlayer", 0);
-			EnemyPawn->ResetChaseSpeed();
 			EnemyController->GetBlackboardComp()->SetValueAsObject("PlayerPosition", nullptr);
 		}
 	}

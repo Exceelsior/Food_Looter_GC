@@ -4,8 +4,8 @@
 #include "FLEndPoint.h"
 
 #include "FLEnemy.h"
-#include "FLGameState.h"
-#include "Food_Looter_GCGameModeBase.h"
+#include "../Bidon/FLGameState.h"
+#include "../Bidon/Food_Looter_GCGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 
 // Sets default values

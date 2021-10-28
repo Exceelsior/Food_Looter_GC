@@ -3,7 +3,7 @@
 
 #include "FLSpawnPoint.h"
 
-#include "Food_Looter_GCGameModeBase.h"
+#include "../Bidon/Food_Looter_GCGameModeBase.h"
 
 // Sets default values
 AFLSpawnPoint::AFLSpawnPoint()

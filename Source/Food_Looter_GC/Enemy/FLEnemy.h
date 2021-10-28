@@ -2,8 +2,7 @@
 
 #pragma once
 
-#include "FLTargetPoint.h"
-
+class AFLTargetPoint;
 class AFLGameState;
 class UBehaviorTree;
 class AFLEnemyController;

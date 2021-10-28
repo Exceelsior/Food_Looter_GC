@@ -3,9 +3,10 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "FLEnemyController.h"
 #include "BehaviorTree/BTService.h"
 #include "BTServiceDetectPlayer.generated.h"
+
+class EnemyController;
 
 /**
  * 

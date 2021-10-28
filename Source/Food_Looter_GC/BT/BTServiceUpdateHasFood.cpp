@@ -2,7 +2,7 @@
 
 
 #include "BTServiceUpdateHasFood.h"
-#include "FLEnemyController.h"
+#include "../Enemy/FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 void UBTServiceUpdateHasFood::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
