@@ -97,12 +97,20 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 	if(GM->ListEnemies.Num() < NbEnemyMax)
 	{		
 		AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyArray[FMath::RandRange(0, EnemyArray.Num()-1)], SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
-
+		AFLFood* TempFood;
+		
 		if(CheckFoodInRoom())
 		{
-			AFLFood* TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
-			SpawnedEnemy->HasFood = true;
+			int Chance = FMath::RandRange(0,100);
 
+			if(Chance < 10)
+				TempFood = GetWorld()->SpawnActor<AFLFood>(SuperFoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
+			else
+				TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
+			
+			SpawnedEnemy->HasFood = true;
+			SpawnedEnemy->WalkSpeed /= TempFood->GetDivision();
+		
 			TempFood->GetMesh()->SetSimulatePhysics(false);
 			TempFood->SetActorEnableCollision(false);
 			TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
