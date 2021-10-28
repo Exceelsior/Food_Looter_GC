@@ -10,6 +10,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "../Enemy/FLTargetPoint.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 void AFood_Looter_GCGameModeBase::BeginPlay()
 {
@@ -108,7 +109,7 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 				TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
 			
 			SpawnedEnemy->HasFood = true;
-			SpawnedEnemy->WalkSpeed /= TempFood->GetDivision();
+			SpawnedEnemy->GetCharacterMovement()->MaxWalkSpeed /= TempFood->GetDivision();
 		
 			TempFood->GetMesh()->SetSimulatePhysics(false);
 			TempFood->SetActorEnableCollision(false);

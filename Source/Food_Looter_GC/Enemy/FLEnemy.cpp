@@ -114,7 +114,7 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	FoodEquiped->SetActorRotation(TargetPoint->GetActorRotation());
 	FoodEquiped->SetMyFoodPoint(TargetPoint);
 
-	WalkSpeed *= FoodEquiped->GetDivision();
+	GetCharacterMovement()->MaxWalkSpeed *= FoodEquiped->GetDivision();
 	
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
@@ -133,6 +133,6 @@ void AFLEnemy::PickUpFood(AFLFood* Food)
 		Food->SetActorEnableCollision(false);
 		Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 
-		WalkSpeed /= Food->GetDivision();
+		GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
 	}
 }

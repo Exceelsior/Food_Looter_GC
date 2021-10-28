@@ -6,6 +6,7 @@
 #include "../Props/FLFood.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Food_Looter_GC/Enemy/FLEnemy.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 EBTNodeResult::Type UBTTaskDropFood::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {
@@ -23,6 +24,8 @@ EBTNodeResult::Type UBTTaskDropFood::ExecuteTask(UBehaviorTreeComponent& OwnerCo
 			EnemyPawn->FoodEquiped->SetActorEnableCollision(true);
 			EnemyPawn->FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 			EnemyPawn->FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+
+			EnemyPawn->GetCharacterMovement()->MaxWalkSpeed *= EnemyPawn->FoodEquiped->GetDivision();
 
 			EnemyController->GetBlackboardComp()->SetValueAsVector("FoodPosition", EnemyPawn->FoodEquiped->GetActorLocation());
 			EnemyController->GetBlackboardComp()->SetValueAsInt("HasLostFood", 1);
