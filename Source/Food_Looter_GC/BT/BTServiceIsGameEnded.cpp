@@ -2,7 +2,7 @@
 
 
 #include "BTServiceIsGameEnded.h"
-#include "FLEnemyController.h"
+#include "../Enemy/FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 void UBTServiceIsGameEnded::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)

@@ -4,9 +4,9 @@
 #include "FLChest.h"
 
 #include "FLFood.h"
-#include "FLGameState.h"
-#include "FLHUD.h"
-#include "Food_Looter_GCGameModeBase.h"
+#include "../Bidon/FLGameState.h"
+#include "../UI/FLHUD.h"
+#include "../Bidon/Food_Looter_GCGameModeBase.h"
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 

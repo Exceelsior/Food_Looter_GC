@@ -3,7 +3,7 @@
 
 #include "BTTaskTrackPlayer.h"
 
-#include "FLEnemyController.h"
+#include "../Enemy/FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 EBTNodeResult::Type UBTTaskTrackPlayer::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)

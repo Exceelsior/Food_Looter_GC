@@ -2,8 +2,8 @@
 
 
 #include "BTTaskDropFood.h"
-#include "FLEnemyController.h"
-#include "FLFood.h"
+#include "../Enemy/FLEnemyController.h"
+#include "../Props/FLFood.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 EBTNodeResult::Type UBTTaskDropFood::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)

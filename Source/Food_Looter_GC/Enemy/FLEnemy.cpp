@@ -4,13 +4,13 @@
 #include "FLEnemy.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "FLEnemyController.h"
-#include "FLGameState.h"
+#include "../Bidon/FLGameState.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "FLFood.h"
-#include "Food_Looter_GCGameModeBase.h"
+#include "../Props/FLFood.h"
+#include "../Bidon/Food_Looter_GCGameModeBase.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 // Sets default values

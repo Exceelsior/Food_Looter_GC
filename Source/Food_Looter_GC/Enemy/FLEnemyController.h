@@ -4,9 +4,9 @@
 
 #include "CoreMinimal.h"
 #include "AIController.h"
-#include "FLEnemy.h"
 #include "FLEnemyController.generated.h"
 
+class AFLEnemy;
 class AFLGameState;
 class UBehaviorTreeComponent;
 /**

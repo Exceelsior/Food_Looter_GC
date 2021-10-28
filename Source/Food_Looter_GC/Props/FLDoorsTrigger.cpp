@@ -3,7 +3,7 @@
 
 #include "FLDoorsTrigger.h"
 
-#include "FLEnemy.h"
+#include "../Enemy/FLEnemy.h"
 #include "LevelSequence.h"
 #include "LevelSequencePlayer.h"
 #include "MovieSceneSequencePlayer.h"
