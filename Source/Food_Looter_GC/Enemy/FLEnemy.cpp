@@ -4,13 +4,14 @@
 #include "FLEnemy.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "FLEnemyController.h"
-#include "../Bidon/FLGameState.h"
+#include "FLTargetPoint.h"
+#include "../Core/FLGameState.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "../Props/FLFood.h"
-#include "../Bidon/Food_Looter_GCGameModeBase.h"
+#include "../Core/Food_Looter_GCGameModeBase.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 // Sets default values
@@ -63,7 +64,7 @@ TArray<AActor*> AFLEnemy::GetAvailableTargetPoints()
 	return ArrayTarget; 
 }
 
-void AFLEnemy::SetChaseSpeed()
+/*void AFLEnemy::SetChaseSpeed()
 {
 	GetCharacterMovement()->MaxWalkSpeed = ChaseSpeed;
 }
@@ -71,7 +72,7 @@ void AFLEnemy::SetChaseSpeed()
 void AFLEnemy::ResetChaseSpeed()
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
-}
+}*/
 
 void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {

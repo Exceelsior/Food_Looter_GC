@@ -5,6 +5,7 @@
 
 #include "../Enemy/FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "Food_Looter_GC/Enemy/FLEnemy.h"
 
 EBTNodeResult::Type UBTTaskTrackPlayer::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {

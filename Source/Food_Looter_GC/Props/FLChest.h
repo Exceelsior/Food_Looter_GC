@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "../Bidon/FLGameState.h"
+#include "../Core/FLGameState.h"
 #include "GameFramework/Actor.h"
 #include "FLChest.generated.h"
 

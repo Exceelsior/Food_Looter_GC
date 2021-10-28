@@ -4,10 +4,11 @@
 #include "BTTaskFindRoamingPoint.h"
 
 #include "../Enemy/FLEnemyController.h"
-#include "../Bidon/FLGameState.h"
-#include "../Bidon/Food_Looter_GCGameModeBase.h"
+#include "../Core/FLGameState.h"
+#include "../Core/Food_Looter_GCGameModeBase.h"
 #include "NavigationSystem.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "Food_Looter_GC/Enemy/FLEnemy.h"
 
 EBTNodeResult::Type UBTTaskFindRoamingPoint::ExecuteTask(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {	

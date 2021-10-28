@@ -5,7 +5,7 @@
 
 #include "../Enemy/FLTargetPoint.h"
 #include "../Enemy/FLEnemyController.h"
-#include "../Bidon/FLGameState.h"
+#include "../Core/FLGameState.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 EBTNodeResult::Type UBTTaskTargetPointSelection::ExecuteTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory)

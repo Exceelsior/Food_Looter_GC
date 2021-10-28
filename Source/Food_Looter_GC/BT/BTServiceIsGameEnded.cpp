@@ -4,6 +4,7 @@
 #include "BTServiceIsGameEnded.h"
 #include "../Enemy/FLEnemyController.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "Food_Looter_GC/Enemy/FLEnemy.h"
 
 void UBTServiceIsGameEnded::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)
 {

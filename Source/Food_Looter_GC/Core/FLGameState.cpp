@@ -9,6 +9,7 @@
 #include "../Player/FLMainCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include "Engine/TargetPoint.h"
 
 void AFLGameState::BeginPlay()
 {
