@@ -72,7 +72,6 @@ TArray<AActor*> AFLEnemy::GetAvailableTargetPoints()
 
 void AFLEnemy::SetChaseSpeed()
 {
-
 	GetCharacterMovement()->MaxWalkSpeed = ChaseSpeed;
 }
 
@@ -92,9 +91,7 @@ void AFLEnemy::ObjectInRange(UPrimitiveComponent* OverlappedComponent, AActor* O
 		DropFoodOnPoint(TargetPoint);
 	}
 	else if(Food != nullptr && !HasFood && Food == FoodEquiped && !AlreadyDroppedFood)
-	{
-		UE_LOG(LogTemp, Warning, TEXT("KJFBV"));
-		
+	{		
 		PickUpFood(Food);
 	}
 		
@@ -148,7 +145,7 @@ void AFLEnemy::DropFood()
 		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
 		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
-		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsObject("FoodPosition", FoodEquiped);
+		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsVector("FoodPosition", FoodEquiped->GetActorLocation());
 		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 1);
 		
 	}
