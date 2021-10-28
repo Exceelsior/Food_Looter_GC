@@ -3,6 +3,7 @@
 
 #include "FLMainCharacter.h"
 
+#include "FLChair.h"
 #include "FLEnemy.h"
 #include "FLFood.h"
 #include "FLGameState.h"
@@ -43,7 +44,12 @@ AFLMainCharacter::AFLMainCharacter()
 
 	FaceCameraComponent = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("Face Capture Component"));
 	FaceCameraComponent->SetupAttachment(GetMesh());
+	
+	ChairCameraLocationComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Chair Camera Location Component"));
+	ChairCameraLocationComponent->SetupAttachment(GetMesh());
+	
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFLMainCharacter::OnTouched);
+	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AFLMainCharacter::OnEndTouched);
 }
 
 // Called when the game starts or when spawned
@@ -136,8 +142,8 @@ void AFLMainCharacter::Interact()
 	if(!HasFood)
 	{
 		GetCapsuleComponent()->GetOverlappingActors(Food, AFLFood::StaticClass());
-
-		if(Food.Num() != 0)
+		
+		if(Food.Num() != 0 && !IsSat)
 		{
 			//Pas sur de tout cve qu'il se passe la dedans
 			HasFood = true;
@@ -152,6 +158,22 @@ void AFLMainCharacter::Interact()
 				Cast<AFLTargetPoint>(FoodEquiped->GetMyFoodPoint())->SetIsFull(false);
 
 			GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
+		}
+		else if(AvailableChair)
+		{
+			if(!IsSat)
+			{
+				AvailableChair->Sit(this, true);
+				CameraComponent->SetWorldLocation(ChairCameraLocationComponent->GetComponentLocation());
+				CameraComponent->SetWorldRotation(ChairCameraLocationComponent->GetComponentRotation());
+				GetController()->SetIgnoreMoveInput(true);
+				GetController()->SetIgnoreLookInput(true);
+			}
+			else
+			{
+				
+			}
+			
 		}
 	}
 	else
@@ -170,10 +192,17 @@ void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActo
 	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
 	AFLEnemy* Enemy = Cast<AFLEnemy>(OtherActor);
+
+	AFLChair* Chair = Cast<AFLChair>(OtherActor);
+	
 	
 	if(Enemy)
 	{
 		GameState->GameLost();
+	}
+	else if(Chair)
+	{
+		AvailableChair = Chair;
 	}
 	if (PlayerSafeZone == nullptr)
 	{
@@ -182,6 +211,17 @@ void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActo
 	}
 	
 }
+
+void AFLMainCharacter::OnEndTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	AFLChair* Chair = Cast<AFLChair>(OtherActor);
+
+	if(Chair == AvailableChair)
+	{
+		AvailableChair = nullptr;
+	}
+}
+
 
 void AFLMainCharacter::PauseGame()
 {
