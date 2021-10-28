@@ -43,4 +43,7 @@ class FOOD_LOOTER_GC_API UFLPlayerAnimInstance : public UAnimInstance
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
 	bool HasLost;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
+	bool IsSat;
+	
 };

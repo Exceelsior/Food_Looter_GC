@@ -21,6 +21,7 @@ void UFLPlayerAnimInstance::UpdateAnimationProperties()
 		IsCarryingFood = Player->CheckIfCarryingFood();
 		HasLost = Player->CheckIfHasLost();
 		HasWon = Player->CheckIfHasWon();
+		IsSat = Player->CheckIfSat();
 	}
 }
 

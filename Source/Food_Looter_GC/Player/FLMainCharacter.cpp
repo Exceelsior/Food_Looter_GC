@@ -146,9 +146,8 @@ void AFLMainCharacter::Interact()
 		
 		if(Food.Num() != 0 && !IsSat)
 		{
-			//Pas sur de tout cve qu'il se passe la dedans
 			HasFood = true;
-			FoodEquiped = Cast<AFLFood>(Food[0]);
+			FoodEquiped = Cast<AFLFood>(Food[0]); //If overlap with more than one food, take the 1rst one
 
 			//Set position of FoodEquiped
 			FoodEquiped->GetMesh()->SetSimulatePhysics(false);
@@ -165,14 +164,13 @@ void AFLMainCharacter::Interact()
 			if(!IsSat)
 			{
 				AvailableChair->Sit(this, true);
-				CameraComponent->SetWorldLocation(ChairCameraLocationComponent->GetComponentLocation());
-				CameraComponent->SetWorldRotation(ChairCameraLocationComponent->GetComponentRotation());
-				GetController()->SetIgnoreMoveInput(true);
-				GetController()->SetIgnoreLookInput(true);
+				PreviousCameraTransform = CameraComponent->GetComponentTransform();
+				CameraComponent->SetWorldTransform(ChairCameraLocationComponent->GetComponentTransform());
 			}
 			else
 			{
-				
+				AvailableChair->Sit(this, false);
+				CameraComponent->SetWorldTransform(PreviousCameraTransform);
 			}
 			
 		}

@@ -87,6 +87,9 @@ protected:
 
 	UPROPERTY()
 	bool IsSat;
+
+	UPROPERTY()
+	FTransform PreviousCameraTransform;
 	
 	//Functions
 	UFUNCTION()
@@ -136,6 +139,9 @@ public:
 
 	void SetHasLost(bool Value) { HasLost = Value; }
 
-	void SetIsSat(bool Value) {IsSat = Value;}	
+	void SetIsSat(bool Value) {IsSat = Value;}
+
+	bool CheckIfSat() {return IsSat;}
+	
 	
 };

@@ -44,9 +44,16 @@ void AFLChair::Sit(AFLMainCharacter* MainCharacter, bool IsNowSat)
 	
 	if(IsNowSat)
 	{
-		
+		MainCharacter->SetActorTransform(SitLocationComponent->GetComponentTransform());
+		MainCharacter->GetController()->SetIgnoreMoveInput(true);
+		MainCharacter->GetController()->SetIgnoreLookInput(true);
 	}
-	
+	else
+	{
+		MainCharacter->SetActorTransform(StandUpLocationComponent->GetComponentTransform());
+		MainCharacter->GetController()->SetIgnoreMoveInput(true);
+		MainCharacter->GetController()->SetIgnoreLookInput(true);
+	}
 
 	
 	
