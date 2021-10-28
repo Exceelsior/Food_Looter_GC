@@ -4,7 +4,7 @@
 #include "FLChest.h"
 
 #include "FLFood.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "FLHUD.h"
 #include "Food_Looter_GCGameModeBase.h"
 #include "Components/BoxComponent.h"
@@ -26,7 +26,7 @@ void AFLChest::BeginPlay()
 {
 	Super::BeginPlay();
 
-	GM = Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>());
+	GM = Cast<AFLGameState>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameState>());
 }
 
 // Called every frame

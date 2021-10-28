@@ -4,7 +4,7 @@
 #include "FLEnemy.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "FLEnemyController.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "BehaviorTree/BehaviorTree.h"
 #include "Components/CapsuleComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
@@ -30,7 +30,7 @@ void AFLEnemy::BeginPlay()
 	Super::BeginPlay();
 
 	ArrayTarget.Empty();	
-	GM = Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>());
+	GM = Cast<AFLGameState>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameState>());
 	EnemyController = Cast<AFLEnemyController>(GetController());
 }
 

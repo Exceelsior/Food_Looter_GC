@@ -7,7 +7,7 @@
 #include "FLEnemy.h"
 #include "FLEnemyController.generated.h"
 
-class AFLGameManager;
+class AFLGameState;
 class UBehaviorTreeComponent;
 /**
  * 

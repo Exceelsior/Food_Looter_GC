@@ -4,7 +4,7 @@
 
 #include "FLTargetPoint.h"
 
-class AFLGameManager;
+class AFLGameState;
 class UBehaviorTree;
 class AFLEnemyController;
 
@@ -31,7 +31,7 @@ public:
 	UCapsuleComponent* DetectionCapsule;
 	
 	UPROPERTY(VisibleAnywhere)
-	AFLGameManager* GM;
+	AFLGameState* GM;
 
 	UPROPERTY(VisibleAnywhere)
 	class AFLFood* FoodEquiped;

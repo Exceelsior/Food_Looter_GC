@@ -4,7 +4,7 @@
 #include "FLEndPoint.h"
 
 #include "FLEnemy.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "Food_Looter_GCGameModeBase.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -42,7 +42,7 @@ void AFLEndPoint::OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* Ot
 
 	if(Enemy != nullptr)
 	{
-		GetWorld()->GetAuthGameMode()->GetGameState<AFLGameManager>()->RemoveEnemy(Enemy);
+		GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>()->RemoveEnemy(Enemy);
 		Enemy->Destroy();	
 	}
 }

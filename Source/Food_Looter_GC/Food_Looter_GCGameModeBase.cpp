@@ -6,7 +6,7 @@
 #include "FLEnemy.h"
 #include "FLEnemyController.h"
 #include "FLFood.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLTargetPoint.h"
 #include "FLHUD.h"
@@ -18,7 +18,7 @@ void AFood_Looter_GCGameModeBase::BeginPlay()
 	
 	CanDecreaseTimer = false;
 
-	GM = Cast<AFLGameManager>(this->GetWorld()->GetGameState());	
+	GM = Cast<AFLGameState>(this->GetWorld()->GetGameState());	
 }
 
 void AFood_Looter_GCGameModeBase::Tick(float DeltaSeconds)

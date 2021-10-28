@@ -4,7 +4,7 @@
 #include "BTTaskFindRoamingPoint.h"
 
 #include "FLEnemyController.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "Food_Looter_GCGameModeBase.h"
 #include "NavigationSystem.h"
 #include "BehaviorTree/BlackboardComponent.h"

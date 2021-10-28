@@ -6,7 +6,7 @@
 #include "GameFramework/GameMode.h"
 #include "Food_Looter_GCGameModeBase.generated.h"
 
-class AFLGameManager;
+class AFLGameState;
 
 UCLASS()
 class FOOD_LOOTER_GC_API AFood_Looter_GCGameModeBase : public AGameMode
@@ -15,7 +15,7 @@ class FOOD_LOOTER_GC_API AFood_Looter_GCGameModeBase : public AGameMode
 
 private:
     UPROPERTY(VisibleAnywhere)
-    AFLGameManager* GM;
+    AFLGameState* GM;
     
     //Temp actor that will be instantiated
     UPROPERTY(VisibleAnywhere)

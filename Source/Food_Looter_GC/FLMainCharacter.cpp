@@ -5,7 +5,7 @@
 
 #include "FLEnemy.h"
 #include "FLFood.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "FLSafeZone.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -57,7 +57,7 @@ void AFLMainCharacter::BeginPlay()
 	//MoveSpeedProp = FindField<UFloatProperty>(AnimInstance->GetClass(), FName("MoveSpeed"));
 
 	CameraZoomValue = MaxCameraZoomDistance;
-	GameManager = Cast<AFLGameManager>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameManager>());
+	GameManager = Cast<AFLGameState>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>());
 
 }
 
@@ -173,7 +173,7 @@ void AFLMainCharacter::OnTouched(UPrimitiveComponent* OverlappedComponent, AActo
 	
 	if(Enemy)
 	{
-		Cast<AFLGameManager>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameManager>())->GameLost();
+		Cast<AFLGameState>(UGameplayStatics::GetGameMode(GetWorld())->GetGameState<AFLGameState>())->GameLost();
 	}
 	if (PlayerSafeZone == nullptr)
 	{

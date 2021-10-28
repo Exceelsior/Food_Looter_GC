@@ -3,7 +3,7 @@
 
 #include "FLEnemyController.h"
 #include "FLEnemy.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "FLTargetPoint.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "BehaviorTree/BehaviorTreeComponent.h"

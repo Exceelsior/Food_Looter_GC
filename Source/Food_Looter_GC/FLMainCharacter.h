@@ -73,7 +73,7 @@ protected:
 	class AFLSafeZone* PlayerSafeZone;
 	
 	UPROPERTY(VisibleAnywhere)
-	class AFLGameManager* GameManager;
+	class AFLGameState* GameManager;
 	
 	//Functions
 	UFUNCTION()
