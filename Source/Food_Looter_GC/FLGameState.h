@@ -6,7 +6,7 @@
 
 #include "Engine/TargetPoint.h"
 #include "GameFramework/GameStateBase.h"
-#include "FLGameManager.generated.h"
+#include "FLGameState.generated.h"
 
 class AFLEnemy;
 
@@ -14,7 +14,7 @@ class AFLEnemy;
  * 
  */
 UCLASS()
-class FOOD_LOOTER_GC_API AFLGameManager : public AGameStateBase
+class FOOD_LOOTER_GC_API AFLGameState : public AGameStateBase
 {
 	GENERATED_BODY()
 

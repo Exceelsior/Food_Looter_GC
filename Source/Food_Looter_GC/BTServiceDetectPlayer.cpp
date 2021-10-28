@@ -9,7 +9,7 @@
 #include "Math/Vector.h"
 #include "Kismet/GameplayStatics.h"
 #include "FLEnemy.h"
-#include "FLGameManager.h"
+#include "FLGameState.h"
 #include "GameFramework/GameModeBase.h"
 
 void UBTServiceDetectPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory)

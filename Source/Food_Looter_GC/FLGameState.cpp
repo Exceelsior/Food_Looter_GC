@@ -1,7 +1,7 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "FLGameManager.h"
+#include "FLGameState.h"
 
 #include "FLEnemy.h"
 #include "FLEnemyController.h"
@@ -10,7 +10,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
-void AFLGameManager::BeginPlay()
+void AFLGameState::BeginPlay()
 {
 	Super::BeginPlay();
 
@@ -18,17 +18,17 @@ void AFLGameManager::BeginPlay()
 	
 }
 
-void AFLGameManager::AddEnemy(AFLEnemy* Enemy)
+void AFLGameState::AddEnemy(AFLEnemy* Enemy)
 {
 	ListEnemies.Add(Enemy);
 }
 
-void AFLGameManager::RemoveEnemy(AFLEnemy* Enemy)
+void AFLGameState::RemoveEnemy(AFLEnemy* Enemy)
 {
 	ListEnemies.Remove(Enemy);
 }
 
-void AFLGameManager::GameLost()
+void AFLGameState::GameLost()
 {
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameLost();
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
@@ -42,7 +42,7 @@ void AFLGameManager::GameLost()
 	}
 }
 
-void AFLGameManager::CompareFood()
+void AFLGameState::CompareFood()
 {
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->UpdateFoodAmount((float)NbFoodPlayer/NbFoodNeeded);
 		
@@ -52,12 +52,12 @@ void AFLGameManager::CompareFood()
 	}
 }
 
-TArray<AActor*> AFLGameManager::GetFoodPositions()
+TArray<AActor*> AFLGameState::GetFoodPositions()
 {
 	return FoodPositions;
 }
 
-void AFLGameManager::UpdatePlayerSafeStateInEnemiesBlackBoards()
+void AFLGameState::UpdatePlayerSafeStateInEnemiesBlackBoards()
 {
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
@@ -65,7 +65,7 @@ void AFLGameManager::UpdatePlayerSafeStateInEnemiesBlackBoards()
 	}
 }
 
-void AFLGameManager::GameWon()
+void AFLGameState::GameWon()
 {
 	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameWon();
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);

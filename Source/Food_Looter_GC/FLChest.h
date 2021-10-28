@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "FLGameState.h"
 #include "GameFramework/Actor.h"
 #include "FLChest.generated.h"
 
@@ -15,7 +16,7 @@ class FOOD_LOOTER_GC_API AFLChest : public AActor
 
     private:
     UPROPERTY(EditAnywhere)
-    AFLGameManager* GM;
+    AFLGameState* GM;
 
     public:
     // Sets default values for this actor's properties
