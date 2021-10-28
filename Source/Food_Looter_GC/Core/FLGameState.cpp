@@ -22,11 +22,27 @@ void AFLGameState::BeginPlay()
 void AFLGameState::AddEnemy(AFLEnemy* Enemy)
 {
 	ListEnemies.Add(Enemy);
+
+	AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
+	
+	if(EnemyController)
+	{
+		ListEnemiesControllers.Add(EnemyController);
+	}
+	
+	
 }
 
 void AFLGameState::RemoveEnemy(AFLEnemy* Enemy)
 {
 	ListEnemies.Remove(Enemy);
+	
+	AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
+	
+	if(EnemyController)
+	{
+		ListEnemiesControllers.Remove(EnemyController);
+	}
 }
 
 void AFLGameState::GameLost()
@@ -40,10 +56,12 @@ void AFLGameState::GameLost()
 	
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
-		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
-		if(EnemyController)
-			EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 		Enemy->SetHasWon(true);
+	}
+
+	for(AFLEnemyController* EnemyController : ListEnemiesControllers)
+	{
+		EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 	}
 }
 
@@ -79,11 +97,13 @@ void AFLGameState::GameWon()
 	
 	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasWon(true);
 	for(AFLEnemy* Enemy : ListEnemies)
-	{
-		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
-		if(EnemyController)
-			EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
+	{		
 		Enemy->SetHasLost(true);
+	}
+
+	for(AFLEnemyController* EnemyController : ListEnemiesControllers)
+	{
+		EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 	}
 }
 
