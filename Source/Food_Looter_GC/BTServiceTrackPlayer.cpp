@@ -13,16 +13,17 @@ void UBTServiceTrackPlayer::ScheduleNextTick(UBehaviorTreeComponent& OwnerComp, 
 
 	if(EnemyController)
 	{
-		FVector LastPlayerPosition = EnemyController->GetBlackboardComp()->GetValueAsVector("LastPlayerPosition");
-
 		AFLEnemy* EnemyPawn = Cast<AFLEnemy>(EnemyController->GetPawn());
 
-		if((LastPlayerPosition - EnemyPawn->GetActorLocation()).Size() < 100 && !EnemyPawn->IsTrackingPlayer)
-		{
-			FVector SupposedPlayerPosition = EnemyController->GetPawn()->GetActorLocation() + EnemyPawn->PlayerDirection * 500;
-			EnemyController->GetBlackboardComp()->SetValueAsVector("SupposedPlayerPosition", SupposedPlayerPosition);
-			EnemyPawn->ResetTrackTimer();
-			EnemyPawn->IsTrackingPlayer = true;
-		}		
+		if(EnemyPawn)
+		{			
+			EnemyController->GetBlackboardComp()->SetValueAsFloat("TrackTimer", EnemyPawn->TrackTimer);
+			
+			if (EnemyPawn->TrackTimer <= 0 && EnemyPawn->IsTrackingPlayer)
+			{				
+				EnemyPawn->IsTrackingPlayer = false;
+				EnemyController->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer", 0);
+			}
+		}
 	}
 }

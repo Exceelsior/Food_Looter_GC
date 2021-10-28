@@ -48,13 +48,6 @@ void AFLEnemy::Tick(float DeltaTime)
 	if(TrackTimer > 0 && IsTrackingPlayer)
 	{
 		TrackTimer -= DeltaTime;		
-		EnemyController->GetBlackboardComp()->SetValueAsFloat("TrackTimer", TrackTimer);
-	}
-	else if (TrackTimer <= 0 && IsTrackingPlayer)
-	{
-		EnemyController->GetBlackboardComp()->SetValueAsFloat("TrackTimer", TrackTimer);
-		EnemyController->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer", 0);
-		IsTrackingPlayer = false;
 	}
 }
 
@@ -94,7 +87,7 @@ void AFLEnemy::SetFood(AFLFood* Food)
 
 void AFLEnemy::ResetTrackTimer()
 {
-	TrackTimer = 3;
+	TrackTimer = 3;	
 	IsTrackingPlayer = true;
 }
 
