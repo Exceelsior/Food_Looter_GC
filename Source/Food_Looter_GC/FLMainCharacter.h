@@ -11,6 +11,7 @@ class UCameraComponent;
 class USpringArmComponent;
 class AFLGameState;
 class AFLSafeZone;
+class AFLChair;
 
 UCLASS()
 class FOOD_LOOTER_GC_API AFLMainCharacter : public ACharacter
@@ -77,6 +78,15 @@ protected:
 	
 	UPROPERTY(VisibleAnywhere)
 	AFLGameState* GameState;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	USceneComponent* ChairCameraLocationComponent;
+
+	UPROPERTY()
+	AFLChair* AvailableChair;
+
+	UPROPERTY()
+	bool IsSat;
 	
 	//Functions
 	UFUNCTION()
@@ -104,6 +114,9 @@ protected:
 	void OnTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult &SweepResult);
 
 	UFUNCTION()
+	void OnEndTouched(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+	
+	UFUNCTION()
 	void PauseGame();
 	
 public:	
@@ -123,6 +136,6 @@ public:
 
 	void SetHasLost(bool Value) { HasLost = Value; }
 
-	
+	void SetIsSat(bool Value) {IsSat = Value;}	
 	
 };
