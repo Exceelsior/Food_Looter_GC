@@ -228,9 +228,6 @@ void AFLMainCharacter::PauseGame()
 void AFLMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	
-	//PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
-	//PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	PlayerInputComponent->BindAxis("Vertical", this, &AFLMainCharacter::MoveForward);
 	PlayerInputComponent->BindAxis("Horizontal", this, &AFLMainCharacter::MoveRight);

@@ -58,8 +58,6 @@ void AFLChair::Sit(AFLMainCharacter* MainCharacter, bool IsNowSat)
 		MainCharacter->GetController()->SetIgnoreMoveInput(false);
 		MainCharacter->GetController()->SetIgnoreLookInput(false);
 	}
-
-	
 	
 }
 

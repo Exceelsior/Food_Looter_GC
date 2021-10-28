@@ -6,6 +6,7 @@
 #include "GameFramework/GameStateBase.h"
 #include "FLGameState.generated.h"
 
+class AFLEnemyController;
 class AFLEnemy;
 
 /**
@@ -19,6 +20,9 @@ class FOOD_LOOTER_GC_API AFLGameState : public AGameStateBase
 	public:
 	UPROPERTY(VisibleAnywhere)
 	TArray<AFLEnemy*> ListEnemies;
+
+	UPROPERTY()
+	TArray<AFLEnemyController*> ListEnemiesControllers;
 
 	UPROPERTY(EditAnywhere)
 	TArray<AActor*> FoodPositions;

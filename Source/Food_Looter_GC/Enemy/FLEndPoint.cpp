@@ -25,7 +25,12 @@ void AFLEndPoint::BeginPlay()
 	Super::BeginPlay();
 	SphereComponent->OnComponentBeginOverlap.AddDynamic(this, &AFLEndPoint::OnTouched);
 	GameMode = Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode());
-	GameMode->EndPoint = this;
+
+	if(GameMode)
+	{
+		GameMode->EndPoint = this;
+	}
+	
 }
 
 // Called every frame

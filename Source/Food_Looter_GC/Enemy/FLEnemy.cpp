@@ -43,7 +43,7 @@ void AFLEnemy::Tick(float DeltaTime)
 	if(TimerPickUpFood > 0)
 		TimerPickUpFood -= DeltaTime;
 	
-	if(ArrayTarget.Num() == 0)
+	if(ArrayTarget.Num() == 0 && GM)
 		ArrayTarget = GM->GetFoodPositions();
 
 	if(TrackTimer > 0 && IsTrackingPlayer)
