@@ -109,7 +109,7 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 				TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
 			
 			SpawnedEnemy->HasFood = true;
-			SpawnedEnemy->GetCharacterMovement()->MaxWalkSpeed /= SpawnedEnemy->FoodEquiped->GetDivision();
+			SpawnedEnemy->GetCharacterMovement()->MaxWalkSpeed /= TempFood->GetDivision();
 		
 			TempFood->GetMesh()->SetSimulatePhysics(false);
 			TempFood->SetActorEnableCollision(false);
