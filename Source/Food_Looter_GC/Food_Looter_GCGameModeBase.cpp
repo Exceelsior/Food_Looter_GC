@@ -115,13 +115,12 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 			TempFood->SetActorEnableCollision(false);
 			TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 			SpawnedEnemy->SetFood(TempFood);
-			SpawnedEnemy->UpdateHasFoodInBlackBoard();
 
 			GM->NbFoodInRoom += 1;
-			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 1);
+			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 1);
 		}
 		else
-			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 0);
+			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 0);
 		
 		GM->AddEnemy(SpawnedEnemy);
 	}
