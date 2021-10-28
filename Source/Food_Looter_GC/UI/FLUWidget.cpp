@@ -1,10 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "FLUWidget.h"
+#include "../UI/FLUWidget.h"
 #include "Components/ProgressBar.h"
 #include "Kismet/GameplayStatics.h"
-
+#include "Components/Button.h"
+#include "Components/Image.h"
+#include "Components/TextBlock.h"
 
 void UFLUWidget::UpdateFoodAmount(float Value)
 {

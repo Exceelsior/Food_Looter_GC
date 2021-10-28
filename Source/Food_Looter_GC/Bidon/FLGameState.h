@@ -3,8 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
-#include "Engine/TargetPoint.h"
 #include "GameFramework/GameStateBase.h"
 #include "FLGameState.generated.h"
 
@@ -33,9 +31,6 @@ class FOOD_LOOTER_GC_API AFLGameState : public AGameStateBase
 
 	UPROPERTY(EditAnywhere)
 	int NbFoodNeeded;		
-	
-	UPROPERTY(VisibleAnywhere)
-	ULevelScriptBlueprint* LvlBP;
 
 	//Functions
 

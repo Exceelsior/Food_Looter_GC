@@ -3,10 +3,10 @@
 
 #include "FLGameState.h"
 
-#include "FLEnemy.h"
-#include "FLEnemyController.h"
-#include "FLHUD.h"
-#include "FLMainCharacter.h"
+#include "../Enemy/FLEnemy.h"
+#include "../enemy/FLEnemyController.h"
+#include "../UI/FLHUD.h"
+#include "../Player/FLMainCharacter.h"
 #include "Kismet/GameplayStatics.h"
 #include "BehaviorTree/BlackboardComponent.h"
 

@@ -4,13 +4,12 @@
 
 #include "CoreMinimal.h"
 #include "Blueprint/UserWidget.h"
-#include "Components/Button.h"
-#include "Components/Image.h"
-#include "Components/TextBlock.h"
-//#include "Runtime/UMG/Public/UMG.h"
 #include "FLUWidget.generated.h"
 
 class UProgressBar;
+class UTextBlock;
+class UImage;
+class UButton;
 
 UCLASS()
 class FOOD_LOOTER_GC_API UFLUWidget : public UUserWidget

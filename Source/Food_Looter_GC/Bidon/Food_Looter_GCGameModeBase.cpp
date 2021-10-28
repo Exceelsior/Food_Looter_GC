@@ -3,13 +3,12 @@
 
 #include "Food_Looter_GCGameModeBase.h"
 
-#include "FLEnemy.h"
-#include "FLEnemyController.h"
-#include "FLFood.h"
+#include "../Enemy/FLEnemy.h"
+#include "../Enemy/FLEnemyController.h"
+#include "../Props/FLFood.h"
 #include "FLGameState.h"
 #include "Kismet/GameplayStatics.h"
-#include "FLTargetPoint.h"
-#include "FLHUD.h"
+#include "../Enemy/FLTargetPoint.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 void AFood_Looter_GCGameModeBase::BeginPlay()
