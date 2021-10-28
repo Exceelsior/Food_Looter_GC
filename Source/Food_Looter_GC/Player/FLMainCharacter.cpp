@@ -3,11 +3,11 @@
 
 #include "FLMainCharacter.h"
 
-#include "FLChair.h"
-#include "FLEnemy.h"
-#include "FLFood.h"
-#include "FLGameState.h"
-#include "FLSafeZone.h"
+#include "../Props/FLChair.h"
+#include "../Enemy/FLEnemy.h"
+#include "../Props/FLFood.h"
+#include "../Bidon/FLGameState.h"
+#include "../Player/FLSafeZone.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/SceneCaptureComponent2D.h"

@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "FLMainCharacter.h"
 #include "Components/SphereComponent.h"
 #include "GameFramework/Actor.h"
 #include "FLChair.generated.h"

@@ -2,6 +2,7 @@
 
 
 #include "FLChair.h"
+#include "../Player/FLMainCharacter.h"
 
 // Sets default values
 AFLChair::AFLChair()
