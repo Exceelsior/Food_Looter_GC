@@ -42,6 +42,9 @@ public:
     TArray<TSubclassOf<AActor>> EnemyArray;
 
     UPROPERTY(EditAnywhere)
+    TArray<UMaterial*> EnemyMaterialsArray;
+    
+    UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> FoodClass;
 
     UPROPERTY(EditAnywhere)
@@ -53,7 +56,11 @@ public:
     UPROPERTY(EditAnywhere)
     float TimerBetweenEnemies;
 
+    UPROPERTY(EditAnywhere)
     int NbEnemyMax;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int SuperFoodSpawnChance = 10;
 
     //Functions    
     UFUNCTION()

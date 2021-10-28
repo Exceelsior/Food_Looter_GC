@@ -17,7 +17,6 @@ EBTNodeResult::Type UBTTaskTrackPlayer::ExecuteTask(UBehaviorTreeComponent& Owne
 		FVector SupposedPlayerPosition = EnemyController->GetPawn()->GetActorLocation() + EnemyPawn->PlayerDirection * 500;
 		EnemyController->GetBlackboardComp()->SetValueAsVector("SupposedPlayerPosition", SupposedPlayerPosition);
 		EnemyPawn->ResetTrackTimer();
-		EnemyPawn->IsTrackingPlayer = true;
 
 		return EBTNodeResult::Succeeded;
 	}
