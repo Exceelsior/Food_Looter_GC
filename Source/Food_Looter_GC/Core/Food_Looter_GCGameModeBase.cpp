@@ -98,29 +98,37 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 	{		
 		AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyArray[FMath::RandRange(0, EnemyArray.Num()-1)], SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
 		AFLFood* TempFood;
-		
-		if(CheckFoodInRoom())
+		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(SpawnedEnemy->GetController());
+
+		if(SpawnedEnemy && EnemyController)
 		{
-			int Chance = FMath::RandRange(0,100);
+			if(CheckFoodInRoom())
+			{
+				int Chance = FMath::RandRange(0,100);
 
-			if(Chance < 10)
-				TempFood = GetWorld()->SpawnActor<AFLFood>(SuperFoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
-			else
-				TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
-			
-			SpawnedEnemy->HasFood = true;
-			SpawnedEnemy->GetCharacterMovement()->MaxWalkSpeed /= TempFood->GetDivision();
+				if(Chance < 10)
+					TempFood = GetWorld()->SpawnActor<AFLFood>(SuperFoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
+				else
+					TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
+
+				if(TempFood)
+				{
+					SpawnedEnemy->HasFood = true;
+					SpawnedEnemy->GetCharacterMovement()->MaxWalkSpeed /= TempFood->GetDivision();
 		
-			TempFood->GetMesh()->SetSimulatePhysics(false);
-			TempFood->SetActorEnableCollision(false);
-			TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-			SpawnedEnemy->SetFood(TempFood);
+					TempFood->GetMesh()->SetSimulatePhysics(false);
+					TempFood->SetActorEnableCollision(false);
+					TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+					SpawnedEnemy->SetFood(TempFood);
 
-			GM->NbFoodInRoom += 1;
-			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 1);
+					GM->NbFoodInRoom += 1;
+					EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 1);
+					EnemyController->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 1);
+				}
+			}
+			else
+				EnemyController->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 0);
 		}
-		else
-			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 0);
 		
 		GM->AddEnemy(SpawnedEnemy);
 	}
