@@ -35,6 +35,8 @@ public:
 	UFUNCTION()
 	void PlayAgain();
 
+	UFUNCTION()
+	void QuitGame();
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UProgressBar* FoodBar;
 	
@@ -46,4 +48,7 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
 	UButton* ReplayButton;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (BindWidget))
+	UButton* QuitButton;
 };

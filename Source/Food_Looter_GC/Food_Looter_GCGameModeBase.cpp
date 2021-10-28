@@ -96,7 +96,7 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 {
 	if(GM->ListEnemies.Num() < NbEnemyMax)
 	{		
-		AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyArray[FMath::RandRange(0, EnemyArray.Num())], SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
+		AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyArray[FMath::RandRange(0, EnemyArray.Num()-1)], SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
 
 		if(CheckFoodInRoom())
 		{
