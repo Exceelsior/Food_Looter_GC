@@ -15,11 +15,14 @@ EBTNodeResult::Type UBTTaskTrackPlayer::ExecuteTask(UBehaviorTreeComponent& Owne
 	{
 		AFLEnemy* EnemyPawn = Cast<AFLEnemy>(EnemyController->GetPawn());
 
-		FVector SupposedPlayerPosition = EnemyController->GetPawn()->GetActorLocation() + EnemyPawn->PlayerDirection * 500;
-		EnemyController->GetBlackboardComp()->SetValueAsVector("SupposedPlayerPosition", SupposedPlayerPosition);
-		EnemyPawn->ResetTrackTimer();
+		if(EnemyPawn)
+		{
+			FVector SupposedPlayerPosition = EnemyController->GetPawn()->GetActorLocation() + EnemyPawn->PlayerDirection * 500;
+			EnemyController->GetBlackboardComp()->SetValueAsVector("SupposedPlayerPosition", SupposedPlayerPosition);
+			EnemyPawn->ResetTrackTimer();
 
-		return EBTNodeResult::Succeeded;
+			return EBTNodeResult::Succeeded;
+		}
 	}
 	return EBTNodeResult::Failed;
 }

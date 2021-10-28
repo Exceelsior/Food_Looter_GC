@@ -19,22 +19,25 @@ EBTNodeResult::Type UBTTaskFindRoamingPoint::ExecuteTask(UBehaviorTreeComponent&
 	{
 		AFLEnemy* EnemyPawn = Cast<AFLEnemy>(EnemyController->GetPawn());
 		UNavigationSystemV1* NavSys = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
-		if(EnemyPawn->RoamNumber < 2)
+		if(EnemyPawn && NavSys)
 		{
-			FNavLocation ResultLocation;
+			if(EnemyPawn->RoamNumber < 2)
+			{
+				FNavLocation ResultLocation;
 			
-			do
-				NavSys->GetRandomReachablePointInRadius(EnemyController->GetPawn()->GetActorLocation(), 4000, ResultLocation);
-			while((ResultLocation.Location - EnemyPawn->GetActorLocation()).Size() < 500); //Tant que le point est trop proche, trouve un nouveau point
+				do
+					NavSys->GetRandomReachablePointInRadius(EnemyController->GetPawn()->GetActorLocation(), 4000, ResultLocation);
+				while((ResultLocation.Location - EnemyPawn->GetActorLocation()).Size() < 500); //Tant que le point est trop proche, trouve un nouveau point
 			
-			EnemyController->GetBlackboardComp()->SetValueAsVector("RoamPoint", ResultLocation.Location);
-			EnemyPawn->RoamNumber++;
+				EnemyController->GetBlackboardComp()->SetValueAsVector("RoamPoint", ResultLocation.Location);
+				EnemyPawn->RoamNumber++;
+			}
+			else
+			{
+				EnemyController->GetBlackboardComp()->SetValueAsVector("RoamPoint",Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint->GetActorLocation());
+			}
+			return EBTNodeResult::Succeeded;
 		}
-		else
-		{
-			EnemyController->GetBlackboardComp()->SetValueAsVector("RoamPoint",Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint->GetActorLocation());
-		}
-		return EBTNodeResult::Succeeded;
 	}
 	return EBTNodeResult::Failed;
 }

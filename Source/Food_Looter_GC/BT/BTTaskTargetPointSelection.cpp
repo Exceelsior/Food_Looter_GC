@@ -17,24 +17,25 @@ EBTNodeResult::Type UBTTaskTargetPointSelection::ExecuteTask(UBehaviorTreeCompon
        
 		UBlackboardComponent* BlackboardComp = EnemyController->GetBlackboardComp();
 		AFLTargetPoint* CurrentPoint = Cast<AFLTargetPoint>(BlackboardComp->GetValueAsObject("LocationToGo"));
- 
-		AvailableTargetPoints = Cast<AFLGameState>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>())->GetFoodPositions();
-		
-		int32 RandomIndex;
- 
-		AFLTargetPoint* NextTargetPoint;
-		
-		do
+
+		if(CurrentPoint)
 		{
-			RandomIndex = FMath::RandRange(0, AvailableTargetPoints.Num()-1);
-			NextTargetPoint = Cast<AFLTargetPoint>(AvailableTargetPoints[RandomIndex]);
-			
-			
-		} while (CurrentPoint == NextTargetPoint && !NextTargetPoint->GetIsFull());
+			AvailableTargetPoints = Cast<AFLGameState>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>())->GetFoodPositions();
+		
+			int32 RandomIndex;
  
-		BlackboardComp->SetValueAsObject("LocationToGo", NextTargetPoint);
+			AFLTargetPoint* NextTargetPoint;
+
+			do
+			{
+				RandomIndex = FMath::RandRange(0, AvailableTargetPoints.Num()-1);
+				NextTargetPoint = Cast<AFLTargetPoint>(AvailableTargetPoints[RandomIndex]);				
+			} while (CurrentPoint == NextTargetPoint && !NextTargetPoint->GetIsFull());
  
-		return EBTNodeResult::Succeeded;
+			BlackboardComp->SetValueAsObject("LocationToGo", NextTargetPoint);
+ 
+			return EBTNodeResult::Succeeded;
+		}
 	}
 	return EBTNodeResult::Failed;
 }
