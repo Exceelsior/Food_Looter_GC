@@ -97,38 +97,30 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 	if(GM->ListEnemies.Num() < NbEnemyMax)
 	{		
 		AFLEnemy* SpawnedEnemy = GetWorld()->SpawnActor<AFLEnemy>(EnemyArray[FMath::RandRange(0, EnemyArray.Num()-1)], SpawnPoint->GetActorLocation(), SpawnPoint->GetActorRotation());
-		SpawnedEnemy->GetMesh()->SetMaterial(0, EnemyMaterialsArray[FMath::RandRange(0, EnemyMaterialsArray.Num()-1)]);
-
+		AFLFood* TempFood;
 		
-		
-		if(SpawnedEnemy && CheckFoodInRoom())
+		if(CheckFoodInRoom())
 		{
 			int Chance = FMath::RandRange(0,100);
 
-			AFLFood* TempFood;
-			
-			if(Chance < SuperFoodSpawnChance)
+			if(Chance < 10)
 				TempFood = GetWorld()->SpawnActor<AFLFood>(SuperFoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
 			else
 				TempFood = GetWorld()->SpawnActor<AFLFood>(FoodClass, SpawnedEnemy->GetActorLocation(), SpawnedEnemy->GetActorRotation());
 			
 			SpawnedEnemy->HasFood = true;
 			SpawnedEnemy->WalkSpeed /= TempFood->GetDivision();
-			SpawnedEnemy->RefreshWalkSpeed();
 		
 			TempFood->GetMesh()->SetSimulatePhysics(false);
 			TempFood->SetActorEnableCollision(false);
 			TempFood->AttachToComponent(SpawnedEnemy->GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 			SpawnedEnemy->SetFood(TempFood);
-			SpawnedEnemy->UpdateHasFoodInBlackBoard();
 
 			GM->NbFoodInRoom += 1;
-			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 1);
+			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 1);
 		}
 		else
-		{
-			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasAnAvailableFoodSpot", 0);
-		}
+			Cast<AFLEnemyController>(SpawnedEnemy->GetController())->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 0);
 		
 		GM->AddEnemy(SpawnedEnemy);
 	}

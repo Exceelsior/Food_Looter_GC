@@ -7,6 +7,7 @@
 class AFLGameState;
 class UBehaviorTree;
 class AFLEnemyController;
+class AFLFood;
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
@@ -34,7 +35,7 @@ public:
 	AFLGameState* GM;
 
 	UPROPERTY(VisibleAnywhere)
-	class AFLFood* FoodEquiped;
+	AFLFood* FoodEquiped;
 
 	UPROPERTY(EditAnywhere)
 		float WalkSpeed = 400;
@@ -48,6 +49,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere)
 	bool HasFood = false;
+
+	UPROPERTY(VisibleAnywhere)
+	bool HasLostFood = false;	
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	bool HasLost;
@@ -95,8 +99,6 @@ public:
 
 	void SetFood(AFLFood* Food);
 
-	void UpdateHasFoodInBlackBoard();
-
 	bool CheckIfHasWon() { return HasWon; }
 
 	bool CheckIfHasLost() { return HasLost; }
@@ -107,5 +109,4 @@ public:
 	
 	void ResetTrackTimer();
 
-	void DropFood();
 };

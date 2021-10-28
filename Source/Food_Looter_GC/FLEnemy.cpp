@@ -70,7 +70,12 @@ TArray<AActor*> AFLEnemy::GetAvailableTargetPoints()
 	return ArrayTarget; 
 }
 
-void AFLEnemy::RefreshWalkSpeed()
+void AFLEnemy::SetChaseSpeed()
+{
+	GetCharacterMovement()->MaxWalkSpeed = ChaseSpeed;
+}
+
+void AFLEnemy::ResetChaseSpeed()
 {
 	GetCharacterMovement()->MaxWalkSpeed = WalkSpeed;
 }
@@ -96,13 +101,6 @@ void AFLEnemy::SetFood(AFLFood* Food)
 	FoodEquiped = Food;
 }
 
-void AFLEnemy::UpdateHasFoodInBlackBoard()
-{
-	if(HasFood)
-		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 1);
-	else
-		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 0);
-}
 
 void AFLEnemy::ResetTrackTimer()
 {
@@ -123,48 +121,24 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	FoodEquiped->SetMyFoodPoint(TargetPoint);
 
 	WalkSpeed *= FoodEquiped->GetDivision();
-	RefreshWalkSpeed();
 	
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
 	
 	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
-	
-	UpdateHasFoodInBlackBoard();
 }
 
-void AFLEnemy::DropFood()
-{
-	if(HasFood)
-	{
-		TimerPickUpFood = 3;
-		
-		HasFood = false;
-		FoodEquiped->SetActorEnableCollision(true);
-		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
-		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
-		WalkSpeed *= FoodEquiped->GetDivision();
-
-		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsVector("FoodPosition", FoodEquiped->GetActorLocation());
-		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 1);
-		
-	}
-	
-}
 
 void AFLEnemy::PickUpFood(AFLFood* Food)
 {
 	if(TimerPickUpFood <= 0)
 	{
 		HasFood = true;
+		HasLostFood = false;
 		Food->GetMesh()->SetSimulatePhysics(false);
 		Food->SetActorEnableCollision(false);
 		Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
-		Cast<AFLEnemyController>(GetController())->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
-		UpdateHasFoodInBlackBoard();
 
 		WalkSpeed /= Food->GetDivision();
-
-		RefreshWalkSpeed();
 	}
 }
