@@ -118,8 +118,9 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	
 	FoodEquiped = nullptr;
 	TargetPoint->SetIsFull(true);
-	
-	EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
+
+	if(EnemyController)
+		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 0);
 }
 
 
@@ -132,6 +133,11 @@ void AFLEnemy::PickUpFood(AFLFood* Food)
 		Food->GetMesh()->SetSimulatePhysics(false);
 		Food->SetActorEnableCollision(false);
 		Food->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+		if(EnemyController)
+		{
+			EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 1);
+			EnemyController->GetBlackboardComp()->SetValueAsInt("HasLostFood", 0);
+		}
 
 		GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
 	}
