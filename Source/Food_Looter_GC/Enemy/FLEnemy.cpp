@@ -120,7 +120,11 @@ void AFLEnemy::DropFoodOnPoint(AFLTargetPoint* TargetPoint)
 	TargetPoint->SetIsFull(true);
 
 	if(EnemyController)
+	{
 		EnemyController->GetBlackboardComp()->SetValueAsInt("HasFood", 0);
+		EnemyController->GetBlackboardComp()->SetValueAsObject("LocationToGo", Cast<AFood_Looter_GCGameModeBase>(GetWorld()->GetAuthGameMode())->EndPoint);
+		
+	}
 }
 
 

@@ -22,66 +22,35 @@ void AFLGameState::BeginPlay()
 void AFLGameState::AddEnemy(AFLEnemy* Enemy)
 {
 	ListEnemies.Add(Enemy);
-
-	AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
-
-	if(EnemyController)
-	{
-		ListEnemiesControllers.Add(EnemyController);
-	}
-	
 }
 
 void AFLGameState::RemoveEnemy(AFLEnemy* Enemy)
 {
 	ListEnemies.Remove(Enemy);
-
-	AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
-
-	if(EnemyController)
-	{
-		ListEnemiesControllers.Remove(EnemyController);
-	}
 }
 
 void AFLGameState::GameLost()
 {
-	AFLHUD* HUD = Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
-
-	if(HUD)
-	{
-		HUD->GameLost();
-	}
-	
+	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameLost();
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
 	GetWorld()->GetFirstPlayerController()->SetIgnoreLookInput(true);
 	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 	
-	AFLMainCharacter* Player = Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-
-	if(Player)
-	{
-		//For ragdoll, not working
-		//Player->GetMesh()->SetSimulatePhysics(true);
-		
-		Player->SetHasLost(true);
-	}
+	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasLost(true);
 	
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
+		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
+		if(EnemyController)
+			EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 		Enemy->SetHasWon(true);
 	}
 }
 
 void AFLGameState::CompareFood()
 {
-	AFLHUD* HUD = Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
-
-	if(HUD)
-	{
-		HUD->UpdateFoodAmount((float)NbFoodPlayer/NbFoodNeeded);
-	}
-	
+	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->UpdateFoodAmount((float)NbFoodPlayer/NbFoodNeeded);
+		
 	if(NbFoodPlayer >= NbFoodNeeded)
 	{
 		GameWon();
@@ -97,49 +66,29 @@ void AFLGameState::UpdatePlayerSafeStateInEnemiesBlackBoards()
 {
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
-		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
-
-		if(EnemyController)
-		{
-			EnemyController->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer", 0);
-		}
+		Cast<AFLEnemyController>(Enemy->GetController())->GetBlackboardComp()->SetValueAsInt("HasSeenPlayer", 0);
 	}
 }
 
 void AFLGameState::GameWon()
 {
-	AFLHUD* HUD = Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
-
-	if(HUD)
-	{
-		HUD->GameWon();
-	}
-	
+	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->GameWon();
 	GetWorld()->GetFirstPlayerController()->SetIgnoreMoveInput(true);
 	GetWorld()->GetFirstPlayerController()->SetIgnoreLookInput(true);
 	GetWorld()->GetFirstPlayerController()->SetShowMouseCursor(true);
 	
-	AFLMainCharacter* Player = Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn());
-
-	if(Player)
-	{
-		Player->SetHasWon(true);
-	}
-	
+	Cast<AFLMainCharacter>(GetWorld()->GetFirstPlayerController()->GetPawn())->SetHasWon(true);
 	for(AFLEnemy* Enemy : ListEnemies)
 	{
+		AFLEnemyController* EnemyController = Cast<AFLEnemyController>(Enemy->GetController());
+		if(EnemyController)
+			EnemyController->GetBlackboardComp()->SetValueAsInt("GameEnded", 1);
 		Enemy->SetHasLost(true);
 	}
 }
 
 void AFLGameState::PauseGame()
 {
-	AFLHUD* HUD = Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD());
-
-	if(HUD)
-	{
-		HUD->PauseGame();
-	}
-	
+	Cast<AFLHUD>(GetWorld()->GetFirstPlayerController()->GetHUD())->PauseGame();
 }
 

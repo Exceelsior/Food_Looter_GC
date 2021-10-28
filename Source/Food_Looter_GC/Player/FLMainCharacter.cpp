@@ -75,7 +75,8 @@ void AFLMainCharacter::Tick(float DeltaTime)
 	
 	if(GetCapsuleComponent()->IsOverlappingActor(PlayerSafeZone))
 	{
-		GameState->UpdatePlayerSafeStateInEnemiesBlackBoards();
+		if(GameState)
+			GameState->UpdatePlayerSafeStateInEnemiesBlackBoards();
 	}
 }
 
@@ -146,14 +147,17 @@ void AFLMainCharacter::Interact()
 			FoodEquiped = Cast<AFLFood>(Food[0]); //If overlap with more than one food, take the 1rst one
 
 			//Set position of FoodEquiped
-			FoodEquiped->GetMesh()->SetSimulatePhysics(false);
-			FoodEquiped->SetActorEnableCollision(false);
-			FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
+			if(FoodEquiped)
+			{
+				FoodEquiped->GetMesh()->SetSimulatePhysics(false);
+				FoodEquiped->SetActorEnableCollision(false);
+				FoodEquiped->AttachToComponent(GetMesh(), FAttachmentTransformRules::SnapToTargetNotIncludingScale, "CarryFood");
 
-			if(FoodEquiped->GetMyFoodPoint() != nullptr)
-				Cast<AFLTargetPoint>(FoodEquiped->GetMyFoodPoint())->SetIsFull(false);
+				if(FoodEquiped->GetMyFoodPoint() != nullptr)
+					Cast<AFLTargetPoint>(FoodEquiped->GetMyFoodPoint())->SetIsFull(false);
 
-			GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
+				GetCharacterMovement()->MaxWalkSpeed /= FoodEquiped->GetDivision();
+			}
 		}
 		else if(AvailableChair)
 		{
@@ -175,12 +179,15 @@ void AFLMainCharacter::Interact()
 	else
 	{
 		//Let the food drop, cause not hold anymore
-		HasFood = false;
-		FoodEquiped->GetMesh()->SetSimulatePhysics(true);
-		FoodEquiped->SetActorEnableCollision(true);
-		FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+		if(FoodEquiped)
+		{
+			HasFood = false;
+			FoodEquiped->GetMesh()->SetSimulatePhysics(true);
+			FoodEquiped->SetActorEnableCollision(true);
+			FoodEquiped->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
 
-		GetCharacterMovement()->MaxWalkSpeed *= FoodEquiped->GetDivision();
+			GetCharacterMovement()->MaxWalkSpeed *= FoodEquiped->GetDivision();
+		}
 	}	
 }
 
@@ -212,9 +219,12 @@ void AFLMainCharacter::OnEndTouched(UPrimitiveComponent* OverlappedComponent, AA
 {
 	AFLChair* Chair = Cast<AFLChair>(OtherActor);
 
-	if(Chair == AvailableChair)
+	if(Chair)
 	{
-		AvailableChair = nullptr;
+		if(Chair == AvailableChair)
+		{
+			AvailableChair = nullptr;
+		}
 	}
 }
 

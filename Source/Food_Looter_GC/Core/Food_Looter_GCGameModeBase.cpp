@@ -132,9 +132,11 @@ void AFood_Looter_GCGameModeBase::SpawnEnemy()
 			}
 			else
 				EnemyController->GetBlackboardComp()->SetValueAsInt("CanHaveFood", 0);
-		}
-		
-		GM->AddEnemy(SpawnedEnemy);
+
+			EnemyController->GetBlackboardComp()->SetValueAsObject("EndPoint", EndPoint);
+			
+			GM->AddEnemy(SpawnedEnemy);
+		}		
 	}
 }
 
