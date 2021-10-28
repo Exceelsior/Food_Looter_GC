@@ -21,6 +21,8 @@ AFLChair::AFLChair()
 
 	SitLocationComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Location where the player will sit"));
 	SitLocationComponent->SetupAttachment(StaticMeshComponent);
+
+	
 	
 }
 
@@ -44,15 +46,17 @@ void AFLChair::Sit(AFLMainCharacter* MainCharacter, bool IsNowSat)
 	
 	if(IsNowSat)
 	{
+		StaticMeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		MainCharacter->SetActorTransform(SitLocationComponent->GetComponentTransform());
 		MainCharacter->GetController()->SetIgnoreMoveInput(true);
 		MainCharacter->GetController()->SetIgnoreLookInput(true);
 	}
 	else
 	{
+		StaticMeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 		MainCharacter->SetActorTransform(StandUpLocationComponent->GetComponentTransform());
-		MainCharacter->GetController()->SetIgnoreMoveInput(true);
-		MainCharacter->GetController()->SetIgnoreLookInput(true);
+		MainCharacter->GetController()->SetIgnoreMoveInput(false);
+		MainCharacter->GetController()->SetIgnoreLookInput(false);
 	}
 
 	

@@ -21,10 +21,7 @@ class FOOD_LOOTER_GC_API UFLPlayerAnimInstance : public UAnimInstance
 
 	// The Tick function from the animation instance / 
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
-
-	// Return the character movement speed /
-	float GetCharacterMovementSpeed();
-
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "AnimationProperties")
 	float MovementSpeed;
 	

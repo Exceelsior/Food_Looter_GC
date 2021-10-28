@@ -80,16 +80,13 @@ protected:
 	AFLGameState* GameState;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	USceneComponent* ChairCameraLocationComponent;
+	UCameraComponent* ChairCameraComponent;
 
 	UPROPERTY()
 	AFLChair* AvailableChair;
 
 	UPROPERTY()
 	bool IsSat;
-
-	UPROPERTY()
-	FTransform PreviousCameraTransform;
 	
 	//Functions
 	UFUNCTION()

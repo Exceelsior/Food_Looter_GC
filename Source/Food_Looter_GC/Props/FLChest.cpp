@@ -17,7 +17,13 @@ AFLChest::AFLChest()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	BasePartMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Chest lower part mesh"));
+
+	UpperPartMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Chest upper part mesh"));
+	UpperPartMeshComponent->SetupAttachment(BasePartMeshComponent);
+	
 	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
+	BoxCollision->SetupAttachment(BasePartMeshComponent);
 	BoxCollision->OnComponentBeginOverlap.AddDynamic(this, &AFLChest::OnFoodDrop);
 }
 

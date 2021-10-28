@@ -46,8 +46,9 @@ AFLMainCharacter::AFLMainCharacter()
 	FaceCameraComponent = CreateDefaultSubobject<USceneCaptureComponent2D>(TEXT("Face Capture Component"));
 	FaceCameraComponent->SetupAttachment(GetMesh());
 	
-	ChairCameraLocationComponent = CreateDefaultSubobject<USceneComponent>(TEXT("Chair Camera Location Component"));
-	ChairCameraLocationComponent->SetupAttachment(GetMesh());
+	ChairCameraComponent = CreateDefaultSubobject<UCameraComponent>(TEXT("Chair Camera Component"));
+	ChairCameraComponent->SetupAttachment(GetCapsuleComponent());
+	ChairCameraComponent->Activate();
 	
 	GetCapsuleComponent()->OnComponentBeginOverlap.AddDynamic(this, &AFLMainCharacter::OnTouched);
 	GetCapsuleComponent()->OnComponentEndOverlap.AddDynamic(this, &AFLMainCharacter::OnEndTouched);
@@ -65,7 +66,6 @@ void AFLMainCharacter::BeginPlay()
 
 	CameraZoomValue = MaxCameraZoomDistance;
 	GameState = Cast<AFLGameState>(GetWorld()->GetAuthGameMode()->GetGameState<AFLGameState>());
-
 }
 
 // Called every frame
@@ -89,9 +89,6 @@ void AFLMainCharacter::MoveForward(float Value)
 		
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::X);
 		AddMovementInput(Direction, Value);
-		
-		//MoveSpeedProp->SetPropertyValue_InContainer(AnimInstance, 1);
-		
 	}
 }
 
@@ -105,7 +102,6 @@ void AFLMainCharacter::MoveRight(float Value)
 		const FVector Direction = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
 		AddMovementInput(Direction, Value);
-		//MoveSpeedProp->SetPropertyValue_InContainer(AnimInstance, 1);
 	}
 }
 
@@ -164,13 +160,14 @@ void AFLMainCharacter::Interact()
 			if(!IsSat)
 			{
 				AvailableChair->Sit(this, true);
-				PreviousCameraTransform = CameraComponent->GetComponentTransform();
-				CameraComponent->SetWorldTransform(ChairCameraLocationComponent->GetComponentTransform());
+				CameraComponent->Deactivate();
+				ChairCameraComponent->Activate();
 			}
 			else
 			{
 				AvailableChair->Sit(this, false);
-				CameraComponent->SetWorldTransform(PreviousCameraTransform);
+				CameraComponent->Activate();
+				ChairCameraComponent->Deactivate();
 			}
 			
 		}

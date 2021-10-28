@@ -29,6 +29,12 @@ class FOOD_LOOTER_GC_API AFLChest : public AActor
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     UBoxComponent* BoxCollision;
 
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UStaticMeshComponent* BasePartMeshComponent;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UStaticMeshComponent* UpperPartMeshComponent;
+    
     public:
     // Called every frame
     virtual void Tick(float DeltaTime) override;
