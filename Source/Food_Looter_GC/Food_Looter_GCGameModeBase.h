@@ -39,7 +39,7 @@ public:
     AActor* EndPoint;
     
     UPROPERTY(EditAnywhere)
-    TSubclassOf<AActor> EnemyClass;
+    TArray<TSubclassOf<AActor>> EnemyArray;
 
     UPROPERTY(EditAnywhere)
     TSubclassOf<AActor> FoodClass;
